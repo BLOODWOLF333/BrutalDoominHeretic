@@ -1,0 +1,146 @@
+ACTOR HEPhoenixRod : PhoenixRod Replaces PhoenixRod
+{
+	Game Heretic
+	SpawnID 29
+	+WEAPON.NOAUTOFIRE
+	Weapon.SelectionOrder 2600
+	Weapon.Kickback 150
+	Weapon.YAdjust 15
+	Weapon.AmmoUse 1
+	Weapon.AmmoGive 2
+	Weapon.AmmoType "HEPhoenixRodAmmo"
+	Weapon.Sisterweapon "HEPhoenixRodPowered"
+	Inventory.PickupMessage "$TXT_WPNPHOENIxROD"
+	DropItem "HEPhoenixRod"
+	VisibleToPlayerClass Corvus
+	Inventory.ForbiddenTo BDoomer, ArcadeDoomer, TacticalDoomer, Purist
+	States
+	{
+	Spawn:
+		WPHX A -1
+		Stop
+	Ready:
+		PHNX A 1 A_WeaponReady
+		Loop
+	Deselect:
+		PHNX A 1 A_Lower
+		Loop
+	Select:
+		PHNX A 1 A_Raise
+		Loop
+	Fire:
+		PHNX B 4 BRIGHT
+		TNT1 A 0 A_PlaySound("weapons/phoenixshoot", CHAN_WEAPON)
+		PHNX D 4 BRIGHT
+		PHNX C 4 BRIGHT A_FireCustomMissile("HEPhoenixFX1",0,1)
+		TNT1 A 0 A_Recoil(4)
+		PHNX DB 4 BRIGHT
+		PHNX B 0 A_ReFire
+		Goto Ready
+	}
+}
+
+ACTOR HEPhoenixRodPowered : PhoenixRodPowered Replaces PhoenixRodPowered
+{
+	Game Heretic
+	+WEAPON.POWERED_UP
+	+WEAPON.MELEEWEAPON
+	Weapon.SisterWeapon "HEPhoenixRod"
+	Weapon.AmmoGive 0
+	DropItem "HEPhoenixRod"
+	States
+	{
+	Fire:
+		PHNX B 3 BRIGHT A_InitPhoenixPL2
+	Hold:
+		PHNX C 1 BRIGHT A_FirePhoenixPL2
+		PHNX D 4 BRIGHT A_ReFire
+	Powerdown:
+		PHNX B 4 BRIGHT A_ShutdownPhoenixPL2
+		Goto Ready
+	}
+}
+
+ACTOR HEPhoenixFX1 : PhoenixFX1 Replaces PhoenixFX1
+{
+	Game Heretic
+	SpawnID 163
+	Radius 11
+	Height 8
+	Speed 40
+	Damage(random(120,120))
+	DamageType Fire
+	Projectile
+	RenderStyle Add
+	+THRUGHOST
+	+SPECIALFIREDAMAGE
+	+BLOODLESSIMPACT
+	SeeSound "weapons/phoenixshoot"
+	DeathSound "weapons/phoenixhit"
+	Obituary "$OB_MPPHOENIXROD"
+	States
+	{
+	Spawn:
+		FX04 A 2 BRIGHT A_SpawnItemEX("HEPhoenixPuff")
+		Loop
+	Death:
+		FX08 A 6 BRIGHT A_Explode
+		TNT1 A 0 A_CustomMissile("ExplosionSplashSpawner")
+		TNT1 A 0 A_SpawnItemEx("ExplosiveFlames",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
+		TNT1 A 0 A_CustomMissile("HEExplosionparticles", 0, 0, random (0, 360), 2, random (60, 90))
+		TNT1 A 0 A_CustomMissile("HEExplosionparticles2", 0, 0, random (0, 360), 2, random (60, 90))
+		TNT1 A 0 A_CustomMissile("BigBlackSmokeLarger", 0, 0, random (0, 360), 2, random (60, 90))
+		TNT1 A 0 Radius_Quake(3, 8, 0, 15, 0)
+		FX08 BC 5 BRIGHT
+		FX08 DEFGH 4 BRIGHT
+		Stop
+	}
+}
+
+ACTOR HEPhoenixPuff : PhoenixPuff Replaces PhoenixPuff//Smoke trail
+{
+	+NOBLOCKMAP
+	+NOGRAVITY
+	+NOTELEPORT
+	+CANNOTPUSH
+	RenderStyle Translucent
+	Alpha 0.4
+	Scale 0.2
+	States
+	{
+	Spawn:
+		SMK3 ABCDEFGHIJKLM 2
+		Stop
+	}
+}
+
+ACTOR HEPhoenixFX2 : PhoenixFX2 Replaces PhoenixFX2
+{
+	Radius 6
+	Height 8
+	Speed 10
+	Damage (random(12,12))
+	DamageType Fire
+	Projectile
+	RenderStyle Add
+	Alpha 0.75
+	Scale 0.5
+	Obituary "$OB_MPPPHOENIXROD"
+	+BLOODLESSIMPACT
+	States
+	{
+	Spawn:
+		FIR3 ACACACEGIK 2 BRIGHT
+		Stop
+	Death:
+		CFCF ABCD 1 BRIGHT
+		TNT1 A 0 A_CustomMissile ("Smoke", 0, 0, random(0,360), CMF_AIMDIRECTION | CMF_ABSOLUTEPITCH | CMF_ABSOLUTEANGLE, random (60, 90))
+		CFCF EFGH 1 BRIGHT
+		TNT1 A 0 A_CustomMissile ("Smoke", 0, 0, random(0,360), CMF_AIMDIRECTION | CMF_ABSOLUTEPITCH | CMF_ABSOLUTEANGLE, random (60, 90))
+		CFCF IJKL 1 BRIGHT
+		TNT1 A 0 A_CustomMissile ("Smoke", 0, 0, random(0,360), CMF_AIMDIRECTION | CMF_ABSOLUTEPITCH | CMF_ABSOLUTEANGLE, random (60, 90))
+		CFCF MNOP 1 BRIGHT
+		TNT1 A 0 A_CustomMissile ("Smoke", 0, 0, random(0,360), CMF_AIMDIRECTION | CMF_ABSOLUTEPITCH | CMF_ABSOLUTEANGLE, random (60, 90))
+		Stop
+	}
+}

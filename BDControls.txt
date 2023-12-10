@@ -1,0 +1,49 @@
+//Scripts of my old bike. Required to make the tank work.
+#library "BDControls"
+#include "zcommon.acs"
+
+script "BDInputs" ENTER
+{
+	int buttons;
+
+	while (TRUE)
+	{
+		buttons = GetPlayerInput(-1, INPUT_BUTTONS);
+
+		if (buttons & BT_USE)
+		{
+			GiveInventory("PressedUse", 1);
+		}
+		if (buttons & BT_SPEED)
+		{
+			GiveInventory("IsRunning", 1);
+		}
+		if (buttons & BT_ALTATTACK)
+		{
+		   GiveInventory("FiredSecondary", 1);
+		}
+		if (buttons & BT_ATTACK)
+		{
+		   GiveInventory("FiredPrimary", 1);
+		}
+		if (buttons & BT_CROUCH)
+		{
+		   GiveInventory("IsCrouching", 1);
+		}
+
+		delay(2);
+		TakeInventory("PressedUse", 1);
+		TakeInventory("IsRunning", 1);
+		TakeInventory("FiredSecondary", 1);
+		TakeInventory("FiredPrimary", 1);
+		TakeInventory("IsCrouching", 1);
+	}
+}
+
+Script "CheckVoodoo" (VOID)
+{
+	if(ClassifyActor(0) & ACTOR_VOODOODOLL)
+    {
+        SetActorState(0,"VoodooDoll");
+    }
+}

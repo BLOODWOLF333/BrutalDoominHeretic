@@ -1,0 +1,333 @@
+ACTOR HEStaff : Staff Replaces Staff
+{
+	Weapon.SelectionOrder 3800
+	+THRUGHOST
+	+WIMPY_WEAPON
+	+MELEEWEAPON
+	Weapon.sisterweapon "HEStaffPowered"
+	Obituary "$OB_MPSTAFF"
+	Tag "$TAG_STAFF"
+	DropItem "Staff"
+	VisibleToPlayerClass Corvus
+	Inventory.ForbiddenTo BDoomer, ArcadeDoomer, TacticalDoomer, Purist
+	States
+	{
+	Ready:
+		TNT1 A 0 A_TakeInventory("RStrike",2)
+		TNT1 A 0 A_TakeInventory("LStrike",2)
+		STFF A 1 A_WeaponReady
+		Loop
+	Deselect:
+		STFF A 1 A_Lower
+		Loop
+	Select:
+		STFF A 1 A_Raise
+		Loop
+	Fire://LeftJab
+		TNT1 A 0 A_JumpIfInventory("RStrike",2,"LeftStrongSwing")
+		TNT1 A 0 A_JumpIfInventory("LStrike",2,"LeftStrongJab")
+		TNT1 A 0 A_JumpIfInventory("RStrike",1,"R2LSwing")
+		TNT1 A 0 A_JumpIfInventory("LStrike",1,"LeftSwing")
+		STFL A 3
+		TNT1 A 0 A_PlaySound("Weapons/Staff/Jab")
+		TNT1 A 0 A_Recoil(-1)
+		STFL B 4 A_StaffAttack((random(10,10)), "HEStaffPuff")
+		TNT1 A 0 A_GiveInventory("LStrike",1)
+		STFL A 2
+		STFF A 2 A_WeaponReady
+		Goto Ready
+	LeftSwing:
+		STFL CDE 1 A_SetAngle(angle+1)//Left
+		TNT1 A 1
+		STFL FGH 1 A_SetAngle(angle-1)//Right
+		TNT1 A 0 A_PlaySound("Weapons/Staff/Swing")
+		TNT1 A 0 A_Recoil(-1)
+		STFL I 4 A_StaffAttack((random(15,15)), "HEStaffPuff")
+		TNT1 A 0 A_GiveInventory("LStrike",2)
+		STFL A 2
+		STFF A 2 A_WeaponReady
+		Goto Ready
+	R2LSwing:
+		TNT1 A 1
+		STFL FGH 1
+		TNT1 A 0 A_PlaySound("Weapons/Staff/Swing")
+		TNT1 A 0 A_Recoil(-1)
+		STFL I 1 A_StaffAttack((random(15,15)), "HEStaffPuff")
+		TNT1 A 0 A_GiveInventory("LStrike",2)
+		STFL III 1 A_SetAngle(angle-1)//Right
+		STFL AAA 1 A_SetAngle(angle+1)//Left
+		STFF A 1 A_WeaponReady
+		Goto Ready
+	LeftStrongJab:
+		STFL A 3
+		TNT1 A 0 A_PlaySound("Weapons/Staff/Strong")
+		TNT1 A 0 A_Recoil(-2)
+		STFL B 8 A_StaffAttack((random(20,20)), "HEStaffPuff")
+		TNT1 A 0 A_TakeInventory("RStrike",2)
+		TNT1 A 0 A_TakeInventory("LStrike",2)
+		STFL A 2
+		STFF A 2 A_WeaponReady(WRF_NOFIRE)
+		Goto Ready
+	LeftStrongSwing:
+		TNT1 A 1
+		STFL FGH 1
+		TNT1 A 0 A_PlaySound("Weapons/Staff/Strong")
+		TNT1 A 0 A_Recoil(-2)
+		STFL I 1 A_StaffAttack((random(20,20)), "HEStaffPuff")
+		TNT1 A 0 A_TakeInventory("RStrike",2)
+		TNT1 A 0 A_TakeInventory("LStrike",2)
+		STFL III 1 A_SetAngle(angle-2)//Right
+		STFL I 4
+		STFL AAA 1 A_SetAngle(angle+2)//Left
+		STFF A 1 A_WeaponReady(WRF_NOFIRE)
+		Goto Ready
+	AltFire://RightSwing
+		TNT1 A 0 A_JumpIfInventory("LStrike",2,"RightStrongSwing")
+		TNT1 A 0 A_JumpIfInventory("RStrike",2,"RightStrongJab")
+		TNT1 A 0 A_JumpIfInventory("RStrike",1,"RightJab")
+		STFL CDE 1
+		TNT1 A 1
+		STFR DEF 1
+		TNT1 A 0 A_PlaySound("Weapons/Staff/Swing")
+		TNT1 A 0 A_Recoil(-1)
+		STFR G 1 A_StaffAttack((random(15,15)), "HEStaffPuff")
+		TNT1 A 0 A_GiveInventory("RStrike",1)
+		STFR GGG 1 A_SetAngle(angle+1)//Left
+		STFR G 2 A_WeaponReady(WRF_NOPRIMARY)//to RightJab
+		STFR FED 1 A_SetAngle(angle-1)//Right
+		TNT1 A 1 A_WeaponReady(WRF_NOSECONDARY)//to R2LSwing
+		STFL EDC 1
+		STFF A 1 A_WeaponReady
+		Goto Ready
+	RightJab:
+		STFF BBB 1 A_SetAngle(angle-1)//Right
+		STFF A 1
+		STFF B 2
+		TNT1 A 0 A_PlaySound("Weapons/Staff/Jab")
+		TNT1 A 0 A_Recoil(-1)
+		STFF C 4 A_StaffAttack((random(10,10)), "HEStaffPuff")
+		TNT1 A 0 A_GiveInventory("RStrike",2)
+		STFF B 2 A_WeaponReady(WRF_NOPRIMARY)//to RightStrongJab
+		STFR ABC 1
+		TNT1 A 1 A_WeaponReady(WRF_NOSECONDARY)//to LeftStrongSwing
+		STFL EDC 1
+		STFF A 1 A_WeaponReady
+		Goto Ready
+	RightStrongJab:
+		STFF B 3
+		TNT1 A 0 A_PlaySound("Weapons/Staff/Strong")
+		TNT1 A 0 A_Recoil(-2)
+		STFF C 8 A_StaffAttack((random(20,20)), "HEStaffPuff")
+		TNT1 A 0 A_TakeInventory("RStrike",2)
+		TNT1 A 0 A_TakeInventory("LStrike",2)
+		STFF B 2
+		STFR ABC 1
+		TNT1 A 1
+		STFL EDC 1
+		STFF A 1 A_WeaponReady(WRF_NOFIRE)
+		Goto Ready
+	RightStrongSwing:
+		STFL CDE 1
+		TNT1 A 1
+		STFR DEF 1
+		TNT1 A 0 A_PlaySound("Weapons/Staff/Strong")
+		TNT1 A 0 A_Recoil(-2)
+		STFR G 1 A_StaffAttack((random(20,20)), "HEStaffPuff")
+		TNT1 A 0 A_TakeInventory("RStrike",2)
+		TNT1 A 0 A_TakeInventory("LStrike",2)
+		STFR GGG 1 A_SetAngle(angle+2)//Left
+		STFR G 4
+		STFR FED 1 A_SetAngle(angle-2)//Right
+		TNT1 A 1
+		STFL EDC 1
+		STFF A 1 A_WeaponReady(WRF_NOFIRE)
+		Goto Ready
+	}
+}
+
+ACTOR HEStaffPowered : StaffPowered Replaces StaffPowered
+{
+	Weapon.sisterweapon "HEStaff"
+	Weapon.ReadySound "weapons/staffcrackle"
+	+WEAPON.POWERED_UP
+	+WEAPON.READYSNDHALF
+	+WEAPON.STAFF2_KICKBACK
+	Obituary "$OB_MPPSTAFF"
+	States
+	{
+	Ready:
+		TNT1 A 0 A_TakeInventory("RStrike",2)
+		TNT1 A 0 A_TakeInventory("LStrike",2)
+		STFF DEF 4 BRIGHT A_WeaponReady
+        TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
+		Loop
+	Deselect:
+		STFF D 1 BRIGHT A_Lower
+		Loop
+	Select:
+		STFF D 1 BRIGHT A_Raise
+		Loop
+	Fire://LeftJab
+		TNT1 A 0 A_JumpIfInventory("RStrike",2,"LeftStrongSwing")
+		TNT1 A 0 A_JumpIfInventory("LStrike",2,"LeftStrongJab")
+		TNT1 A 0 A_JumpIfInventory("RStrike",1,"R2LSwing")
+		TNT1 A 0 A_JumpIfInventory("LStrike",1,"LeftSwing")
+		STFL J 3 BRIGHT
+		TNT1 A 0 A_PlaySound("Weapons/Staff/Jab")
+		TNT1 A 0 A_Recoil(-1)
+		STFL K 4 BRIGHT A_StaffAttack((random(20,20)), "HEStaffPuff2")
+		TNT1 A 0 A_GiveInventory("LStrike",1)
+		STFL J 2 BRIGHT
+		STFF DEF 4 BRIGHT A_WeaponReady
+		Goto Ready
+	LeftSwing:
+		STFL LMN 1 BRIGHT A_SetAngle(angle+1)//Left
+		TNT1 A 1
+		STFL OPQ 1 BRIGHT A_SetAngle(angle-1)//Right
+		TNT1 A 0 A_PlaySound("Weapons/Staff/Swing")
+		TNT1 A 0 A_Recoil(-1)
+		STFL R 4 BRIGHT A_StaffAttack((random(30,30)), "HEStaffPuff2")
+		TNT1 A 0 A_GiveInventory("LStrike",2)
+		STFL J 2 BRIGHT
+		STFF DEF 4 BRIGHT A_WeaponReady
+		Goto Ready
+	R2LSwing:
+		TNT1 A 1
+		STFL OPQ 1 BRIGHT
+		TNT1 A 0 A_PlaySound("Weapons/Staff/Swing")
+		TNT1 A 0 A_Recoil(-1)
+		STFL R 1 BRIGHT A_StaffAttack((random(30,30)), "HEStaffPuff2")
+		TNT1 A 0 A_GiveInventory("LStrike",2)
+		STFL RRR 1 BRIGHT A_SetAngle(angle-1)//Right
+		STFL JJJ 1 BRIGHT A_SetAngle(angle+1)//Left
+		STFF DEF 4 BRIGHT A_WeaponReady
+		Goto Ready
+	LeftStrongJab:
+		STFL J 3 BRIGHT
+		TNT1 A 0 A_PlaySound("Weapons/Staff/Strong")
+		TNT1 A 0 A_Recoil(-2)
+		STFL K 8 BRIGHT A_StaffAttack((random(40,40)), "HEStaffPuff2")
+		TNT1 A 0 A_TakeInventory("RStrike",2)
+		TNT1 A 0 A_TakeInventory("LStrike",2)
+		STFL J 2 BRIGHT
+		STFF DEF 4 BRIGHT A_WeaponReady(WRF_NOFIRE)
+		Goto Ready
+	LeftStrongSwing:
+		TNT1 A 1
+		STFL OPQ 1 BRIGHT
+		TNT1 A 0 A_PlaySound("Weapons/Staff/Strong")
+		TNT1 A 0 A_Recoil(-2)
+		STFL R 1 BRIGHT A_StaffAttack((random(40,40)), "HEStaffPuff2")
+		TNT1 A 0 A_TakeInventory("RStrike",2)
+		TNT1 A 0 A_TakeInventory("LStrike",2)
+		STFL RRR 1 BRIGHT A_SetAngle(angle-2)//Right
+		STFL R 4 BRIGHT
+		STFL JJJ 1 BRIGHT A_SetAngle(angle+2)//Left
+		STFF DEF 4 BRIGHT A_WeaponReady(WRF_NOFIRE)
+		Goto Ready
+	AltFire://RightSwing
+		TNT1 A 0 A_JumpIfInventory("LStrike",2,"RightStrongSwing")
+		TNT1 A 0 A_JumpIfInventory("RStrike",2,"RightStrongJab")
+		TNT1 A 0 A_JumpIfInventory("RStrike",1,"RightJab")
+		STFL LMN 1 BRIGHT
+		TNT1 A 1
+		STFR KLM 1 BRIGHT
+		TNT1 A 0 A_PlaySound("Weapons/Staff/Swing")
+		TNT1 A 0 A_Recoil(-1)
+		STFR N 1 BRIGHT A_StaffAttack((random(30,30)), "HEStaffPuff2")
+		TNT1 A 0 A_GiveInventory("RStrike",1)
+		STFR NNN 1 BRIGHT A_SetAngle(angle+1)//Left
+		STFR N 2 BRIGHT A_WeaponReady(WRF_NOPRIMARY)//Swing to Jab
+		STFR MLK 1 BRIGHT A_SetAngle(angle-1)//Right
+		TNT1 A 1 A_WeaponReady(WRF_NOSECONDARY)//R to L Swing
+		STFL NML 1 BRIGHT
+		STFF DEF 4 BRIGHT A_WeaponReady
+		Goto Ready
+	RightJab:
+		STFF GGG 1 BRIGHT A_SetAngle(angle-1)//Right
+		STFF D 1 BRIGHT
+		STFF G 3 BRIGHT
+		TNT1 A 0 A_PlaySound("Weapons/Staff/Jab")
+		TNT1 A 0 A_Recoil(-1)
+		STFF H 4 BRIGHT A_StaffAttack((random(20,20)), "HEStaffPuff2")
+		TNT1 A 0 A_GiveInventory("RStrike",2)
+		STFF G 2 BRIGHT A_WeaponReady(WRF_NOPRIMARY)
+		STFR HIJ 1 BRIGHT
+		TNT1 A 1 A_WeaponReady(WRF_NOSECONDARY)
+		STFL NML 1 BRIGHT
+		STFF DEF 4 BRIGHT A_WeaponReady
+		Goto Ready
+	RightStrongJab:
+		STFF G 3 BRIGHT
+		TNT1 A 0 A_PlaySound("Weapons/Staff/Strong")
+		TNT1 A 0 A_Recoil(-2)
+		STFF H 8 BRIGHT A_StaffAttack((random(40,40)), "HEStaffPuff2")
+		TNT1 A 0 A_TakeInventory("RStrike",2)
+		TNT1 A 0 A_TakeInventory("LStrike",2)
+		STFF G 2 BRIGHT
+		STFR HIJ 1 BRIGHT
+		TNT1 A 1
+		STFL NML 1 BRIGHT
+		STFF DEF 4 BRIGHT A_WeaponReady(WRF_NOFIRE)
+		Goto Ready
+	RightStrongSwing:
+		STFL LMN 1 BRIGHT
+		TNT1 A 1
+		STFR KLM 1 BRIGHT
+		TNT1 A 0 A_PlaySound("Weapons/Staff/Strong")
+		TNT1 A 0 A_Recoil(-2)
+		STFR N 1 BRIGHT A_StaffAttack((random(40,40)), "HEStaffPuff2")
+		TNT1 A 0 A_TakeInventory("RStrike",2)
+		TNT1 A 0 A_TakeInventory("LStrike",2)
+		STFR NNN 1 BRIGHT A_SetAngle(angle+2)//Left
+		STFR N 4 BRIGHT
+		STFR MLK 1 BRIGHT A_SetAngle(angle-2)//Right
+		TNT1 A 1
+		STFL NML 1 BRIGHT
+		STFF DEF 4 BRIGHT A_WeaponReady(WRF_NOFIRE)
+		Goto Ready
+	}
+}
+
+// Staff puff ---------------------------------------------------------------
+
+ACTOR HEStaffPuff
+{
+	RenderStyle Add
+	Scale 0.5
+	Alpha 0.5
+	VSpeed 1
+	+NOBLOCKMAP
+	+NOGRAVITY
+	+PUFFONACTORS
+	AttackSound "weapons/staffhit"
+	States
+	{
+	Spawn:
+		SMOK ABCDEFGHIJKLMNOPQ 1
+		Stop
+	}
+}
+
+// Staff puff 2 -------------------------------------------------------------
+
+ACTOR HEStaffPuff2
+{
+	RenderStyle Add
+	Alpha 0.25
+	Scale 0.5
+	+NOBLOCKMAP
+	+NOGRAVITY
+	+PUFFONACTORS
+	AttackSound "weapons/staffpowerhit"
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_CustomMissile ("BlueFire", 0, 0, random (0, 360), CMF_AIMDIRECTION | CMF_ABSOLUTEPITCH | CMF_ABSOLUTEANGLE, random(60,90))
+		TNT1 A 0 A_SpawnItemEx("BlueParticleSpawner")
+		TNT1 A 0 A_CustomMissile ("ExplosionSmoke", 1, 0, random (0, 360), 2, random (0, 160))
+		SH1K ABCDEFG 2 BRIGHT
+		Stop
+	}
+}

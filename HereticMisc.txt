@@ -1,0 +1,54 @@
+ACTOR HEPod : Pod Replaces Pod
+{
+	Game Heretic
+	SpawnID 125
+	Health 45
+	Radius 16
+	Height 54
+	Painchance 255
+	+SOLID +NOBLOOD +SHOOTABLE +DROPOFF
+	+WINDTHRUST +PUSHABLE +SLIDESONWALLS
+	+CANPASS +TELESTOMP +DONTMORPH
+	+NOBLOCKMONST +DONTGIB +OLDRADIUSDMG
+	DeathSound "world/podexplode"
+	PushFactor 0.5
+	States
+	{
+	Spawn:
+		PPOD A 10
+		Loop
+	Pain:
+		PPOD B 14 A_PodPain
+		Goto Spawn
+	Death:
+		PPOD C 5 BRIGHT A_RemovePod
+		PPOD D 5 BRIGHT A_Scream
+		PPOD E 5 BRIGHT A_Explode
+		TNT1 A 0 A_CustomMissile("ExplosionSplashSpawner")
+		TNT1 A 0 A_SpawnItemEx("ExplosiveFlamesG",0,0,54,0,0,0,0,SXF_NOCHECKPOSITION,0)
+		TNT1 A 0 A_CustomMissile("HEExplosionparticles3G", 54, 0, random (0, 360), 2, random (40, 90))
+		TNT1 A 0 A_CustomMissile("HEExplosionparticles4G", 54, 0, random (0, 360), 2, random (40, 90))
+		TNT1 A 0 A_CustomMissile("BigBlackSmokeLarger", 54, 0, random (0, 360), 2, random (20, 90))
+		TNT1 A 0 Radius_Quake(3, 8, 0, 15, 0)
+		TNT1 AAAA 0 A_PodPain
+		TNT1 A 0 A_SpawnItemEx("TinyBurningPieceG", 0,0,59,random (-4, 4), random (-4, 4), random (1, 5))
+		TNT1 A 0 A_SpawnItemEx("TinyBurningPiece2G", 0,0,64,random (-4, 4), random (-4, 4), random (1, 5))
+		TNT1 A 0 A_SpawnItemEx("TinyBurningPiece3G", 0,0,69,random (-4, 4), random (-4, 4), random (1, 5))
+		PPOD F 10 BRIGHT
+		Stop
+	Grow:
+		PPOD IJKLMNOP 3
+		Goto Spawn
+	}
+}
+
+ACTOR HEPickupFlash : PickupFlash Replaces PickupFlash
+{
+	+NOGRAVITY
+	States
+	{
+	Spawn:
+		ACLO DCDCBCBABA 3 BRIGHT
+		Stop
+	}
+}

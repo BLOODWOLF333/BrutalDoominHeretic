@@ -1,0 +1,155 @@
+Flat LAVAFL
+	pic FHDL01	tics 1
+	pic FHDL02	tics 1
+	pic FHDL03	tics 1
+	pic FHDL04	tics 1
+	pic FHDL05	tics 1
+	pic FHDL06	tics 1
+	pic FHDL07	tics 1
+	pic FHDL08	tics 1
+	pic FHDL09	tics 1
+	pic FHDL10	tics 1
+	pic FHDL11	tics 1
+	pic FHDL12	tics 1
+	pic FHDL13	tics 1
+	pic FHDL14	tics 1
+	pic FHDL15	tics 1
+	pic FHDL16	tics 1
+	pic FHDL17	tics 1
+	pic FHDL18	tics 1
+	pic FHDL19	tics 1
+	pic FHDL20	tics 1
+	pic FHDL21	tics 1
+	pic FHDL22	tics 1
+	pic FHDL23	tics 1
+	pic FHDL24	tics 1
+	pic FHDL25	tics 1
+	pic FHDL26	tics 1
+	pic FHDL27	tics 1
+	pic FHDL28	tics 1
+	pic FHDL29	tics 1
+	pic FHDL30	tics 1
+	pic FHDL31	tics 1
+	pic FHDL32	tics 1
+
+flat BDFWATER
+    pic FHDW01 tics 1
+	pic FHDW02 tics 1
+	pic FHDW03 tics 1
+	pic FHDW04 tics 1
+	pic FHDW05 tics 1
+	pic FHDW06 tics 1
+	pic FHDW07 tics 1
+	pic FHDW08 tics 1
+	pic FHDW09 tics 1
+	pic FHDW10 tics 1
+	pic FHDW11 tics 1
+	pic FHDW12 tics 1
+	pic FHDW13 tics 1
+	pic FHDW14 tics 1
+	pic FHDW15 tics 1
+	pic FHDW16 tics 1
+	pic FHDW17 tics 1
+	pic FHDW18 tics 1
+	pic FHDW19 tics 1
+	pic FHDW20 tics 1
+	pic FHDW21 tics 1
+	pic FHDW22 tics 1
+	pic FHDW23 tics 1
+	pic FHDW24 tics 1
+	pic FHDW25 tics 1
+	pic FHDW26 tics 1
+	pic FHDW27 tics 1
+	pic FHDW28 tics 1
+	pic FHDW29 tics 1
+	pic FHDW30 tics 1
+	pic FHDW31 tics 1
+	pic FHDW32 tics 1
+
+//*******************\\
+//*******************\\
+//|||||| FALLS ||||||||
+//*******************//
+//*******************//
+
+texture LFALL01//lava fall
+pic LFALL01	tics 1
+pic LFALL02	tics 1
+pic LFALL03	tics 1
+pic LFALL04	tics 1
+pic LFALL05	tics 1
+pic LFALL06	tics 1
+pic LFALL07	tics 1
+pic LFALL08	tics 1
+pic LFALL09	tics 1
+pic LFALL10	tics 1
+pic LFALL11	tics 1
+pic LFALL12	tics 1
+pic LFALL13	tics 1
+pic LFALL14	tics 1
+pic LFALL15	tics 1
+pic LFALL16	tics 1
+pic LFALL17	tics 1
+pic LFALL18	tics 1
+pic LFALL19	tics 1
+pic LFALL20	tics 1
+pic LFALL21	tics 1
+pic LFALL22	tics 1
+pic LFALL23	tics 1
+pic LFALL24	tics 1
+pic LFALL25	tics 1
+pic LFALL26	tics 1
+pic LFALL27	tics 1
+pic LFALL28	tics 1
+pic LFALL29	tics 1
+pic LFALL30 tics 1
+pic LFALL31 tics 1
+pic LFALL32 tics 1
+
+texture BDWFALL1//water fall
+pic WFALL01	tics 1
+pic WFALL02	tics 1
+pic WFALL03	tics 1
+pic WFALL04	tics 1
+pic WFALL05	tics 1
+pic WFALL06	tics 1
+pic WFALL07	tics 1
+pic WFALL08	tics 1
+pic WFALL09	tics 1
+pic WFALL10	tics 1
+pic WFALL11	tics 1
+pic WFALL12	tics 1
+pic WFALL13	tics 1
+pic WFALL14	tics 1
+pic WFALL15	tics 1
+pic WFALL16	tics 1
+pic WFALL17	tics 1
+pic WFALL18	tics 1
+pic WFALL19	tics 1
+pic WFALL20	tics 1
+pic WFALL21	tics 1
+pic WFALL22	tics 1
+pic WFALL23	tics 1
+pic WFALL24	tics 1
+pic WFALL25	tics 1
+pic WFALL26	tics 1
+pic WFALL27	tics 1
+pic WFALL28	tics 1
+pic WFALL29	tics 1
+pic WFALL30	tics 1
+pic WFALL31	tics 1
+pic WFALL32	tics 1
+
+flat GRWAT_01
+pic GRWAT_01 rand 4 4
+pic GRWAT_02 rand 4 4
+pic GRWAT_03 rand 4 4
+pic GRWAT_04 rand 4 4
+pic GRWAT_05 rand 4 4
+pic GRWAT_06 rand 4 4
+pic GRWAT_07 rand 4 4
+pic GRWAT_08 rand 4 4
+pic GRWAT_09 rand 4 4
+pic GRWAT_10 rand 4 4
+pic GRWAT_11 rand 4 4
+pic GRWAT_12 rand 4 4

@@ -1,0 +1,2517 @@
+Glow
+{
+	Walls//Textures
+	{
+		LAVAFL FULLBRIGHT
+		FHDL01 FULLBRIGHT
+		FHDL02 FULLBRIGHT
+		FHDL03 FULLBRIGHT
+		FHDL04 FULLBRIGHT
+		FHDL05 FULLBRIGHT
+		FHDL06 FULLBRIGHT
+		FHDL07 FULLBRIGHT
+		FHDL08 FULLBRIGHT
+		FHDL09 FULLBRIGHT
+		FHDL10 FULLBRIGHT
+		FHDL11 FULLBRIGHT
+		FHDL12 FULLBRIGHT
+		FHDL13 FULLBRIGHT
+		FHDL14 FULLBRIGHT
+		FHDL15 FULLBRIGHT
+		FHDL16 FULLBRIGHT
+		FHDL17 FULLBRIGHT
+		FHDL18 FULLBRIGHT
+		FHDL19 FULLBRIGHT
+		FHDL20 FULLBRIGHT
+		FHDL21 FULLBRIGHT
+		FHDL22 FULLBRIGHT
+		FHDL23 FULLBRIGHT
+		FHDL24 FULLBRIGHT
+		FHDL25 FULLBRIGHT
+		FHDL26 FULLBRIGHT
+		FHDL27 FULLBRIGHT
+		FHDL28 FULLBRIGHT
+		FHDL29 FULLBRIGHT
+		FHDL30 FULLBRIGHT
+		FHDL31 FULLBRIGHT
+		FHDL32 FULLBRIGHT
+	}
+
+	Flats//Actual Flats
+	{
+		FLATHUH1 "100 90 0" fullbright
+		FLATHUH2 "100 90 0" fullbright
+		FLATHUH3 "100 90 0" fullbright
+		FLATHUH4 "100 90 0" fullbright
+		FLTLAVA1 "100 90 0" fullbright
+		FLTLAVA2 "100 90 0" fullbright
+		FLTLAVA3 "100 90 0" fullbright
+		FLTLAVA4 "100 90 0" fullbright
+		FLTTELE1 "100 10 10" fullbright
+		FLTTELE2 "100 10 10" fullbright
+		FLTTELE3 "100 10 10" fullbright
+		FLTTELE4 "100 10 10" fullbright
+		FLOOR21 "10 10 100" fullbright
+		FLOOR22 "10 10 100" fullbright
+		FLOOR23 "10 10 100" fullbright
+		FLOOR24 "10 10 100" fullbright
+	}
+}
+
+// ------------------
+// -- Doom Decorations --
+// ------------------
+
+pointlight ALARMORANGELAMP
+{
+    color 1.0 0.5 0.0
+    size 64
+    offset 0 0 90
+}
+
+pointlight BDECAdditiveBlueLight
+{
+    color 0.0 0.0 1.0
+    size 80
+    offset 0 0 0
+	subtractive 1
+}
+
+pointlight BDECAdditiveBlueLightLarge
+{
+    color 0.0 0.0 2.0
+    size 160
+    offset 0 0 0
+	subtractive 1
+}
+
+pointlight BDECAdditiveRedLight
+{
+    color 1.0 0.0 0.0
+    size 64
+    offset 0 0 0
+	subtractive 1
+}
+
+pointlight BDECAdditiveRedLightLarge
+{
+    color 1.0 0.0 0.0
+    size 160
+    offset 0 0 0
+	subtractive 1
+}
+
+pointlight BDECAdditiveRedSmall
+{
+    color 1.0 0.0 0.0
+    size 16
+    offset 0 0 0
+	subtractive 1
+}
+
+pointlight BDECBlueLightBig
+{
+    color 0.0 0.0 1.0
+    size 64
+    offset 0 0 0
+}
+
+pointlight BDECBlueLightWall1L
+{
+    color 0.0 0.0 1.0
+    size 16
+    offset 0 0 0
+}
+
+pointlight BDECBottomlessPit
+{
+    color 1.0 1.0 1.0
+    size 900
+    offset 0 0 0
+	subtractive 1
+}
+
+pointlight BDECCEILLAMP
+{
+    color 0.8 0.8 0.8
+    size 64
+    offset 0 -32 0
+}
+
+pointlight BDECCEILLAMPLong
+{
+    color 0.8 0.8 0.8
+    size 80
+    offset 0 -70 0
+}
+
+pointlight BDECCEILLAMPLong2
+{
+    color 0.8 0.8 0.8
+    size 140
+    offset 0 -120 0
+}
+
+pointlight BDECComputerLight1
+{
+    color 0.0 1.0 0.0
+    size 48
+    offset 0 64 0
+}
+
+pointlight BDECComputerLight2
+{
+    color 0.0 1.0 0.0
+    size 32
+    offset 0 32 0
+}
+
+pulselight BDECComputerLight3
+{
+    color 1.0 1.0 1.0
+    size 32
+    secondarySize 34
+    interval 0.1
+	offset 0 64 0
+}
+
+pointlight BDECRedLightBig
+{
+    color 1.0 0.0 0.0
+    size 64
+    offset 0 0 0
+}
+
+pointlight BDECRedLightWall1L
+{
+    color 1.0 0.0 0.0
+    size 16
+    offset 0 0 0
+}
+
+pointlight BDECYellowLightBig
+{
+    color 1.0 1.0 0.0
+    size 64
+    offset 0 0 0
+}
+
+pointlight BDECYellowLightWall1L
+{
+    color 1.0 1.0 0.0
+    size 16
+    offset 0 0 0
+}
+
+pointlight BDECWhiteLightWall1L
+{
+    color 1.0 1.0 1.0
+    size 16
+    offset 0 0 0
+}
+
+pointlight BDECOrangeLightShaft
+{
+    color 0.3 0.1 0.0
+    size 32
+	offset 0 0 -64
+}
+
+pulselight BIGBLUETORCH
+{
+    color 0.0 0.0 1.0
+    size 64
+    secondarySize 72
+    interval 0.1
+    offset 0 60 0
+}
+
+pulselight BIGGREENTORCH
+{
+    color 0.0 1.0 0.0
+    size 64
+    secondarySize 72
+    interval 0.1
+    offset 0 60 0
+}
+
+pointlight BIGORANGELAMP
+{
+    color 1.0 0.5 0.0
+    size 96
+    offset 0 -40 0
+}
+
+pulselight BIGREDTORCH
+{
+    color 1.0 0.3 0.0
+    size 64
+    secondarySize 72
+    interval 0.1
+    offset 0 60 0
+}
+
+pointlight BIGWHITELAMP
+{
+    color 0.9 0.9 1.0
+    size 60
+    offset 0 -40 0
+}
+
+pointlight BIGWHITELAMP2
+{
+    color 0.9 0.9 1.0
+    size 50
+    offset 0 -100 0
+}
+
+pointlight BIGWHITELAMP3
+{
+    color 0.9 0.9 1.0
+    size 90
+    offset 0 -120 0
+}
+
+pulselight BurningBarrelLight
+{
+    color 1.0 0.5 0.0
+    size 48
+    secondarySize 54
+    interval 0.1
+    offset 0 32 0
+	dontlightself 1
+}
+
+pulselight CandleStickLight
+{
+    color 1.0 0.3 0.0
+    size 16
+    secondarySize 18
+    interval 0.1
+    offset 0 16 0
+}
+
+pulselight SKULLCANDLES
+{
+    color 1.0 1.0 0.0
+    size 32
+    secondarySize 34
+    interval 0.1
+    offset 0 24 0
+}
+
+pulselight SMALLBLUETORCH
+{
+    color 0.0 0.0 1.0
+    size 48
+    secondarySize 54
+    interval 0.1
+    offset 0 35 0
+}
+
+pulselight SMALLGREENTORCH
+{
+    color 0.0 1.0 0.0
+    size 48
+    secondarySize 54
+    interval 0.1
+    offset 0 35 0
+}
+
+pulselight SMALLREDTORCH
+{
+    color 1.0 0.3 0.0
+    size 48
+    secondarySize 54
+    interval 0.1
+    offset 0 35 0
+}
+
+pointlight YELLOWLAMP
+{
+    color 1.0 1.0 0.0
+    size 56
+    offset 0 44 0
+}
+
+// ------------------
+// -- Doom Weapons --
+// ------------------
+
+pointlight Flashlight1
+{
+    color 0.3 0.3 0.3
+    size 64
+    offset 0 0 0
+}
+
+pointlight Flashlight2
+{
+    color 0.7 0.7 0.7
+    size 32
+    offset 0 0 0
+}
+
+pointlight Flashlight3
+{
+    color 1.0 1.0 1.0
+    size 16
+    offset 0 0 0
+}
+
+object BFG10K_Ball
+{
+    frame BFS1A { light BFGBALL }
+    frame BFS1B { light BFGBALL }
+
+    frame BFE1A { light BFGBALL_X1 }
+    frame BFE1B { light BFGBALL_X2 }
+    frame BFE1C { light BFGBALL_X3 }
+    frame BFE1D { light BFGBALL_X1 }
+    frame BFE1E { light BFGBALL_X4 }
+    frame BFE1F { light BFGBALL_X5 }
+}
+
+object ClassicBFGBall
+{
+    frame BFS1 { light BFGBALL }
+
+    frame BFGBA { light BFGBALL_X1 }
+    frame BFGBB { light BFGBALL_X2 }
+    frame BFGBC { light BFGBALL_X2 }
+    frame BFGBD { light BFGBALL_X3 }
+    frame BFGBE { light BFGBALL_X1 }
+    frame BFGBF { light BFGBALL_X4 }
+	frame BFGBG { light BFGBALL_X5 }
+}
+
+object FlashlightProjectile
+{
+	frame TNT2 { light Flashlight1 }
+}
+
+object FlashlightProjectile2
+{
+	frame TNT2 { light Flashlight2 }
+}
+
+object FlashlightProjectile3
+{
+	frame TNT2 { light Flashlight3 }
+}
+
+object SuperBFGBall
+{
+    frame BFS1 { light BFGBALL }
+
+    frame BFGBA { light BFGBALL_X1 }
+    frame BFGBB { light BFGBALL_X2 }
+    frame BFGBC { light BFGBALL_X2 }
+    frame BFGBD { light BFGBALL_X3 }
+    frame BFGBE { light BFGBALL_X1 }
+    frame BFGBF { light BFGBALL_X4 }
+	frame BFGBG { light BFGBALL_X5 }
+}
+
+// ------------------
+// -- Doom Monsters --
+// ------------------
+
+pointlight IONBALL
+{
+    color 1.0 0.1 1.0
+    size 56
+}
+
+flickerlight IONBALL_X1
+{
+    color 1.0 0.2 1.0
+    size 64
+    secondarySize 72
+    chance 0.4
+}
+
+flickerlight IONBALL_X2
+{
+    color 0.8 0.2 0.8
+    size 80
+    secondarySize 88
+    chance 0.4
+}
+
+flickerlight IONBALL_X3
+{
+    color 0.5 0.1 0.5
+    size 64
+    secondarySize 72
+    chance 0.4
+}
+
+flickerlight IONBALL_X4
+{
+    color 0.2 0.0 0.2
+    size 8
+    secondarySize 16
+    chance 0.4
+}
+
+flickerlight2 RedShotLight
+{
+    color 1.0 0.3 0.0
+    size 48
+    secondarySize 56
+    interval 1
+    offset 0 40 0
+}
+
+flickerlight2 RedShotLightBig
+{
+    color 1.0 0.3 0.0
+    size 96
+    secondarySize 112
+    interval 1
+    offset 0 40 0
+}
+
+flickerlight2 ShotLight
+{
+    color 1.0 0.8 0.2
+    size 48
+    secondarySize 56
+    interval 1
+    offset 0 40 0
+}
+
+flickerlight2 ShotLightBig
+{
+    color 1.0 0.8 0.2
+    size 96
+    secondarySize 112
+    interval 1
+    offset 0 40 0
+}
+
+// ------------------
+// -- Fire
+// ------------------
+
+object BackblastFlames1
+{
+	frame EXPL { light BIGREDTORCH }
+}
+
+object BackblastFlames2
+{
+	frame EXPL { light BIGREDTORCH }
+}
+
+object BackblastFlames3
+{
+	frame EXPL { light BIGREDTORCH }
+}
+
+object BackblastFlames4
+{
+	frame EXPL { light BIGREDTORCH }
+}
+
+object BlueFlameTrails
+{
+	frame FRPB { light SMALLBLUETORCH }
+}
+
+object BurningPentagram
+{
+	frame PNTG { light IMPBALL }
+}
+
+object BurningPentagramBig
+{
+	frame PNTG { light IMPBALL }
+}
+
+object CoolandNewFlameTrails
+{
+	frame FIR3 { light SMALLREDTORCH }
+}
+
+object CoolandNewFlameTrailsMedium
+{
+	frame FIR3 { light SMALLREDTORCH }
+}
+
+object ExplosionFlames
+{
+	frame EXPL { light BIGREDTORCH }
+}
+
+object ExplosionFlamesBig
+{
+	frame EXPL { light BIGREDTORCH }
+}
+
+object ExplosionFlamesBig2
+{
+	frame EXPL { light BIGREDTORCH }
+}
+
+object ExplosionFlamesGiant
+{
+	frame EXPL { light BIGREDTORCH }
+}
+
+object FireBallExplosion
+{
+	frame FX98 { light BIGREDTORCH }
+}
+
+object FireballExplosionFlames
+{
+	frame FIR3 { light IMPBALL }
+}
+
+object FireballExplosionFlamesBig
+{
+	frame FIR3 { light BIGREDTORCH }
+}
+
+object FireballExplosionFlamesM
+{
+	frame FIR4 { light VIOLETLARGE }
+}
+
+object FireballExplosionFlamesMedium
+{
+	frame FIR3 { light BIGREDTORCH }
+}
+
+object FireballExplosionFlamesSmall
+{
+	frame FIR3 { light IMPBALL }
+}
+
+object Flames
+{
+	frame FRFX { light BIGREDTORCH }
+}
+
+object FlamethrowerBurningStuff
+{
+	frame NF4R { light BIGREDTORCH }
+}
+
+object FlamethrowerFireParticles
+{
+	frame FIR3 { light BIGREDTORCH }
+}
+
+object FlamethrowerFireParticlesM
+{
+	frame FIR4 { light VIOLETLARGE }
+}
+
+object FlamethrowerFireTrail
+{
+	frame FIR3 { light IMPBALL }
+}
+
+object FlamethrowerMissile
+{
+	frame FIR3 { light IMPBALL }
+}
+
+object FlamethrowerMissile2
+{
+	frame FIR3 { light IMPBALL }
+}
+
+object FlamethrowerMissile3
+{
+	frame FIR3 { light IMPBALL }
+}
+
+object FlamethrowerMissileFatso
+{
+	frame FIR3 { light IMPBALL }
+}
+
+object FlamethrowerMissileProper
+{
+	frame FIR3 { light IMPBALL }
+}
+
+object FlameTrails
+{
+	frame FRPR { light SMALLREDTORCH }
+}
+
+object FlyingBurningFuel
+{
+	frame NF3R { light SMALLREDTORCH }
+}
+
+object FlyingBurningFuel2
+{
+	frame NF3R { light SMALLREDTORCH }
+}
+
+object FlyingBurningFuel3
+{
+	frame NF3R { light SMALLREDTORCH }
+}
+
+object GreenExplosionFlameTrail
+{
+	frame EXPG { light BIGGREENTORCH }
+}
+
+object GreenFlameTrails
+{
+	frame FRPG { light SMALLGREENTORCH }
+}
+
+object GreenFlameTrailsbIG
+{
+	frame FRPG { light BIGGREENTORCH }
+}
+
+object HighExplosiveFlames
+{
+	frame X003 { light BIGREDTORCH }
+}
+
+object HighExplosiveFlames2
+{
+	frame X003 { light BIGREDTORCH }
+}
+
+object HighExplosiveFlamesBig
+{
+	frame X003 { light BIGREDTORCH }
+}
+
+object HighExplosiveFlamesHuge
+{
+	frame X003 { light BIGREDTORCH }
+}
+
+object HighExplosiveFlamesSmall
+{
+	frame X003 { light BIGREDTORCH }
+}
+
+object HugeBackblastFlames1
+{
+	frame X003 { light BIGREDTORCH }
+}
+
+object HugeBackblastFlames2
+{
+	frame X003 { light BIGREDTORCH }
+}
+
+object HugeBackblastFlames3
+{
+	frame X003 { light BIGREDTORCH }
+}
+
+object HugeBackblastFlames4
+{
+	frame X003 { light BIGREDTORCH }
+}
+
+object MarineFlameThrower
+{
+	frame FIR3 { light IMPBALL }
+}
+
+object MediumExplosionFlames
+{
+	frame EXPL { light BIGREDTORCH }
+}
+
+object NuclearFlames
+{
+	frame X003 { light BIGREDTORCH }
+}
+
+object NuclearFlamesBig
+{
+	frame X003 { light BIGREDTORCH }
+}
+
+object NuclearFlamesImpact
+{
+	frame EXPL { light BIGREDTORCH }
+}
+
+object RailgunFlameTrails
+{
+	frame FIR3 { light SMALLREDTORCH }
+}
+
+object RailgunFlameTrailsBlue
+{
+	frame FIR5 { light SMALLBLUETORCH }
+}
+
+object RealFlameTrailsMedium
+{
+	frame FIR1 { light SMALLREDTORCH }
+}
+
+object RealFlameTrailsSmall
+{
+	frame FIR1 { light SMALLREDTORCH }
+}
+
+object SmallExplosionFlames
+{
+	frame EXPL { light SMALLREDTORCH }
+}
+
+object SmallFireFocus24
+{
+    frame FLME { light SMALLREDTORCH }
+}
+
+object SmallFireTrail
+{
+	frame FIR3 { light SMALLREDTORCH }
+}
+
+object SmallFireTrail324
+{
+	frame FIR3 { light SMALLREDTORCH }
+}
+
+object SmallFlameTrails
+{
+	frame FRPR { light SMALLREDTORCH }
+}
+
+object SmallGreenFlameTrails
+{
+	frame FRPG { light SMALLGREENTORCH }
+}
+
+object TempHDFlamesGFX1
+{
+    frame NF4R { light BIGREDTORCH }
+}
+
+object TempHDFlamesGFX1Big
+{
+    frame NF4R { light BIGREDTORCH }
+}
+
+object TempHDFlamesGFX1Slim
+{
+    frame NF4R { light BIGREDTORCH }
+}
+
+object TinyBurningPiece
+{
+    frame CFCF { light SMALLREDTORCH }
+}
+
+object TinyBurningPiece2
+{
+    frame CFCF { light SMALLREDTORCH }
+}
+
+object TinyBurningPiece3
+{
+    frame CFCF { light SMALLREDTORCH }
+}
+
+object TinyBurningPieceInfinite
+{
+    frame CFCF { light SMALLREDTORCH }
+}
+
+object TinyBurningPieceTemp
+{
+    frame CFCF { light SMALLREDTORCH }
+}
+
+// ------------------
+// -- Flares
+// ------------------
+
+pointlight BLUEMEDIUM
+{
+    color 0.0 0.0 1.0
+    size 48
+}
+
+pointlight BLUELARGE
+{
+    color 0.0 0.0 1.0
+    size 64
+}
+
+pointlight BLUESMALL
+{
+    color 0.0 0.0 1.0
+    size 32
+}
+
+pointlight GREENMEDIUM
+{
+	color 0.0 1.0 0.0
+	size 48
+}
+
+pointlight GREENLARGE
+{
+    color 0.0 1.0 0.0
+    size 64
+}
+
+pointlight GREENSMALL
+{
+    color 0.0 1.0 0.0
+    size 32
+}
+
+pointlight REDMEDIUM
+{
+	color 1.0 0.0 0.0
+	size 48
+}
+
+pointlight REDLARGE
+{
+    color 1.0 0.0 0.0
+    size 64
+}
+
+pointlight REDSMALL
+{
+    color 1.0 0.0 0.0
+    size 32
+}
+
+pointlight VIOLETMEDIUM
+{
+	color 1.0 0.0 1.0
+	size 48
+}
+
+pointlight VIOLETLARGE
+{
+    color 1.0 0.0 1.0
+    size 64
+}
+
+pointlight VIOLETSMALL
+{
+    color 1.0 0.0 1.0
+    size 32
+}
+
+pointlight WHITEMEDIUM
+{
+	color 0.8 0.8 1.0
+	size 48
+}
+
+pointlight WHITELARGE
+{
+    color 0.8 0.8 1.0
+    size 64
+}
+
+pointlight WHITESMALL
+{
+    color 0.8 0.8 1.0
+    size 32
+}
+
+pointlight YELLOWMEDIUM
+{
+	color 1.0 1.0 0.0
+	size 48
+}
+
+pointlight YELLOWLARGE
+{
+    color 1.0 1.0 0.0
+    size 64
+}
+
+pointlight YELLOWSMALL
+{
+    color 1.0 1.0 0.0
+    size 32
+}
+
+object BlueFlare
+{
+	frame LENB { light BLUELARGE }
+}
+
+object BlueFlareMedium
+{
+	frame LENB { light BLUEMEDIUM }
+}
+
+object BlueFlareSmall
+{
+	frame LENB { light BLUESMALL }
+}
+
+object ExplosionFlareEffect
+{
+    frame FLARB { light REDLARGE }
+}
+
+object FireballFlare
+{
+    frame LENY { light IMPBALL }
+}
+
+object GreenFlare
+{
+    frame LENG { light GREENLARGE }
+}
+
+object GreenFlare2
+{
+    frame L2NG { light GREENLARGE }
+}
+
+object GreenFlareMedium
+{
+    frame LENG { light GREENMEDIUM }
+}
+
+object GreenFlareMedium2
+{
+    frame L2NG { light GREENMEDIUM }
+}
+
+object GreenFlareSmall
+{
+    frame LENG { light GREENSMALL }
+}
+
+object NukeFlare
+{
+    frame LEYSO { light ROCKET }
+}
+
+object OrangeLensFlareAlt
+{
+    frame LEYSO { light ZOMBIEATK }
+}
+
+object PinkFlare
+{
+    frame LENP { light VIOLETLARGE }
+}
+
+object PinkIonFlare
+{
+    frame LENP { light VIOLETSMALL }
+}
+
+object PlasmaFlare
+{
+    frame L2NB { light PLASMABALL }
+}
+
+object PlayerMuzzle1
+{
+    frame PLMZ { light ShotLight }
+}
+
+object PlayerMuzzle2
+{
+    frame PLMZ { light RedShotLight }
+}
+
+object RedFlare
+{
+    frame LENR { light REDLARGE }
+}
+
+object RedFlare2
+{
+    frame L2NR { light REDLARGE }
+}
+
+object RedFlare3Flat
+{
+    frame LENR { light REDMEDIUM }
+}
+
+object RedFlareMedium
+{
+    frame LENR { light REDMEDIUM }
+}
+
+object RedFlareSmall
+{
+    frame LENR { light REDSMALL }
+}
+
+object RedFlareSmall2
+{
+    frame L2NR { light REDSMALL }
+}
+
+object RocketFlare
+{
+    frame LEYSO { light ROCKET }
+}
+
+object UnmakerLaserTrail
+{
+    frame LEYSR { light REDSMALL }
+}
+
+object VioletFlare
+{
+    frame LENV { light VIOLETLARGE }
+}
+
+object VioletFlareSmall
+{
+    frame LENV { light VIOLETSMALL }
+}
+
+object YellowFlare
+{
+    frame LEYSA { light YELLOWLARGE }
+}
+
+object YellowFlareSmall
+{
+    frame LEYSA { light YELLOWSMALL }
+}
+
+object YellowFlareSmallB
+{
+    frame LEYSA { light YELLOWSMALL }
+}
+
+// ------------------
+// -- Misc & Puffs
+// ------------------
+
+object AltAxeAttack
+{
+    frame FX57 { light BPUFF2 }
+	frame FX58 { light BPUFF2 }
+}
+
+object AltAxeAttackStrong
+{
+    frame FX57 { light BPUFF2 }
+	frame FX58 { light BPUFF2 }
+}
+
+object AxeAttack
+{
+    frame FX57 { light BPUFF2 }
+	frame FX58 { light BPUFF2 }
+}
+
+object AxeAttackStrong
+{
+    frame FX57 { light BPUFF2 }
+	frame FX58 { light BPUFF2 }
+}
+
+object RicoChet
+{
+    frame FX57 { light BPUFF1 }
+	frame FX58 { light BPUFF1 }
+}
+
+object SawDamageHorizontal
+{
+    frame BPUFC { light BPUFF1 }
+    frame BPUFD { light BPUFF2 }
+}
+
+object SawDamageHorizontal2
+{
+    frame BPUFC { light BPUFF1 }
+    frame BPUFD { light BPUFF2 }
+}
+
+object SawDamageVertical
+{
+    frame BPUFC { light BPUFF1 }
+    frame BPUFD { light BPUFF2 }
+}
+
+object SawDamageVertical2
+{
+    frame BPUFC { light BPUFF1 }
+    frame BPUFD { light BPUFF2 }
+}
+
+object Sparks
+{
+    frame FX57 { light BPUFF2 }
+	frame FX58 { light BPUFF2 }
+}
+
+object SSawPuff
+{
+    frame BPUFC { light BPUFF1 }
+    frame BPUFD { light BPUFF2 }
+}
+
+object SSawPuff2
+{
+    frame BPUFC { light BPUFF1 }
+    frame BPUFD { light BPUFF2 }
+}
+
+// -----
+// Heretic defs
+// -----
+
+// Brightmaps Monsters
+brightmap sprite BEASA1 {	map "Brightmaps/Monsters/Beast/BEASA1.png" disablefullbright	}
+brightmap sprite BEASA6A4 {	map "Brightmaps/Monsters/Beast/BEASA6A4.png" disablefullbright	}
+brightmap sprite BEASA7A3 {	map "Brightmaps/Monsters/Beast/BEASA7A3.png" disablefullbright	}
+brightmap sprite BEASA8A2 {	map "Brightmaps/Monsters/Beast/BEASA8A2.png" disablefullbright	}
+brightmap sprite BEASB1 {	map "Brightmaps/Monsters/Beast/BEASB1.png" disablefullbright	}
+brightmap sprite BEASB6B4 {	map "Brightmaps/Monsters/Beast/BEASB6B4.png" disablefullbright	}
+brightmap sprite BEASB7B3 {	map "Brightmaps/Monsters/Beast/BEASB7B3.png" disablefullbright	}
+brightmap sprite BEASB8B2 {	map "Brightmaps/Monsters/Beast/BEASB8B2.png" disablefullbright	}
+brightmap sprite BEASC1 {	map "Brightmaps/Monsters/Beast/BEASC1.png" disablefullbright	}
+brightmap sprite BEASC7C3 {	map "Brightmaps/Monsters/Beast/BEASC7C3.png" disablefullbright	}
+brightmap sprite BEASC8C2 {	map "Brightmaps/Monsters/Beast/BEASC8C2.png" disablefullbright	}
+brightmap sprite BEASD1 {	map "Brightmaps/Monsters/Beast/BEASD1.png" disablefullbright	}
+brightmap sprite BEASD7D3 {	map "Brightmaps/Monsters/Beast/BEASD7D3.png" disablefullbright	}
+brightmap sprite BEASD8D2 {	map "Brightmaps/Monsters/Beast/BEASD8D2.png" disablefullbright	}
+brightmap sprite BEASE1 {	map "Brightmaps/Monsters/Beast/BEASE1.png" disablefullbright	}
+brightmap sprite BEASE6E4 {	map "Brightmaps/Monsters/Beast/BEASE6E4.png" disablefullbright	}
+brightmap sprite BEASE7E3 {	map "Brightmaps/Monsters/Beast/BEASE7E3.png" disablefullbright	}
+brightmap sprite BEASE8E2 {	map "Brightmaps/Monsters/Beast/BEASE8E2.png" disablefullbright	}
+brightmap sprite BEASF1 {	map "Brightmaps/Monsters/Beast/BEASF1.png" disablefullbright	}
+brightmap sprite BEASF6F4 {	map "Brightmaps/Monsters/Beast/BEASF6F4.png" disablefullbright	}
+brightmap sprite BEASF7F3 {	map "Brightmaps/Monsters/Beast/BEASF7F3.png" disablefullbright	}
+brightmap sprite BEASF8F2 {	map "Brightmaps/Monsters/Beast/BEASF8F2.png" disablefullbright	}
+brightmap sprite BEASG1 {	map "Brightmaps/Monsters/Beast/BEASG1.png" disablefullbright	}
+brightmap sprite BEASG2 {	map "Brightmaps/Monsters/Beast/BEASG2.png" disablefullbright	}
+brightmap sprite BEASG3 {	map "Brightmaps/Monsters/Beast/BEASG3.png" disablefullbright	}
+brightmap sprite BEASG4 {	map "Brightmaps/Monsters/Beast/BEASG4.png" disablefullbright	}
+brightmap sprite BEASG7 {	map "Brightmaps/Monsters/Beast/BEASG7.png" disablefullbright	}
+brightmap sprite BEASG8 {	map "Brightmaps/Monsters/Beast/BEASG8.png" disablefullbright	}
+brightmap sprite BEASH1 {	map "Brightmaps/Monsters/Beast/BEASH1.png" disablefullbright	}
+brightmap sprite BEASH2H8 {	map "Brightmaps/Monsters/Beast/BEASH2H8.png" disablefullbright	}
+brightmap sprite BEASH3H7 {	map "Brightmaps/Monsters/Beast/BEASH3H7.png" disablefullbright	}
+brightmap sprite BEASI1 {	map "Brightmaps/Monsters/Beast/BEASI1.png" disablefullbright	}
+brightmap sprite BEASI2I8 {	map "Brightmaps/Monsters/Beast/BEASI2I8.png" disablefullbright	}
+brightmap sprite BEASI3I7 {	map "Brightmaps/Monsters/Beast/BEASI3I7.png" disablefullbright	}
+brightmap sprite BEASI4I6 {	map "Brightmaps/Monsters/Beast/BEASI4I6.png" disablefullbright	}
+
+brightmap sprite CLNKI0 {	map "Brightmaps/Monsters/Clink/CLNKI0.png" disablefullbright	}
+brightmap sprite CLNKJ0 {	map "Brightmaps/Monsters/Clink/CLNKJ0.png" disablefullbright	}
+brightmap sprite CLNKK0 {	map "Brightmaps/Monsters/Clink/CLNKK0.png" disablefullbright	}
+brightmap sprite CLNKL0 {	map "Brightmaps/Monsters/Clink/CLNKL0.png" disablefullbright	}
+brightmap sprite CLNKM0 {	map "Brightmaps/Monsters/Clink/CLNKM0.png" disablefullbright	}
+brightmap sprite CLNKN0 {	map "Brightmaps/Monsters/Clink/CLNKN0.png" disablefullbright	}
+
+brightmap sprite SDTHA0 {	map "Brightmaps/Monsters/D'Sparil/SDTHA0.png" disablefullbright	}
+brightmap sprite SDTHB0 {	map "Brightmaps/Monsters/D'Sparil/SDTHB0.png" disablefullbright	}
+brightmap sprite SDTHC0 {	map "Brightmaps/Monsters/D'Sparil/SDTHC0.png" disablefullbright	}
+brightmap sprite SDTHD0 {	map "Brightmaps/Monsters/D'Sparil/SDTHD0.png" disablefullbright	}
+brightmap sprite SDTHE0 {	map "Brightmaps/Monsters/D'Sparil/SDTHE0.png" disablefullbright	}
+brightmap sprite SDTHF0 {	map "Brightmaps/Monsters/D'Sparil/SDTHF0.png" disablefullbright	}
+brightmap sprite SDTHG0 {	map "Brightmaps/Monsters/D'Sparil/SDTHG0.png" disablefullbright	}
+brightmap sprite SDTHH0 {	map "Brightmaps/Monsters/D'Sparil/SDTHH0.png" disablefullbright	}
+brightmap sprite SOR2E0 {	map "Brightmaps/Monsters/D'Sparil/SOR2E0.png" disablefullbright	}
+brightmap sprite SOR2F0 {	map "Brightmaps/Monsters/D'Sparil/SOR2F0.png" disablefullbright	}
+brightmap sprite SOR2G0 {	map "Brightmaps/Monsters/D'Sparil/SOR2G0.png" disablefullbright	}
+brightmap sprite SOR2H0 {	map "Brightmaps/Monsters/D'Sparil/SOR2H0.png" disablefullbright	}
+brightmap sprite SOR2I0 {	map "Brightmaps/Monsters/D'Sparil/SOR2I0.png" disablefullbright	}
+brightmap sprite SOR2J0 {	map "Brightmaps/Monsters/D'Sparil/SOR2J0.png" disablefullbright	}
+brightmap sprite SOR2K0 {	map "Brightmaps/Monsters/D'Sparil/SOR2K0.png" disablefullbright	}
+brightmap sprite SOR2L0 {	map "Brightmaps/Monsters/D'Sparil/SOR2L0.png" disablefullbright	}
+brightmap sprite SOR2M1 {	map "Brightmaps/Monsters/D'Sparil/SOR2M1.png" disablefullbright	}
+brightmap sprite SOR2M2 {	map "Brightmaps/Monsters/D'Sparil/SOR2M2.png" disablefullbright	}
+brightmap sprite SOR2N1 {	map "Brightmaps/Monsters/D'Sparil/SOR2N1.png" disablefullbright	}
+brightmap sprite SOR2N2 {	map "Brightmaps/Monsters/D'Sparil/SOR2N2.png" disablefullbright	}
+brightmap sprite SOR2N8 {	map "Brightmaps/Monsters/D'Sparil/SOR2N8.png" disablefullbright	}
+brightmap sprite SOR2O1 {	map "Brightmaps/Monsters/D'Sparil/SOR2O1.png" disablefullbright	}
+brightmap sprite SOR2O2 {	map "Brightmaps/Monsters/D'Sparil/SOR2O2.png" disablefullbright	}
+brightmap sprite SOR2O8 {	map "Brightmaps/Monsters/D'Sparil/SOR2O8.png" disablefullbright	}
+brightmap sprite SOR2P1 {	map "Brightmaps/Monsters/D'Sparil/SOR2P1.png" disablefullbright	}
+brightmap sprite SOR2P2 {	map "Brightmaps/Monsters/D'Sparil/SOR2P2.png" disablefullbright	}
+brightmap sprite SOR2P8 {	map "Brightmaps/Monsters/D'Sparil/SOR2P8.png" disablefullbright	}
+brightmap sprite SOR2Q1 {	map "Brightmaps/Monsters/D'Sparil/SOR2Q1.png" disablefullbright	}
+brightmap sprite SOR2Q8 {	map "Brightmaps/Monsters/D'Sparil/SOR2Q8.png" disablefullbright	}
+brightmap sprite SOR2R1 {	map "Brightmaps/Monsters/D'Sparil/SOR2R1.png" disablefullbright	}
+brightmap sprite SOR2R2 {	map "Brightmaps/Monsters/D'Sparil/SOR2R2.png" disablefullbright	}
+brightmap sprite SOR2R3 {	map "Brightmaps/Monsters/D'Sparil/SOR2R3.png" disablefullbright	}
+brightmap sprite SOR2R4 {	map "Brightmaps/Monsters/D'Sparil/SOR2R4.png" disablefullbright	}
+brightmap sprite SOR2R5 {	map "Brightmaps/Monsters/D'Sparil/SOR2R5.png" disablefullbright	}
+brightmap sprite SOR2R6 {	map "Brightmaps/Monsters/D'Sparil/SOR2R6.png" disablefullbright	}
+brightmap sprite SOR2R7 {	map "Brightmaps/Monsters/D'Sparil/SOR2R7.png" disablefullbright	}
+brightmap sprite SOR2R8 {	map "Brightmaps/Monsters/D'Sparil/SOR2R8.png" disablefullbright	}
+brightmap sprite SOR2S1 {	map "Brightmaps/Monsters/D'Sparil/SOR2S1.png" disablefullbright	}
+brightmap sprite SOR2S2 {	map "Brightmaps/Monsters/D'Sparil/SOR2S2.png" disablefullbright	}
+brightmap sprite SOR2S3 {	map "Brightmaps/Monsters/D'Sparil/SOR2S3.png" disablefullbright	}
+brightmap sprite SOR2S4 {	map "Brightmaps/Monsters/D'Sparil/SOR2S4.png" disablefullbright	}
+brightmap sprite SOR2S5 {	map "Brightmaps/Monsters/D'Sparil/SOR2S5.png" disablefullbright	}
+brightmap sprite SOR2S6 {	map "Brightmaps/Monsters/D'Sparil/SOR2S6.png" disablefullbright	}
+brightmap sprite SOR2S7 {	map "Brightmaps/Monsters/D'Sparil/SOR2S7.png" disablefullbright	}
+brightmap sprite SOR2S8 {	map "Brightmaps/Monsters/D'Sparil/SOR2S8.png" disablefullbright	}
+brightmap sprite SOR2T1 {	map "Brightmaps/Monsters/D'Sparil/SOR2T1.png" disablefullbright	}
+brightmap sprite SOR2T2 {	map "Brightmaps/Monsters/D'Sparil/SOR2T2.png" disablefullbright	}
+brightmap sprite SOR2T3 {	map "Brightmaps/Monsters/D'Sparil/SOR2T3.png" disablefullbright	}
+brightmap sprite SOR2T4 {	map "Brightmaps/Monsters/D'Sparil/SOR2T4.png" disablefullbright	}
+brightmap sprite SOR2T5 {	map "Brightmaps/Monsters/D'Sparil/SOR2T5.png" disablefullbright	}
+brightmap sprite SOR2T6 {	map "Brightmaps/Monsters/D'Sparil/SOR2T6.png" disablefullbright	}
+brightmap sprite SOR2T7 {	map "Brightmaps/Monsters/D'Sparil/SOR2T7.png" disablefullbright	}
+brightmap sprite SOR2T8 {	map "Brightmaps/Monsters/D'Sparil/SOR2T8.png" disablefullbright	}
+brightmap sprite SRCRA1 {	map "Brightmaps/Monsters/D'Sparil/SRCRA1.png" disablefullbright	}
+brightmap sprite SRCRA2 {	map "Brightmaps/Monsters/D'Sparil/SRCRA2.png" disablefullbright	}
+brightmap sprite SRCRA3 {	map "Brightmaps/Monsters/D'Sparil/SRCRA3.png" disablefullbright	}
+brightmap sprite SRCRA4 {	map "Brightmaps/Monsters/D'Sparil/SRCRA4.png" disablefullbright	}
+brightmap sprite SRCRA6 {	map "Brightmaps/Monsters/D'Sparil/SRCRA6.png" disablefullbright	}
+brightmap sprite SRCRA7 {	map "Brightmaps/Monsters/D'Sparil/SRCRA7.png" disablefullbright	}
+brightmap sprite SRCRA8 {	map "Brightmaps/Monsters/D'Sparil/SRCRA8.png" disablefullbright	}
+brightmap sprite SRCRB1 {	map "Brightmaps/Monsters/D'Sparil/SRCRB1.png" disablefullbright	}
+brightmap sprite SRCRB2 {	map "Brightmaps/Monsters/D'Sparil/SRCRB2.png" disablefullbright	}
+brightmap sprite SRCRB3 {	map "Brightmaps/Monsters/D'Sparil/SRCRB3.png" disablefullbright	}
+brightmap sprite SRCRB4 {	map "Brightmaps/Monsters/D'Sparil/SRCRB4.png" disablefullbright	}
+brightmap sprite SRCRB6 {	map "Brightmaps/Monsters/D'Sparil/SRCRB6.png" disablefullbright	}
+brightmap sprite SRCRB7 {	map "Brightmaps/Monsters/D'Sparil/SRCRB7.png" disablefullbright	}
+brightmap sprite SRCRB8 {	map "Brightmaps/Monsters/D'Sparil/SRCRB8.png" disablefullbright	}
+brightmap sprite SRCRC1 {	map "Brightmaps/Monsters/D'Sparil/SRCRC1.png" disablefullbright	}
+brightmap sprite SRCRC2 {	map "Brightmaps/Monsters/D'Sparil/SRCRC2.png" disablefullbright	}
+brightmap sprite SRCRC3 {	map "Brightmaps/Monsters/D'Sparil/SRCRC3.png" disablefullbright	}
+brightmap sprite SRCRC4 {	map "Brightmaps/Monsters/D'Sparil/SRCRC4.png" disablefullbright	}
+brightmap sprite SRCRC6 {	map "Brightmaps/Monsters/D'Sparil/SRCRC6.png" disablefullbright	}
+brightmap sprite SRCRC7 {	map "Brightmaps/Monsters/D'Sparil/SRCRC7.png" disablefullbright	}
+brightmap sprite SRCRC8 {	map "Brightmaps/Monsters/D'Sparil/SRCRC8.png" disablefullbright	}
+brightmap sprite SRCRD1 {	map "Brightmaps/Monsters/D'Sparil/SRCRD1.png" disablefullbright	}
+brightmap sprite SRCRD2 {	map "Brightmaps/Monsters/D'Sparil/SRCRD2.png" disablefullbright	}
+brightmap sprite SRCRD3 {	map "Brightmaps/Monsters/D'Sparil/SRCRD3.png" disablefullbright	}
+brightmap sprite SRCRD4 {	map "Brightmaps/Monsters/D'Sparil/SRCRD4.png" disablefullbright	}
+brightmap sprite SRCRD6 {	map "Brightmaps/Monsters/D'Sparil/SRCRD6.png" disablefullbright	}
+brightmap sprite SRCRD7 {	map "Brightmaps/Monsters/D'Sparil/SRCRD7.png" disablefullbright	}
+brightmap sprite SRCRD8 {	map "Brightmaps/Monsters/D'Sparil/SRCRD8.png" disablefullbright	}
+brightmap sprite SRCRM0 {	map "Brightmaps/Monsters/D'Sparil/SRCRM0.png" disablefullbright	}
+brightmap sprite SRCRN0 {	map "Brightmaps/Monsters/D'Sparil/SRCRN0.png" disablefullbright	}
+brightmap sprite SRCRO0 {	map "Brightmaps/Monsters/D'Sparil/SRCRO0.png" disablefullbright	}
+brightmap sprite SRCRQ1 {	map "Brightmaps/Monsters/D'Sparil/SRCRQ1.png" disablefullbright	}
+brightmap sprite SRCRQ2 {	map "Brightmaps/Monsters/D'Sparil/SRCRQ2.png" disablefullbright	}
+brightmap sprite SRCRQ3 {	map "Brightmaps/Monsters/D'Sparil/SRCRQ3.png" disablefullbright	}
+brightmap sprite SRCRQ4 {	map "Brightmaps/Monsters/D'Sparil/SRCRQ4.png" disablefullbright	}
+brightmap sprite SRCRQ6 {	map "Brightmaps/Monsters/D'Sparil/SRCRQ6.png" disablefullbright	}
+brightmap sprite SRCRQ7 {	map "Brightmaps/Monsters/D'Sparil/SRCRQ7.png" disablefullbright	}
+brightmap sprite SRCRQ8 {	map "Brightmaps/Monsters/D'Sparil/SRCRQ8.png" disablefullbright	}
+brightmap sprite SRCRR1 {	map "Brightmaps/Monsters/D'Sparil/SRCRR1.png" disablefullbright	}
+brightmap sprite SRCRR2 {	map "Brightmaps/Monsters/D'Sparil/SRCRR2.png" disablefullbright	}
+brightmap sprite SRCRR3 {	map "Brightmaps/Monsters/D'Sparil/SRCRR3.png" disablefullbright	}
+brightmap sprite SRCRR4 {	map "Brightmaps/Monsters/D'Sparil/SRCRR4.png" disablefullbright	}
+brightmap sprite SRCRR6 {	map "Brightmaps/Monsters/D'Sparil/SRCRR6.png" disablefullbright	}
+brightmap sprite SRCRR7 {	map "Brightmaps/Monsters/D'Sparil/SRCRR7.png" disablefullbright	}
+brightmap sprite SRCRR8 {	map "Brightmaps/Monsters/D'Sparil/SRCRR8.png" disablefullbright	}
+brightmap sprite SRCRS1 {	map "Brightmaps/Monsters/D'Sparil/SRCRS1.png" disablefullbright	}
+brightmap sprite SRCRS2 {	map "Brightmaps/Monsters/D'Sparil/SRCRS2.png" disablefullbright	}
+brightmap sprite SRCRS3 {	map "Brightmaps/Monsters/D'Sparil/SRCRS3.png" disablefullbright	}
+brightmap sprite SRCRS7 {	map "Brightmaps/Monsters/D'Sparil/SRCRS7.png" disablefullbright	}
+brightmap sprite SRCRS8 {	map "Brightmaps/Monsters/D'Sparil/SRCRS8.png" disablefullbright	}
+
+brightmap sprite IMPXA1 {	map "Brightmaps/Monsters/Imp/IMPXA1.png" disablefullbright	}
+brightmap sprite IMPXA2A8 {	map "Brightmaps/Monsters/Imp/IMPXA2A8.png" disablefullbright	}
+brightmap sprite IMPXA3A7 {	map "Brightmaps/Monsters/Imp/IMPXA3A7.png" disablefullbright	}
+brightmap sprite IMPXB1 {	map "Brightmaps/Monsters/Imp/IMPXB1.png" disablefullbright	}
+brightmap sprite IMPXB2B8 {	map "Brightmaps/Monsters/Imp/IMPXB2B8.png" disablefullbright	}
+brightmap sprite IMPXB3B7 {	map "Brightmaps/Monsters/Imp/IMPXB3B7.png" disablefullbright	}
+brightmap sprite IMPXC1 {	map "Brightmaps/Monsters/Imp/IMPXC1.png" disablefullbright	}
+brightmap sprite IMPXC2C8 {	map "Brightmaps/Monsters/Imp/IMPXC2C8.png" disablefullbright	}
+brightmap sprite IMPXC3C7 {	map "Brightmaps/Monsters/Imp/IMPXC3C7.png" disablefullbright	}
+brightmap sprite IMPXD1 {	map "Brightmaps/Monsters/Imp/IMPXD1.png" disablefullbright	}
+brightmap sprite IMPXD2 {	map "Brightmaps/Monsters/Imp/IMPXD2.png" disablefullbright	}
+brightmap sprite IMPXD3 {	map "Brightmaps/Monsters/Imp/IMPXD3.png" disablefullbright	}
+brightmap sprite IMPXD4 {	map "Brightmaps/Monsters/Imp/IMPXD4.png" disablefullbright	}
+brightmap sprite IMPXD5 {	map "Brightmaps/Monsters/Imp/IMPXD5.png" disablefullbright	}
+brightmap sprite IMPXD6 {	map "Brightmaps/Monsters/Imp/IMPXD6.png" disablefullbright	}
+brightmap sprite IMPXD7 {	map "Brightmaps/Monsters/Imp/IMPXD7.png" disablefullbright	}
+brightmap sprite IMPXD8 {	map "Brightmaps/Monsters/Imp/IMPXD8.png" disablefullbright	}
+brightmap sprite IMPXE1 {	map "Brightmaps/Monsters/Imp/IMPXE1.png" disablefullbright	}
+brightmap sprite IMPXE2 {	map "Brightmaps/Monsters/Imp/IMPXE2.png" disablefullbright	}
+brightmap sprite IMPXE3 {	map "Brightmaps/Monsters/Imp/IMPXE3.png" disablefullbright	}
+brightmap sprite IMPXE4 {	map "Brightmaps/Monsters/Imp/IMPXE4.png" disablefullbright	}
+brightmap sprite IMPXE5 {	map "Brightmaps/Monsters/Imp/IMPXE5.png" disablefullbright	}
+brightmap sprite IMPXE6 {	map "Brightmaps/Monsters/Imp/IMPXE6.png" disablefullbright	}
+brightmap sprite IMPXE7 {	map "Brightmaps/Monsters/Imp/IMPXE7.png" disablefullbright	}
+brightmap sprite IMPXE8 {	map "Brightmaps/Monsters/Imp/IMPXE8.png" disablefullbright	}
+brightmap sprite IMPXF1 {	map "Brightmaps/Monsters/Imp/IMPXF1.png" disablefullbright	}
+brightmap sprite IMPXF2 {	map "Brightmaps/Monsters/Imp/IMPXF2.png" disablefullbright	}
+brightmap sprite IMPXF3 {	map "Brightmaps/Monsters/Imp/IMPXF3.png" disablefullbright	}
+brightmap sprite IMPXF4 {	map "Brightmaps/Monsters/Imp/IMPXF4.png" disablefullbright	}
+brightmap sprite IMPXF5 {	map "Brightmaps/Monsters/Imp/IMPXF5.png" disablefullbright	}
+brightmap sprite IMPXF6 {	map "Brightmaps/Monsters/Imp/IMPXF6.png" disablefullbright	}
+brightmap sprite IMPXF7 {	map "Brightmaps/Monsters/Imp/IMPXF7.png" disablefullbright	}
+brightmap sprite IMPXF8 {	map "Brightmaps/Monsters/Imp/IMPXF8.png" disablefullbright	}
+brightmap sprite IMPXG1 {	map "Brightmaps/Monsters/Imp/IMPXG1.png" disablefullbright	}
+brightmap sprite IMPXG2 {	map "Brightmaps/Monsters/Imp/IMPXG2.png" disablefullbright	}
+brightmap sprite IMPXG3 {	map "Brightmaps/Monsters/Imp/IMPXG3.png" disablefullbright	}
+brightmap sprite IMPXG7 {	map "Brightmaps/Monsters/Imp/IMPXG7.png" disablefullbright	}
+brightmap sprite IMPXG8 {	map "Brightmaps/Monsters/Imp/IMPXG8.png" disablefullbright	}
+
+brightmap sprite KNIGA1 {	map "Brightmaps/Monsters/Knight/KNIGA1.png" disablefullbright	}
+brightmap sprite KNIGA2 {	map "Brightmaps/Monsters/Knight/KNIGA2.png" disablefullbright	}
+brightmap sprite KNIGA3 {	map "Brightmaps/Monsters/Knight/KNIGA3.png" disablefullbright	}
+brightmap sprite KNIGA4 {	map "Brightmaps/Monsters/Knight/KNIGA4.png" disablefullbright	}
+brightmap sprite KNIGA5 {	map "Brightmaps/Monsters/Knight/KNIGA5.png" disablefullbright	}
+brightmap sprite KNIGA6 {	map "Brightmaps/Monsters/Knight/KNIGA6.png" disablefullbright	}
+brightmap sprite KNIGA7 {	map "Brightmaps/Monsters/Knight/KNIGA7.png" disablefullbright	}
+brightmap sprite KNIGA8 {	map "Brightmaps/Monsters/Knight/KNIGA8.png" disablefullbright	}
+brightmap sprite KNIGB1 {	map "Brightmaps/Monsters/Knight/KNIGB1.png" disablefullbright	}
+brightmap sprite KNIGB2 {	map "Brightmaps/Monsters/Knight/KNIGB2.png" disablefullbright	}
+brightmap sprite KNIGB3 {	map "Brightmaps/Monsters/Knight/KNIGB3.png" disablefullbright	}
+brightmap sprite KNIGB4 {	map "Brightmaps/Monsters/Knight/KNIGB4.png" disablefullbright	}
+brightmap sprite KNIGB5 {	map "Brightmaps/Monsters/Knight/KNIGB5.png" disablefullbright	}
+brightmap sprite KNIGB6 {	map "Brightmaps/Monsters/Knight/KNIGB6.png" disablefullbright	}
+brightmap sprite KNIGB7 {	map "Brightmaps/Monsters/Knight/KNIGB7.png" disablefullbright	}
+brightmap sprite KNIGB8 {	map "Brightmaps/Monsters/Knight/KNIGB8.png" disablefullbright	}
+brightmap sprite KNIGC1 {	map "Brightmaps/Monsters/Knight/KNIGC1.png" disablefullbright	}
+brightmap sprite KNIGC2 {	map "Brightmaps/Monsters/Knight/KNIGC2.png" disablefullbright	}
+brightmap sprite KNIGC3 {	map "Brightmaps/Monsters/Knight/KNIGC3.png" disablefullbright	}
+brightmap sprite KNIGC4 {	map "Brightmaps/Monsters/Knight/KNIGC4.png" disablefullbright	}
+brightmap sprite KNIGC5 {	map "Brightmaps/Monsters/Knight/KNIGC5.png" disablefullbright	}
+brightmap sprite KNIGC6 {	map "Brightmaps/Monsters/Knight/KNIGC6.png" disablefullbright	}
+brightmap sprite KNIGC7 {	map "Brightmaps/Monsters/Knight/KNIGC7.png" disablefullbright	}
+brightmap sprite KNIGC8 {	map "Brightmaps/Monsters/Knight/KNIGC8.png" disablefullbright	}
+brightmap sprite KNIGD1 {	map "Brightmaps/Monsters/Knight/KNIGD1.png" disablefullbright	}
+brightmap sprite KNIGD2 {	map "Brightmaps/Monsters/Knight/KNIGD2.png" disablefullbright	}
+brightmap sprite KNIGD3 {	map "Brightmaps/Monsters/Knight/KNIGD3.png" disablefullbright	}
+brightmap sprite KNIGD4 {	map "Brightmaps/Monsters/Knight/KNIGD4.png" disablefullbright	}
+brightmap sprite KNIGD5 {	map "Brightmaps/Monsters/Knight/KNIGD5.png" disablefullbright	}
+brightmap sprite KNIGD6 {	map "Brightmaps/Monsters/Knight/KNIGD6.png" disablefullbright	}
+brightmap sprite KNIGD7 {	map "Brightmaps/Monsters/Knight/KNIGD7.png" disablefullbright	}
+brightmap sprite KNIGD8 {	map "Brightmaps/Monsters/Knight/KNIGD8.png" disablefullbright	}
+brightmap sprite KNIGE1 {	map "Brightmaps/Monsters/Knight/KNIGE1.png" disablefullbright	}
+brightmap sprite KNIGE2 {	map "Brightmaps/Monsters/Knight/KNIGE2.png" disablefullbright	}
+brightmap sprite KNIGE3 {	map "Brightmaps/Monsters/Knight/KNIGE3.png" disablefullbright	}
+brightmap sprite KNIGE4 {	map "Brightmaps/Monsters/Knight/KNIGE4.png" disablefullbright	}
+brightmap sprite KNIGE5 {	map "Brightmaps/Monsters/Knight/KNIGE5.png" disablefullbright	}
+brightmap sprite KNIGE6 {	map "Brightmaps/Monsters/Knight/KNIGE6.png" disablefullbright	}
+brightmap sprite KNIGE7 {	map "Brightmaps/Monsters/Knight/KNIGE7.png" disablefullbright	}
+brightmap sprite KNIGE8 {	map "Brightmaps/Monsters/Knight/KNIGE8.png" disablefullbright	}
+brightmap sprite KNIGF1 {	map "Brightmaps/Monsters/Knight/KNIGF1.png" disablefullbright	}
+brightmap sprite KNIGF2 {	map "Brightmaps/Monsters/Knight/KNIGF2.png" disablefullbright	}
+brightmap sprite KNIGF3 {	map "Brightmaps/Monsters/Knight/KNIGF3.png" disablefullbright	}
+brightmap sprite KNIGF4 {	map "Brightmaps/Monsters/Knight/KNIGF4.png" disablefullbright	}
+brightmap sprite KNIGF5 {	map "Brightmaps/Monsters/Knight/KNIGF5.png" disablefullbright	}
+brightmap sprite KNIGF6 {	map "Brightmaps/Monsters/Knight/KNIGF6.png" disablefullbright	}
+brightmap sprite KNIGF7 {	map "Brightmaps/Monsters/Knight/KNIGF7.png" disablefullbright	}
+brightmap sprite KNIGF8 {	map "Brightmaps/Monsters/Knight/KNIGF8.png" disablefullbright	}
+brightmap sprite KNIGG1 {	map "Brightmaps/Monsters/Knight/KNIGG1.png" disablefullbright	}
+brightmap sprite KNIGG2 {	map "Brightmaps/Monsters/Knight/KNIGG2.png" disablefullbright	}
+brightmap sprite KNIGG3 {	map "Brightmaps/Monsters/Knight/KNIGG3.png" disablefullbright	}
+brightmap sprite KNIGG4 {	map "Brightmaps/Monsters/Knight/KNIGG4.png" disablefullbright	}
+brightmap sprite KNIGG5 {	map "Brightmaps/Monsters/Knight/KNIGG5.png" disablefullbright	}
+brightmap sprite KNIGG6 {	map "Brightmaps/Monsters/Knight/KNIGG6.png" disablefullbright	}
+brightmap sprite KNIGG7 {	map "Brightmaps/Monsters/Knight/KNIGG7.png" disablefullbright	}
+brightmap sprite KNIGG8 {	map "Brightmaps/Monsters/Knight/KNIGG8.png" disablefullbright	}
+brightmap sprite KNIGH1 {	map "Brightmaps/Monsters/Knight/KNIGH1.png" disablefullbright	}
+brightmap sprite KNIGH2 {	map "Brightmaps/Monsters/Knight/KNIGH2.png" disablefullbright	}
+brightmap sprite KNIGH3 {	map "Brightmaps/Monsters/Knight/KNIGH3.png" disablefullbright	}
+brightmap sprite KNIGH4 {	map "Brightmaps/Monsters/Knight/KNIGH4.png" disablefullbright	}
+brightmap sprite KNIGH5 {	map "Brightmaps/Monsters/Knight/KNIGH5.png" disablefullbright	}
+brightmap sprite KNIGH6 {	map "Brightmaps/Monsters/Knight/KNIGH6.png" disablefullbright	}
+brightmap sprite KNIGH7 {	map "Brightmaps/Monsters/Knight/KNIGH7.png" disablefullbright	}
+brightmap sprite KNIGH8 {	map "Brightmaps/Monsters/Knight/KNIGH8.png" disablefullbright	}
+brightmap sprite KNIGI0 {	map "Brightmaps/Monsters/Knight/KNIGI0.png" disablefullbright	}
+brightmap sprite KNIGJ0 {	map "Brightmaps/Monsters/Knight/KNIGJ0.png" disablefullbright	}
+brightmap sprite KNIGK0 {	map "Brightmaps/Monsters/Knight/KNIGK0.png" disablefullbright	}
+brightmap sprite KNIGL0 {	map "Brightmaps/Monsters/Knight/KNIGL0.png" disablefullbright	}
+brightmap sprite KNIGM0 {	map "Brightmaps/Monsters/Knight/KNIGM0.png" disablefullbright	}
+brightmap sprite KNIGN0 {	map "Brightmaps/Monsters/Knight/KNIGN0.png" disablefullbright	}
+
+brightmap sprite LICHA1 {	map "Brightmaps/Monsters/Ironlich/LICHA1.png" disablefullbright	}
+brightmap sprite LICHB1 {	map "Brightmaps/Monsters/Ironlich/LICHB1.png" disablefullbright	}
+brightmap sprite LICHB2B8 {	map "Brightmaps/Monsters/Ironlich/LICHB2B8.png" disablefullbright	}
+brightmap sprite LICHB3B7 {	map "Brightmaps/Monsters/Ironlich/LICHB3B7.png" disablefullbright	}
+brightmap sprite LICHC0 {	map "Brightmaps/Monsters/Ironlich/LICHC0.png" disablefullbright	}
+brightmap sprite LICHD0 {	map "Brightmaps/Monsters/Ironlich/LICHD0.png" disablefullbright	}
+brightmap sprite LICHE0 {	map "Brightmaps/Monsters/Ironlich/LICHE0.png" disablefullbright	}
+brightmap sprite LICHF0 {	map "Brightmaps/Monsters/Ironlich/LICHF0.png" disablefullbright	}
+brightmap sprite LICHG0 {	map "Brightmaps/Monsters/Ironlich/LICHG0.png" disablefullbright	}
+brightmap sprite LICHH0 {	map "Brightmaps/Monsters/Ironlich/LICHH0.png" disablefullbright	}
+
+brightmap sprite MNTRA1 {	map "Brightmaps/Monsters/Minotaur/MNTRA1.png" disablefullbright	}
+brightmap sprite MNTRA2 {	map "Brightmaps/Monsters/Minotaur/MNTRA2.png" disablefullbright	}
+brightmap sprite MNTRA3 {	map "Brightmaps/Monsters/Minotaur/MNTRA3.png" disablefullbright	}
+brightmap sprite MNTRA7 {	map "Brightmaps/Monsters/Minotaur/MNTRA7.png" disablefullbright	}
+brightmap sprite MNTRA8 {	map "Brightmaps/Monsters/Minotaur/MNTRA8.png" disablefullbright	}
+brightmap sprite MNTRB1 {	map "Brightmaps/Monsters/Minotaur/MNTRB1.png" disablefullbright	}
+brightmap sprite MNTRB2 {	map "Brightmaps/Monsters/Minotaur/MNTRB2.png" disablefullbright	}
+brightmap sprite MNTRB3 {	map "Brightmaps/Monsters/Minotaur/MNTRB3.png" disablefullbright	}
+brightmap sprite MNTRB7 {	map "Brightmaps/Monsters/Minotaur/MNTRB7.png" disablefullbright	}
+brightmap sprite MNTRB8 {	map "Brightmaps/Monsters/Minotaur/MNTRB8.png" disablefullbright	}
+brightmap sprite MNTRC1 {	map "Brightmaps/Monsters/Minotaur/MNTRC1.png" disablefullbright	}
+brightmap sprite MNTRC2 {	map "Brightmaps/Monsters/Minotaur/MNTRC2.png" disablefullbright	}
+brightmap sprite MNTRC3 {	map "Brightmaps/Monsters/Minotaur/MNTRC3.png" disablefullbright	}
+brightmap sprite MNTRC7 {	map "Brightmaps/Monsters/Minotaur/MNTRC7.png" disablefullbright	}
+brightmap sprite MNTRC8 {	map "Brightmaps/Monsters/Minotaur/MNTRC8.png" disablefullbright	}
+brightmap sprite MNTRD1 {	map "Brightmaps/Monsters/Minotaur/MNTRD1.png" disablefullbright	}
+brightmap sprite MNTRD2 {	map "Brightmaps/Monsters/Minotaur/MNTRD2.png" disablefullbright	}
+brightmap sprite MNTRD3 {	map "Brightmaps/Monsters/Minotaur/MNTRD3.png" disablefullbright	}
+brightmap sprite MNTRD7 {	map "Brightmaps/Monsters/Minotaur/MNTRD7.png" disablefullbright	}
+brightmap sprite MNTRD8 {	map "Brightmaps/Monsters/Minotaur/MNTRD8.png" disablefullbright	}
+brightmap sprite MNTRE1 {	map "Brightmaps/Monsters/Minotaur/MNTRE1.png" disablefullbright	}
+brightmap sprite MNTRE7 {	map "Brightmaps/Monsters/Minotaur/MNTRE7.png" disablefullbright	}
+brightmap sprite MNTRE8 {	map "Brightmaps/Monsters/Minotaur/MNTRE8.png" disablefullbright	}
+brightmap sprite MNTRU1 {	map "Brightmaps/Monsters/Minotaur/MNTRU1.png" disablefullbright	}
+brightmap sprite MNTRU2 {	map "Brightmaps/Monsters/Minotaur/MNTRU2.png" disablefullbright	}
+brightmap sprite MNTRU3 {	map "Brightmaps/Monsters/Minotaur/MNTRU3.png" disablefullbright	}
+brightmap sprite MNTRU4 {	map "Brightmaps/Monsters/Minotaur/MNTRU4.png" disablefullbright	}
+brightmap sprite MNTRU6 {	map "Brightmaps/Monsters/Minotaur/MNTRU6.png" disablefullbright	}
+brightmap sprite MNTRU7 {	map "Brightmaps/Monsters/Minotaur/MNTRU7.png" disablefullbright	}
+brightmap sprite MNTRU8 {	map "Brightmaps/Monsters/Minotaur/MNTRU8.png" disablefullbright	}
+brightmap sprite MNTRV1 {	map "Brightmaps/Monsters/Minotaur/MNTRV1.png" disablefullbright	}
+brightmap sprite MNTRV2 {	map "Brightmaps/Monsters/Minotaur/MNTRV2.png" disablefullbright	}
+brightmap sprite MNTRV7 {	map "Brightmaps/Monsters/Minotaur/MNTRV7.png" disablefullbright	}
+brightmap sprite MNTRV8 {	map "Brightmaps/Monsters/Minotaur/MNTRV8.png" disablefullbright	}
+brightmap sprite MNTRW1 {	map "Brightmaps/Monsters/Minotaur/MNTRW1.png" disablefullbright	}
+brightmap sprite MNTRW2 {	map "Brightmaps/Monsters/Minotaur/MNTRW2.png" disablefullbright	}
+brightmap sprite MNTRW3 {	map "Brightmaps/Monsters/Minotaur/MNTRW3.png" disablefullbright	}
+brightmap sprite MNTRW7 {	map "Brightmaps/Monsters/Minotaur/MNTRW7.png" disablefullbright	}
+brightmap sprite MNTRX1 {	map "Brightmaps/Monsters/Minotaur/MNTRX1.png" disablefullbright	}
+brightmap sprite MNTRX2 {	map "Brightmaps/Monsters/Minotaur/MNTRX2.png" disablefullbright	}
+brightmap sprite MNTRX3 {	map "Brightmaps/Monsters/Minotaur/MNTRX3.png" disablefullbright	}
+brightmap sprite MNTRX7 {	map "Brightmaps/Monsters/Minotaur/MNTRX7.png" disablefullbright	}
+brightmap sprite MNTRX8 {	map "Brightmaps/Monsters/Minotaur/MNTRX8.png" disablefullbright	}
+brightmap sprite MNTRY1 {	map "Brightmaps/Monsters/Minotaur/MNTRY1.png" disablefullbright	}
+brightmap sprite MNTRY2 {	map "Brightmaps/Monsters/Minotaur/MNTRY2.png" disablefullbright	}
+brightmap sprite MNTRY3 {	map "Brightmaps/Monsters/Minotaur/MNTRY3.png" disablefullbright	}
+brightmap sprite MNTRY7 {	map "Brightmaps/Monsters/Minotaur/MNTRY7.png" disablefullbright	}
+brightmap sprite MNTRZ1 {	map "Brightmaps/Monsters/Minotaur/MNTRZ1.png" disablefullbright	}
+brightmap sprite MNTRZ2 {	map "Brightmaps/Monsters/Minotaur/MNTRZ2.png" disablefullbright	}
+brightmap sprite MNTRZ3 {	map "Brightmaps/Monsters/Minotaur/MNTRZ3.png" disablefullbright	}
+brightmap sprite MNTRZ8 {	map "Brightmaps/Monsters/Minotaur/MNTRZ8.png" disablefullbright	}
+
+brightmap sprite MUMMH1 {	map "Brightmaps/Monsters/Mummy/MUMMH1.png" disablefullbright	}
+brightmap sprite MUMMH2 {	map "Brightmaps/Monsters/Mummy/MUMMH2.png" disablefullbright	}
+brightmap sprite MUMMH3 {	map "Brightmaps/Monsters/Mummy/MUMMH3.png" disablefullbright	}
+brightmap sprite MUMMH7 {	map "Brightmaps/Monsters/Mummy/MUMMH7.png" disablefullbright	}
+brightmap sprite MUMMH8 {	map "Brightmaps/Monsters/Mummy/MUMMH8.png" disablefullbright	}
+brightmap sprite MUMMS0 {	map "Brightmaps/Monsters/Mummy/MUMMS0.png" disablefullbright	}
+brightmap sprite MUMMT0 {	map "Brightmaps/Monsters/Mummy/MUMMT0.png" disablefullbright	}
+brightmap sprite MUMMU0 {	map "Brightmaps/Monsters/Mummy/MUMMU0.png" disablefullbright	}
+brightmap sprite MUMMV0 {	map "Brightmaps/Monsters/Mummy/MUMMV0.png" disablefullbright	}
+
+brightmap sprite WZRDC1 {	map "Brightmaps/Monsters/Wizard/WZRDC1.png" disablefullbright	}
+brightmap sprite WZRDC2C8 {	map "Brightmaps/Monsters/Wizard/WZRDC2C8.png" disablefullbright	}
+brightmap sprite WZRDC3C7 {	map "Brightmaps/Monsters/Wizard/WZRDC3C7.png" disablefullbright	}
+brightmap sprite WZRDC4C6 {	map "Brightmaps/Monsters/Wizard/WZRDC4C6.png" disablefullbright	}
+brightmap sprite WZRDC5 {	map "Brightmaps/Monsters/Wizard/WZRDC5.png" disablefullbright	}
+brightmap sprite WZRDD1 {	map "Brightmaps/Monsters/Wizard/WZRDD1.png" disablefullbright	}
+brightmap sprite WZRDD2D8 {	map "Brightmaps/Monsters/Wizard/WZRDD2D8.png" disablefullbright	}
+brightmap sprite WZRDD3D7 {	map "Brightmaps/Monsters/Wizard/WZRDD3D7.png" disablefullbright	}
+brightmap sprite WZRDD4D6 {	map "Brightmaps/Monsters/Wizard/WZRDD4D6.png" disablefullbright	}
+brightmap sprite WZRDD5 {	map "Brightmaps/Monsters/Wizard/WZRDD5.png" disablefullbright	}
+brightmap sprite WZRDE1 {	map "Brightmaps/Monsters/Wizard/WZRDE1.png" disablefullbright	}
+brightmap sprite WZRDE2E8 {	map "Brightmaps/Monsters/Wizard/WZRDE2E8.png" disablefullbright	}
+brightmap sprite WZRDE3E7 {	map "Brightmaps/Monsters/Wizard/WZRDE3E7.png" disablefullbright	}
+brightmap sprite WZRDF0 {	map "Brightmaps/Monsters/Wizard/WZRDF0.png" disablefullbright	}
+brightmap sprite WZRDG0 {	map "Brightmaps/Monsters/Wizard/WZRDG0.png" disablefullbright	}
+brightmap sprite WZRDH0 {	map "Brightmaps/Monsters/Wizard/WZRDH0.png" disablefullbright	}
+brightmap sprite WZRDI0 {	map "Brightmaps/Monsters/Wizard/WZRDI0.png" disablefullbright	}
+brightmap sprite WZRDJ0 {	map "Brightmaps/Monsters/Wizard/WZRDJ0.png" disablefullbright	}
+brightmap sprite WZRDK0 {	map "Brightmaps/Monsters/Wizard/WZRDK0.png" disablefullbright	}
+brightmap sprite WZRDL0 {	map "Brightmaps/Monsters/Wizard/WZRDL0.png" disablefullbright	}
+
+// Brightmaps Weapons
+brightmap sprite STFFD0 {	map "Brightmaps/Weapons/Staff/STFFD0.png" disablefullbright	}
+brightmap sprite STFFE0 {	map "Brightmaps/Weapons/Staff/STFFE0.png" disablefullbright	}
+brightmap sprite STFFF0 {	map "Brightmaps/Weapons/Staff/STFFF0.png" disablefullbright	}
+brightmap sprite STFFG0 {	map "Brightmaps/Weapons/Staff/STFFG0.png" disablefullbright	}
+brightmap sprite STFFH0 {	map "Brightmaps/Weapons/Staff/STFFH0.png" disablefullbright	}
+brightmap sprite STFLJ0 {	map "Brightmaps/Weapons/Staff/STFLJ0.png" disablefullbright	}
+brightmap sprite STFLK0 {	map "Brightmaps/Weapons/Staff/STFLK0.png" disablefullbright	}
+brightmap sprite STFLL0 {	map "Brightmaps/Weapons/Staff/STFLL0.png" disablefullbright	}
+brightmap sprite STFLM0 {	map "Brightmaps/Weapons/Staff/STFLM0.png" disablefullbright	}
+brightmap sprite STFLN0 {	map "Brightmaps/Weapons/Staff/STFLN0.png" disablefullbright	}
+brightmap sprite STFLO0 {	map "Brightmaps/Weapons/Staff/STFLO0.png" disablefullbright	}
+brightmap sprite STFLP0 {	map "Brightmaps/Weapons/Staff/STFLP0.png" disablefullbright	}
+brightmap sprite STFLQ0 {	map "Brightmaps/Weapons/Staff/STFLQ0.png" disablefullbright	}
+brightmap sprite STFLR0 {	map "Brightmaps/Weapons/Staff/STFLR0.png" disablefullbright	}
+brightmap sprite STFRH0 {	map "Brightmaps/Weapons/Staff/STFRH0.png" disablefullbright	}
+brightmap sprite STFRI0 {	map "Brightmaps/Weapons/Staff/STFRI0.png" disablefullbright	}
+brightmap sprite STFRJ0 {	map "Brightmaps/Weapons/Staff/STFRJ0.png" disablefullbright	}
+brightmap sprite STFRK0 {	map "Brightmaps/Weapons/Staff/STFRK0.png" disablefullbright	}
+brightmap sprite STFRL0 {	map "Brightmaps/Weapons/Staff/STFRL0.png" disablefullbright	}
+brightmap sprite STFRM0 {	map "Brightmaps/Weapons/Staff/STFRM0.png" disablefullbright	}
+brightmap sprite STFRN0 {	map "Brightmaps/Weapons/Staff/STFRN0.png" disablefullbright	}
+
+brightmap sprite GAUND0 {	map "Brightmaps/Weapons/Gauntlets/GAUND0.png" disablefullbright	}
+brightmap sprite GAUNE0 {	map "Brightmaps/Weapons/Gauntlets/GAUNE0.png" disablefullbright	}
+brightmap sprite GAUNF0 {	map "Brightmaps/Weapons/Gauntlets/GAUNF0.png" disablefullbright	}
+brightmap sprite GAUNG0 {	map "Brightmaps/Weapons/Gauntlets/GAUNG0.png" disablefullbright	}
+brightmap sprite GAUNH0 {	map "Brightmaps/Weapons/Gauntlets/GAUNH0.png" disablefullbright	}
+brightmap sprite GAUNI0 {	map "Brightmaps/Weapons/Gauntlets/GAUNI0.png" disablefullbright	}
+brightmap sprite GAUNJ0 {	map "Brightmaps/Weapons/Gauntlets/GAUNJ0.png" disablefullbright	}
+brightmap sprite GAUNK0 {	map "Brightmaps/Weapons/Gauntlets/GAUNK0.png" disablefullbright	}
+brightmap sprite GAUNL0 {	map "Brightmaps/Weapons/Gauntlets/GAUNL0.png" disablefullbright	}
+brightmap sprite GAUNM0 {	map "Brightmaps/Weapons/Gauntlets/GAUNM0.png" disablefullbright	}
+brightmap sprite GAUNN0 {	map "Brightmaps/Weapons/Gauntlets/GAUNN0.png" disablefullbright	}
+
+brightmap sprite GWNDB0 {	map "Brightmaps/Weapons/GoldWand/GWNDB0.png" disablefullbright	}
+brightmap sprite GWNDC0 {	map "Brightmaps/Weapons/GoldWand/GWNDC0.png" disablefullbright	}
+brightmap sprite GWNDD0 {	map "Brightmaps/Weapons/GoldWand/GWNDD0.png" disablefullbright	}
+
+brightmap sprite CRBWA0 {	map "Brightmaps/Weapons/Crossbow/CRBWA0.png" disablefullbright	}
+brightmap sprite CRBWB0 {	map "Brightmaps/Weapons/Crossbow/CRBWB0.png" disablefullbright	}
+brightmap sprite CRBWC0 {	map "Brightmaps/Weapons/Crossbow/CRBWC0.png" disablefullbright	}
+brightmap sprite CRBWF0 {	map "Brightmaps/Weapons/Crossbow/CRBWF0.png" disablefullbright	}
+brightmap sprite CRBWG0 {	map "Brightmaps/Weapons/Crossbow/CRBWG0.png" disablefullbright	}
+brightmap sprite CRBWH0 {	map "Brightmaps/Weapons/Crossbow/CRBWH0.png" disablefullbright	}
+
+brightmap sprite BLSRB0 {	map "Brightmaps/Weapons/Blaster/BLSRB0.png" disablefullbright	}
+brightmap sprite BLSRC0 {	map "Brightmaps/Weapons/Blaster/BLSRC0.png" disablefullbright	}
+brightmap sprite BLSRD0 {	map "Brightmaps/Weapons/Blaster/BLSRD0.png" disablefullbright	}
+
+brightmap sprite PHNXB0 {	map "Brightmaps/Weapons/PhoenixRod/PHNXB0.png" disablefullbright	}
+brightmap sprite PHNXC0 {	map "Brightmaps/Weapons/PhoenixRod/PHNXC0.png" disablefullbright	}
+brightmap sprite PHNXD0 {	map "Brightmaps/Weapons/PhoenixRod/PHNXD0.png" disablefullbright	}
+
+brightmap sprite HRODB0 {	map "Brightmaps/Weapons/SkullRod/HRODB0.png" disablefullbright	}
+brightmap sprite HRODC0 {	map "Brightmaps/Weapons/SkullRod/HRODC0.png" disablefullbright	}
+brightmap sprite HRODD0 {	map "Brightmaps/Weapons/SkullRod/HRODD0.png" disablefullbright	}
+brightmap sprite HRODE0 {	map "Brightmaps/Weapons/SkullRod/HRODE0.png" disablefullbright	}
+brightmap sprite HRODF0 {	map "Brightmaps/Weapons/SkullRod/HRODF0.png" disablefullbright	}
+brightmap sprite HRODG0 {	map "Brightmaps/Weapons/SkullRod/HRODG0.png" disablefullbright	}
+
+brightmap sprite RVNSC0 {	map "Brightmaps/Weapons/RavenStaff/RVNSC0.png" disablefullbright	}
+brightmap sprite RVNSD0 {	map "Brightmaps/Weapons/RavenStaff/RVNSD0.png" disablefullbright	}
+brightmap sprite RVNSE0 {	map "Brightmaps/Weapons/RavenStaff/RVNSE0.png" disablefullbright	}
+brightmap sprite RVSRA1 {	map "Brightmaps/Weapons/RavenStaff/RVSRA1.png" disablefullbright	}
+brightmap sprite RVSRA6A4 {	map "Brightmaps/Weapons/RavenStaff/RVSRA6A4.png" disablefullbright	}
+brightmap sprite RVSRA7A3 {	map "Brightmaps/Weapons/RavenStaff/RVSRA7A3.png" disablefullbright	}
+brightmap sprite RVSRA8A2 {	map "Brightmaps/Weapons/RavenStaff/RVSRA8A2.png" disablefullbright	}
+brightmap sprite RVSRA5 {	map "Brightmaps/BLACK.png" disablefullbright	}
+brightmap sprite RVSRB1 {	map "Brightmaps/Weapons/RavenStaff/RVSRB1.png" disablefullbright	}
+brightmap sprite RVSRB6B4 {	map "Brightmaps/Weapons/RavenStaff/RVSRB6B4.png" disablefullbright	}
+brightmap sprite RVSRB7B3 {	map "Brightmaps/Weapons/RavenStaff/RVSRB7B3.png" disablefullbright	}
+brightmap sprite RVSRB8B2 {	map "Brightmaps/Weapons/RavenStaff/RVSRB8B2.png" disablefullbright	}
+brightmap sprite RVSRB5 {	map "Brightmaps/BLACK.png" disablefullbright	}
+brightmap sprite RVSRC1 {	map "Brightmaps/Weapons/RavenStaff/RVSRC1.png" disablefullbright	}
+brightmap sprite RVSRC6C4 {	map "Brightmaps/Weapons/RavenStaff/RVSRC6C4.png" disablefullbright	}
+brightmap sprite RVSRC7C3 {	map "Brightmaps/Weapons/RavenStaff/RVSRC7C3.png" disablefullbright	}
+brightmap sprite RVSRC8C2 {	map "Brightmaps/Weapons/RavenStaff/RVSRC8C2.png" disablefullbright	}
+brightmap sprite RVSRC5 {	map "Brightmaps/BLACK.png" disablefullbright	}
+brightmap sprite RVSRD1 {	map "Brightmaps/Weapons/RavenStaff/RVSRD1.png" disablefullbright	}
+brightmap sprite RVSRD6D4 {	map "Brightmaps/BLACK.png" disablefullbright	}
+brightmap sprite RVSRD7D3 {	map "Brightmaps/Weapons/RavenStaff/RVSRD7D3.png" disablefullbright	}
+brightmap sprite RVSRD8D2 {	map "Brightmaps/Weapons/RavenStaff/RVSRD8D2.png" disablefullbright	}
+brightmap sprite RVSRD5 {	map "Brightmaps/BLACK.png" disablefullbright	}
+
+//Textures
+
+brightmap texture DOOREXIT{	map "brightmaps/Walls/DOOREXIT.png" disablefullbright}
+brightmap texture GRSKULL3{	map "brightmaps/Walls/GRSKULL3.png" disablefullbright}
+
+brightmap texture LFALL01{	map "brightmaps/ALBRIGHT128.png"}
+brightmap texture LFALL02{	map "brightmaps/ALBRIGHT128.png"}
+brightmap texture LFALL03{	map "brightmaps/ALBRIGHT128.png"}
+brightmap texture LFALL04{	map "brightmaps/ALBRIGHT128.png"}
+brightmap texture LFALL05{	map "brightmaps/ALBRIGHT128.png"}
+brightmap texture LFALL06{	map "brightmaps/ALBRIGHT128.png"}
+brightmap texture LFALL07{	map "brightmaps/ALBRIGHT128.png"}
+brightmap texture LFALL08{	map "brightmaps/ALBRIGHT128.png"}
+brightmap texture LFALL09{	map "brightmaps/ALBRIGHT128.png"}
+brightmap texture LFALL10{	map "brightmaps/ALBRIGHT128.png"}
+brightmap texture LFALL11{	map "brightmaps/ALBRIGHT128.png"}
+brightmap texture LFALL12{	map "brightmaps/ALBRIGHT128.png"}
+brightmap texture LFALL13{	map "brightmaps/ALBRIGHT128.png"}
+brightmap texture LFALL14{	map "brightmaps/ALBRIGHT128.png"}
+brightmap texture LFALL15{	map "brightmaps/ALBRIGHT128.png"}
+brightmap texture LFALL16{	map "brightmaps/ALBRIGHT128.png"}
+brightmap texture LFALL17{	map "brightmaps/ALBRIGHT128.png"}
+brightmap texture LFALL18{	map "brightmaps/ALBRIGHT128.png"}
+brightmap texture LFALL19{	map "brightmaps/ALBRIGHT128.png"}
+brightmap texture LFALL20{	map "brightmaps/ALBRIGHT128.png"}
+brightmap texture LFALL21{	map "brightmaps/ALBRIGHT128.png"}
+brightmap texture LFALL22{	map "brightmaps/ALBRIGHT128.png"}
+brightmap texture LFALL23{	map "brightmaps/ALBRIGHT128.png"}
+brightmap texture LFALL24{	map "brightmaps/ALBRIGHT128.png"}
+brightmap texture LFALL25{	map "brightmaps/ALBRIGHT128.png"}
+brightmap texture LFALL26{	map "brightmaps/ALBRIGHT128.png"}
+brightmap texture LFALL27{	map "brightmaps/ALBRIGHT128.png"}
+brightmap texture LFALL28{	map "brightmaps/ALBRIGHT128.png"}
+brightmap texture LFALL29{	map "brightmaps/ALBRIGHT128.png"}
+brightmap texture LFALL30{	map "brightmaps/ALBRIGHT128.png"}
+brightmap texture LFALL31{	map "brightmaps/ALBRIGHT128.png"}
+brightmap texture LFALL32{	map "brightmaps/ALBRIGHT128.png"}
+
+brightmap texture SW1ON{	map "brightmaps/Walls/SW1ON.png" disablefullbright}
+brightmap texture SW2ON{	map "brightmaps/Walls/SW2ON.png" disablefullbright}
+
+// Decorations
+
+object HESerpentTorch
+{
+    frame SRTC { light SERPTORCH }
+}
+
+object HEFireBrazier
+{
+    frame KFR1 { light FIREBRAZ }
+}
+
+object HEWallTorch
+{
+	frame WTRH { light WALLTORCH }
+}
+
+object Chandelier
+{
+    frame CHDL { light CHANDELIER }
+}
+
+//Items
+
+pointlight ArtiGold
+{
+    color 1.0 0.8 0.0
+    size 32
+	offset 0 30 0
+}
+
+pointlight ArtiBlue
+{
+    color 0.1 0.1 1.0
+    size 32
+	offset 0 30 0
+}
+
+pointlight ArtiGreen
+{
+    color 0.1 1.0 0.1
+    size 32
+	offset 0 30 0
+}
+
+pointlight ArtiInvisibility
+{
+    color 0.1 0.5 0.1
+    size 32
+	offset 0 30 0
+}
+
+pointlight ArtiRed
+{
+    color 1.0 0.1 0.1
+    size 32
+	offset 0 30 0
+}
+
+pointlight ArtiViolet
+{
+    color 0.5 0.0 1.0
+    size 32
+	offset 0 30 0
+}
+
+pointlight ArtiWhite
+{
+	color 1.0 1.0 1.0
+	size 32
+	offset 0 30 0
+}
+
+pointlight SmallBlueAir
+{
+	color 0.1 0.1 1.0
+	size 16
+	offset 0 30 0
+}
+
+pointlight SmallGoldFloor
+{
+    color 1.0 0.8 0.0
+    size 16
+}
+
+object ArtiEgg
+{
+	frame EGGC { light ArtiGreen	}
+}
+
+object ArtiFly
+{
+	frame SOAR { light ArtiGold	}
+}
+
+object ArtiHealth
+{
+	frame PTN2 { light ArtiViolet	}
+}
+
+object ArtiInvisibility
+{
+	frame INVS { light ArtiInvisibility	}
+}
+
+object ArtiInvulnerability
+{
+	frame INVUA { light ArtiViolet	}
+	frame INVUB { light ArtiRed		}
+	frame INVUC { light ArtiGreen	}
+	frame INVUD { light ArtiBlue	}
+}
+
+object ArtiSuperHealth
+{
+	frame SPHL { light ArtiWhite	}
+}
+
+object ArtiTeleport
+{
+	frame ATLP { light ArtiRed	}
+}
+
+object ArtiTimeBomb
+{
+	frame FBMB { light ArtiGold	}
+}
+
+object HEArtiTomeOfPower
+{
+	frame PWBK { light ArtiWhite	}
+}
+
+object ArtiTorch
+{
+	frame TRCH { light ArtiGold	}
+}
+
+object HEBagOfHolding
+{
+	frame BAGH { light ArtiGold	}
+}
+
+object CrystalVial
+{
+	frame PTN1 { light SmallBlueAir	}
+}
+
+object EnchantedShield
+{
+	frame SHD2 { light ArtiGold	}
+}
+
+object HEActivatedBomb
+{
+	frame XPL1A { light TIMEBOMB_X1 }
+    frame XPL1B { light TIMEBOMB_X2 }
+    frame XPL1C { light TIMEBOMB_X3 }
+    frame XPL1D { light TIMEBOMB_X4 }
+    frame XPL1E { light TIMEBOMB_X5 }
+    frame XPL1F { light TIMEBOMB_X5 }
+}
+
+Object HEEggFX
+{
+	Frame FX03C { Light SmallGreenBolt1 }
+	Frame FX03D { Light SmallGreenBolt2 }
+	Frame FX03E { Light SmallGreenBolt3 }
+}
+
+object HEEgg
+{
+	frame EGGC { light ArtiGreen	}
+}
+
+object HEGoldWandAmmo
+{
+    frame AMG1 { light SWANDAMMO }
+}
+
+object HEGoldWandHefty
+{
+    frame AMG2 { light LWANDAMMO }
+}
+
+object HECrossbowAmmo
+{
+    frame AMC1 { light ETHARROWS }
+}
+
+object HECrossbowHefty
+{
+    frame AMC2 { light ETHQUIVER }
+}
+
+object HEBlasterAmmo
+{
+    frame AMB1 { light SCLAWAMMO }
+}
+
+object HEBlasterHefty
+{
+    frame AMB2 { light LCLAWAMMO }
+}
+
+object HEPhoenixRodAmmo
+{
+    frame AMP1 { light SRODAMMO }
+}
+
+object HEPhoenixRodHefty
+{
+    frame AMP2 { light LRODAMMO }
+}
+
+object HESkullRodAmmo
+{
+    frame AMS2 { light SSTAFFAMMO }
+}
+
+object HESkullRodHefty
+{
+    frame AMS2 { light LSTAFFAMMO }
+}
+
+object RavenAmmo
+{
+    frame AMR1 { light SmallGoldFloor }
+}
+
+object RavenHefty
+{
+    frame AMR1 { light SmallGoldFloor }
+}
+
+object SilverShield
+{
+	frame SHLDA { light ArtiWhite	}
+}
+
+object SuperMap
+{
+	frame SPMP { light ArtiGold	}
+}
+
+// Monsters
+
+object HEBeastBall
+{
+    frame BLHD { light BEASTBALL }
+}
+
+object HEClink
+{
+    frame CLNKK { light CLINK_X1 }
+    frame CLNKL { light CLINK_X2 }
+    frame CLNKM { light CLINK_X3 }
+    frame CLNKN { light CLINK_X4 }
+}
+
+object HEHereticImpBall
+{
+    frame BLHD { light HIMPBALL }
+}
+
+object HEIronlich
+{
+    frame LICHD { light IRONLICH1 }
+    frame LICHE { light IRONLICH2 }
+    frame LICHF { light IRONLICH3 }
+    frame LICHG { light IRONLICH4 }
+}
+
+object HEHeadFX3
+{
+    frame BLHD { light LICHFIRE }
+}
+
+object HEMinotaurFX1
+{
+    frame BLHD { light MAULBALL }
+}
+
+object HEMinotaurFX2
+{
+    frame FX13I { light MAULFLAME_X1 }
+    frame FX13J { light MAULFLAME_X2 }
+    frame FX13K { light MAULFLAME_X3 }
+    frame FX13L { light MAULFLAME_X4 }
+    frame FX13M { light MAULFLAME_X5 }
+}
+
+object HEMinotaurFX3
+{
+    frame F1RE { light MAULFLAME }
+}
+
+object HEMummyLeader
+{
+    frame MUMMY { light MUMMYATK }
+}
+
+object HEMummyLeaderGhost
+{
+    frame MUMMY { light MUMMYATK }
+}
+
+object HEMummyFX1
+{
+    frame FX15A { light MUMMYBALL }
+    frame FX15B { light MUMMYBALL }
+    frame FX15C { light MUMMYBALL }
+
+    frame FX15D { light MUMMYBALL_X1 }
+    frame FX15E { light MUMMYBALL_X2 }
+    frame FX15F { light MUMMYBALL_X3 }
+}
+
+object HEPickupFlash
+{
+    frame ACLOA { light HTFOG3 }
+	frame ACLOB { light HTFOG2 }
+	frame ACLOC { light HTFOG4 }
+	frame ACLOD { light HTFOG5 }
+}
+
+object HEPod
+{
+    frame PPODC { light POD_X1 }
+    frame PPODD { light POD_X2 }
+    frame PPODE { light POD_X3 }
+    frame PPODF { light POD_X4 }
+}
+
+object HESorcerer2
+{
+    frame SOR2R { light DSPARILATK }
+    frame SOR2S { light DSPARILATK }
+    frame SOR2T { light DSPARILATK }
+}
+
+object HESorcererFX1
+{
+    frame BLHD { light SERPENTBALL }
+}
+
+object HESorcerer2FX1
+{
+    frame SPKB { light DSPARILBALL }
+
+    frame FX16G { light DSPARILBALL_X1 }
+    frame FX16H { light DSPARILBALL_X2 }
+    frame FX16I { light DSPARILBALL_X3 }
+    frame FX16J { light DSPARILBALL_X4 }
+    frame FX16K { light DSPARILBALL_X5 }
+    frame FX16L { light DSPARILBALL_X5 }
+}
+
+object HESnakeProjA
+{
+    frame PBALE { light SNAKESHOT1 }
+}
+
+object HESnakeProjB
+{
+    frame PBALD { light SNAKESHOT2 }
+}
+
+object HEWhirlwind
+{
+    frame FX47 { light BIGRED }
+}
+
+object HEWizardFX1
+{
+    frame FX11A { light DISCIPLEBALL }
+    frame FX11B { light DISCIPLEBALL }
+}
+
+// SFX
+
+flickerlight2 BIGBLUE
+{
+    color 0.0 0.0 1.0
+    size 64
+    secondarySize 72
+    interval 0.1
+}
+
+flickerlight2 BIGGREEN
+{
+    color 0.0 1.0 0.0
+    size 64
+    secondarySize 72
+    interval 0.1
+}
+
+flickerlight2 BIGRED
+{
+    color 1.0 0.3 0.0
+    size 64
+    secondarySize 72
+    interval 0.1
+}
+
+flickerlight2 SMALLBLUE
+{
+    color 0.0 0.0 1.0
+    size 48
+    secondarySize 54
+    interval 0.1
+}
+
+flickerlight2 SMALLGREEN
+{
+    color 0.0 1.0 0.0
+    size 48
+    secondarySize 54
+    interval 0.1
+}
+
+flickerlight2 SMALLRED
+{
+    color 1.0 0.3 0.0
+    size 48
+    secondarySize 54
+    interval 0.1
+}
+
+flickerlight2 SMALLVIOLET
+{
+    color 1.0 0.0 0.5
+    size 48
+    secondarySize 54
+    interval 0.1
+}
+
+object BlueFlames
+{
+	frame FIR5 { light BIGBLUE }
+}
+
+object ExplosiveFlames
+{
+	frame X003 { light BIGRED }
+}
+
+object ExplosiveFlamesG
+{
+	frame X002 { light BIGGREEN }
+}
+
+object FireParticles
+{
+	frame FIR3 { light BIGRED }
+}
+
+object TinyBurningPieceG
+{
+    frame CFCG { light SMALLGREEN }
+}
+
+object TinyBurningPiece2G
+{
+    frame CFCG { light SMALLGREEN }
+}
+
+object TinyBurningPiece3G
+{
+    frame CFCG { light SMALLGREEN }
+}
+
+object VioletFire
+{
+	frame FIR4 { light SMALLVIOLET }
+}
+
+// Weapons
+PointLight BlueFire
+{
+	color 0.0 0.5 1.0
+    size 32
+}
+
+PointLight GreenGauntletPuff
+{
+	color 0.0 1.0 0.0
+    size 16
+}
+
+PointLight RedGauntletPuff
+{
+	color 1.0 0.0 0.0
+    size 16
+}
+
+PointLight GoldWandPuff
+{
+	color 0.85 0.6 0.1
+    size 16
+}
+
+PointLight SmallGreenBolt
+{
+	color 0.47 1.0 0.44
+    size 16
+}
+
+PointLight BigGreenBolt
+{
+	color 0.47 1.0 0.44
+    size 32
+}
+
+FlickerLight SmallGreenBolt1
+{
+	color 0.47 1.0 0.44
+    size 16
+	secondarySize 24
+    chance 0.3
+}
+
+FlickerLight SmallGreenBolt2
+{
+	color 0.47 1.0 0.44
+    size 8
+	secondarySize 12
+    chance 0.3
+}
+
+FlickerLight SmallGreenBolt3
+{
+	color 0.47 1.0 0.44
+    size 4
+	secondarySize 6
+    chance 0.3
+}
+
+FlickerLight BigGreenBolt1
+{
+	color 0.47 1.0 0.44
+    size 32
+	secondarySize 48
+    chance 0.3
+}
+
+FlickerLight BigGreenBolt2
+{
+	color 0.47 1.0 0.44
+    size 16
+	secondarySize 24
+    chance 0.3
+}
+
+FlickerLight BigGreenBolt3
+{
+	color 0.47 1.0 0.44
+    size 8
+	secondarySize 12
+    chance 0.3
+}
+
+FlickerLight BlasterPuff
+{
+	color 0.25 0.46 0.89
+    size 24
+	secondarySize 36
+    chance 0.3
+}
+
+FlickerLight BlasterPuff1
+{
+	color 0.25 0.46 0.89
+    size 20
+	secondarySize 30
+    chance 0.3
+}
+
+FlickerLight BlasterPuff2
+{
+	color 0.25 0.46 0.89
+    size 16
+	secondarySize 24
+    chance 0.3
+}
+
+FlickerLight BlasterPuff3
+{
+	color 0.25 0.46 0.89
+    size 12
+	secondarySize 18
+    chance 0.3
+}
+
+FlickerLight BlasterPuff4
+{
+	color 0.25 0.46 0.89
+    size 8
+	secondarySize 12
+    chance 0.3
+}
+
+PointLight PhoenixShot
+{
+	Color 1.0 0.5 0.0
+	Size 64
+}
+
+FlickerLight PhoenixFX
+{
+	color 1.0 0.5 0.0
+    size 72
+	secondarySize 108
+    chance 0.3
+}
+
+FlickerLight PhoenixFX1
+{
+	color 1.0 0.5 0.0
+    size 64
+	secondarySize 96
+    chance 0.3
+}
+
+FlickerLight PhoenixFX2
+{
+	color 1.0 0.5 0.0
+    size 56
+	secondarySize 84
+    chance 0.3
+}
+
+FlickerLight PhoenixFX3
+{
+	color 1.0 0.5 0.0
+    size 48
+	secondarySize 78
+    chance 0.3
+}
+
+FlickerLight PhoenixFX4
+{
+	color 1.0 0.25 0.0
+    size 40
+	secondarySize 60
+    chance 0.3
+}
+
+FlickerLight PhoenixFX5
+{
+	color 1.0 0.25 0.0
+    size 32
+	secondarySize 48
+    chance 0.3
+}
+
+FlickerLight PhoenixFX6
+{
+	color 1.0 0.0 0.0
+    size 24
+	secondarySize 36
+    chance 0.3
+}
+
+FlickerLight PhoenixFX7
+{
+	color 1.0 0.0 0.0
+    size 16
+	secondarySize 24
+    chance 0.3
+}
+
+FlickerLight PhoenixFlame
+{
+	color 1.0 0.25 0.0
+    size 56
+	secondarySize 84
+    chance 0.3
+}
+
+FlickerLight PhoenixFlamePuff
+{
+	color 1.0 0.25 0.0
+    size 16
+	secondarySize 24
+    chance 0.3
+}
+
+PointLight HellStaffShot
+{
+	Color 1.0 0.25 0.25
+	Size 56
+}
+
+FlickerLight HellStaffFX1
+{
+	color 1.0 0.25 0.25
+    size 56
+	secondarySize 84
+    chance 0.3
+}
+
+FlickerLight HellStaffFX2
+{
+	color 1.0 0.25 0.25
+    size 60
+	secondarySize 90
+    chance 0.3
+}
+
+FlickerLight HellStaffFX3
+{
+	color 1.0 0.25 0.25
+    size 64
+	secondarySize 96
+    chance 0.3
+}
+
+FlickerLight HellStaffFX4
+{
+	color 1.0 0.25 0.25
+    size 68
+	secondarySize 102
+    chance 0.3
+}
+
+FlickerLight HellStaffFX5
+{
+	color 1.0 0.25 0.25
+    size 72
+	secondarySize 108
+    chance 0.3
+}
+
+PointLight RavenBlade
+{
+	Color 0.99 0.76 0.28
+	Size 32
+}
+
+object BlueFire
+{
+	frame FIR5 { light BlueFire }
+}
+
+Object HEGauntletPuff1
+{
+	Frame SPKG { Light GreenGauntletPuff }
+}
+
+Object HEGauntletPuff2
+{
+	Frame SPKR { Light RedGauntletPuff }
+}
+
+Object HEGoldWandPuff
+{
+	Frame PUF2 { Light GoldWandPuff	}
+}
+
+Object HEGoldWandTrail
+{
+	Frame LEYS { Light GoldWandPuff }
+}
+
+Object HECrossbowFX1
+{
+	Frame FX03B { Light BigGreenBolt }
+	Frame FX03H { Light BigGreenBolt1 }
+	Frame FX03I { Light BigGreenBolt2 }
+	Frame FX03J { Light BigGreenBolt3 }
+}
+
+Object HECrossbowFX2
+{
+	Frame FX03B { Light BigGreenBolt }
+	Frame FX03H { Light BigGreenBolt1 }
+	Frame FX03I { Light BigGreenBolt2 }
+	Frame FX03J { Light BigGreenBolt3 }
+}
+
+Object HECrossbowFX3
+{
+	Frame FX03A { Light SmallGreenBolt }
+	Frame FX03C { Light SmallGreenBolt1 }
+	Frame FX03D { Light SmallGreenBolt2 }
+	Frame FX03E { Light SmallGreenBolt3 }
+}
+
+Object HEBlasterPuff
+{
+	Frame FX17A { Light BlasterPuff }
+	Frame FX17B { Light BlasterPuff1 }
+	Frame FX17C { Light BlasterPuff2 }
+	Frame FX17D { Light BlasterPuff3 }
+	Frame FX17E { Light BlasterPuff4 }
+	Frame FX17F { Light BlasterPuff4 }
+	Frame FX17G { Light BlasterPuff3 }
+	Frame FX17H { Light BlasterPuff2 }
+	Frame FX17I { Light BlasterPuff1 }
+	Frame FX17J { Light BlasterPuff }
+}
+
+Object HEPhoenixFX1
+{
+	frame FX04A { light PhoenixShot }
+
+	frame FX08A { light PhoenixFX }
+    frame FX08B { light PhoenixFX1 }
+    frame FX08C { light PhoenixFX2 }
+    frame FX08D { light PhoenixFX3 }
+    frame FX08E { light PhoenixFX4 }
+    frame FX08F { light PhoenixFX5 }
+    frame FX08G { light PhoenixFX6 }
+    frame FX08H { light PhoenixFX7 }
+}
+
+Object HEPhoenixFX2
+{
+	frame FIR3 { light PhoenixFlame }
+
+	frame CFCF { light PhoenixFlamePuff }
+}
+
+Object HEHornRodFX1
+{
+    frame FX00A { light HellStaffShot }
+    frame FX00B { light HellStaffShot }
+
+    frame FX00H { light HellStaffFX1 }
+    frame FX00I { light HellStaffFX2 }
+    frame FX00J { light HellStaffFX3 }
+    frame FX00K { light HellStaffFX4 }
+    frame FX00L { light HellStaffFX5 }
+}
+
+object HEHornRodFX2
+{
+    frame FX00C { light HellStaffShot }
+    frame FX00D { light HellStaffShot }
+    frame FX00E { light HellStaffShot }
+    frame FX00F { light HellStaffShot }
+
+    frame FX00H { light HellStaffFX1 }
+    frame FX00I { light HellStaffFX2 }
+    frame FX00J { light HellStaffFX3 }
+    frame FX00K { light HellStaffFX4 }
+    frame FX00L { light HellStaffFX5 }
+}
+
+Object RavenMissile
+{
+	Frame RVNP { Light RavenBlade }
+}
+
+object HEFlameTrails
+{
+	frame FIR3 { light SMALLRED }
+}

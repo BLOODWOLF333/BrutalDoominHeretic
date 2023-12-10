@@ -1,0 +1,113 @@
+// Splashes ----------------------------------------------------------------
+
+splash Water
+{
+   smallclass      HEWaterSplashBase
+   smallclip      12
+   smallsound      world/drip
+
+   baseclass      HEWaterSplashBaseSmall
+   chunkclass      HEWaterSplash
+   chunkxvelshift   8
+   chunkyvelshift   8
+   chunkzvelshift   8
+   chunkbasezvel   2
+   sound         world/watersplash
+   noalert
+}
+
+splash Sludge
+{
+   smallclass      HESludgeSplash
+   smallclip      12
+   smallsound      world/sludgegloop
+
+   baseclass      HESludgeSplashSmall
+   chunkclass      HESludgeChunk
+   chunkxvelshift   8
+   chunkyvelshift   8
+   chunkzvelshift   8
+   chunkbasezvel   1
+   sound         world/sludgegloop
+   noalert
+}
+
+splash Lava
+{
+   smallclass      HELavaSplash
+   smallclip      12
+   smallsound      world/lavasizzle
+
+   baseclass      HELavaSplash
+   chunkclass      HELavaSmoke
+   chunkxvelshift   8
+   chunkyvelshift   8
+   chunkzvelshift   8
+   chunkbasezvel   2
+   sound         world/lavasizzle
+   noalert
+}
+
+splash WaterSound
+{
+	smallclass		None
+	baseclass		None
+	chunkclass		None
+	sound			world/watersplash
+	noalert
+}
+
+// Terrain types -----------------------------------------------------------
+
+terrain Water
+{
+	splash			Water
+	footclip		1
+	liquid
+}
+
+terrain Sludge
+{
+	splash			Sludge
+	footclip		1
+	liquid
+}
+
+terrain Lava
+{
+	splash			Lava
+	footclip		1
+	liquid
+}
+
+terrain JustASound
+{
+	splash			WaterSound
+	liquid
+	footclip		1
+}
+
+// Floor -> terrain mappings -----------------------------------------------
+
+floor LAVAFL Lava
+floor FLTLAVA1 Lava
+floor FLTLAVA2 Lava
+floor FLTLAVA3 Lava
+floor FLTLAVA4 Lava
+floor FLATHUH1 Lava
+floor FLATHUH2 Lava
+floor FLATHUH3 Lava
+floor FLATHUH4 Lava
+
+floor GRWAT_01 Sludge
+floor FLTSLUD1 Sludge
+floor FLTSLUD2 Sludge
+floor FLTSLUD3 Sludge
+
+floor BDFWATER Water
+floor FLTWAWA1 Water
+floor FLTWAWA2 Water
+floor FLTWAWA3 Water
+floor FLTFLWW1 Water
+floor FLTFLWW2 Water
+floor FLTFLWW3 Water

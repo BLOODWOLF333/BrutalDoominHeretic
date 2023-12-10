@@ -1,0 +1,56 @@
+ACTOR HEClink Replaces Clink
+{
+	Game Heretic
+	SpawnID 1
+	Health 150
+	Radius 20
+	Height 64
+	Mass 75
+	Speed 14
+	Painchance 32
+	Monster
+	+NOBLOOD
+	+FLOORCLIP
+	SeeSound "clink/sight"
+	AttackSound "clink/attack"
+	PainSound "clink/pain"
+	DeathSound "clink/death"
+	ActiveSound "clink/active"
+	Obituary "$OB_CLINK"
+	DropItem "SkullRodAmmo", 84, 20
+	States
+	{
+	Spawn:
+		CLNK AB 10 A_Look
+		Loop
+	See:
+		CLNK ABCD 3 A_Chase
+		Loop
+	Melee:
+		CLNK E 5 A_FaceTarget
+		CLNK F 4 A_FaceTarget
+		CLNK G 7 A_CustomMeleeAttack(random[ClinkAttack](3,9), "clink/attack", "clink/attack")
+		Goto See
+	Pain:
+		CLNK H 3
+		CLNK H 3 A_Pain
+		Goto See
+	Death:
+		CLNK IJ 6
+		CLNK K 5 A_Scream
+		CLNK L 5 A_NoBlocking
+		TNT1 A 0 A_Explode
+		TNT1 A 0 A_CustomMissile("ExplosionSplashSpawner")
+		TNT1 A 0 A_SpawnItemEx("ExplosiveFlames",0,0,32,0,0,0,0,SXF_NOCHECKPOSITION,0)
+		TNT1 A 0 A_CustomMissile("HEExplosionparticles3", 32, 0, random (0, 360), 2, random (40, 90))
+		TNT1 A 0 A_CustomMissile("HEExplosionparticles4", 32, 0, random (0, 360), 2, random (40, 90))
+		TNT1 A 0 A_CustomMissile("BigBlackSmokeLarger", 32, 0, random (0, 360), 2, random (20, 90))
+		TNT1 A 0 Radius_Quake(3, 8, 0, 15, 0)
+		TNT1 A 0 A_SpawnItemEx("TinyBurningPiece", 0,0,37,random (-4, 4), random (-4, 4), random (1, 5))
+		TNT1 A 0 A_SpawnItemEx("TinyBurningPiece2", 0,0,42,random (-4, 4), random (-4, 4), random (1, 5))
+		TNT1 A 0 A_SpawnItemEx("TinyBurningPiece3", 0,0,47,random (-4, 4), random (-4, 4), random (1, 5))
+		CLNK MN 5
+		CLNK O -1
+		Stop
+	}
+}

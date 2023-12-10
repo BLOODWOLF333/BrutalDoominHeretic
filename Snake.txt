@@ -1,0 +1,53 @@
+ACTOR HESnakeProjA Replaces SnakeProjA
+{
+	Game Heretic
+	SpawnID 138
+	Radius 12
+	Height 8
+	Speed 14
+	FastSpeed 20
+	Damage 1
+	Projectile
+	-NOBLOCKMAP
+	-ACTIVATEIMPACT
+	-ACTIVATEPCROSS
+	+WINDTHRUST
+	+SPAWNSOUNDSOURCE
+	RenderStyle Add
+	SeeSound "snake/attack"
+	Scale 0.125
+	States
+	{
+	Spawn:
+		PBAL E 5 Bright
+		Loop
+	Death:
+		TNT1 A 0
+		TNT1 A 0 A_CustomMissile ("VioletFire", 0, 0, random (0, 360), CMF_AIMDIRECTION | CMF_ABSOLUTEPITCH | CMF_ABSOLUTEANGLE, random(60,90))
+		TNT1 A 0 A_SpawnItemEx("VioletParticleSpawner")
+		TNT1 A 0 A_CustomMissile ("ExplosionSmoke", 1, 0, random (0, 360), 2, random (0, 160))
+		Stop
+	}
+}
+
+ACTOR HESnakeProjB : HESnakeProjA Replaces SnakeProjB
+{
+	Game Heretic
+	SpawnID 139
+	Damage 3
+	+NOBLOCKMAP
+	-WINDTHRUST
+	Scale 0.25
+	States
+	{
+	Spawn:
+		PBAL D 6 Bright
+		Loop
+	Death:
+		TNT1 A 0
+		TNT1 A 0 A_CustomMissile ("FireballExplosionFlames", 0, 0, random (0, 360), CMF_AIMDIRECTION | CMF_ABSOLUTEPITCH | CMF_ABSOLUTEANGLE, random(60,90))
+		TNT1 A 0 A_SpawnItemEx("HEExplosionparticlesSmall")
+		TNT1 A 0 A_CustomMissile ("ExplosionSmoke", 1, 0, random (0, 360), 2, random (0, 160))
+		Stop
+	}
+}

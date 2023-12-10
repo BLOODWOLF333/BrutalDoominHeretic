@@ -1,0 +1,100 @@
+ACTOR HEHereticImp : HereticImp Replaces HereticImp
+{
+	States
+	{
+	Spawn:
+		IMPX ABCB 10 A_Look
+		Loop
+	See:
+		TNT1 A 0 A_Stop
+		IMPX AABBCCBB 3 A_Chase
+		Loop
+	Melee:
+		IMPX DE 6 A_FaceTarget
+		IMPX F 6 A_CustomMeleeAttack(random[ImpMeAttack](5,12), "himp/attack", "himp/attack")
+		Goto See
+	Missile:
+		TNT1 A 0 A_Stop
+		IMPX A 10 A_FaceTarget
+		IMPX B 6 A_ImpMsAttack
+		IMPX CBAB 6
+		Goto Missile+3
+	Pain:
+		IMPX G 3
+		IMPX G 3 A_Pain
+		Goto See
+	Death:
+		IMPX G 4 A_ImpDeath
+		IMPX H 5
+		Wait
+	XDeath:
+		IMPX S 5 A_ImpXDeath1
+		IMPX TU 5
+		IMPX V 5 A_Gravity
+		IMPX W 5
+		Wait
+	Crash:
+		IMPX I 7 A_ImpExplode
+		IMPX J 7 A_Scream
+		IMPX K 7
+		IMPX L -1
+		Stop
+	XCrash:
+		IMPX X 7
+		IMPX Y 7
+		IMPX Z -1
+		Stop
+	}
+}
+
+ACTOR HEHereticImpLeader : HEHereticImp Replaces HereticImpLeader
+{
+	Game Heretic
+	SpawnID 7
+	Species "HereticImpLeader"
+	Health 80
+	-MISSILEMORE
+	AttackSound "himp/leaderattack"
+	States
+	{
+	Melee:
+		Stop
+	Missile:
+		TNT1 A 0 A_Stop
+		IMPX DE 6 A_FaceTarget
+		IMPX F 6 A_CustomComboAttack("HereticImpBall", 32, random[ImpMsAttack2](5,12), "himp/leaderattack")
+		Goto See
+	}
+}
+
+ACTOR HEHereticImpBall Replaces HereticImpBall
+{
+	Game Heretic
+	SpawnID 10
+	Radius 8
+	Height 8
+	Speed 10
+	FastSpeed 20
+	Damage 1
+	Projectile
+	SeeSound "himp/leaderattack"
+	+SPAWNSOUNDSOURCE
+	-ACTIVATEPCROSS
+	-ACTIVATEIMPACT
+	RenderStyle Add
+	Scale 0.3
+	States
+	{
+	Spawn:
+		BLHD AB 1 BRIGHT A_SpawnItem ("HEFlameTrails", 0, random( -2, 2))
+		TNT1 A 0 A_CustomMissile ("SmokeTrail", 2, 0, random (160, 210), 2, random (-30, 30))
+		Loop
+	Death:
+		TNT1 A 0
+		TNT1 A 0 A_CustomMissile ("HEExplosionparticlesSmall", 10, 0, random (0, 180), 2, random (40, 90))
+	    TNT1 A 0 A_CustomMissile ("FireBallExplosionFlames", 1, 0, random (0, 360), 2, random (0, 360))
+		TNT1 A 0 A_SpawnItemEx ("TinyBurningPiece3", random (-15, 15), random (-15, 15))
+		TNT1 A 0 A_CustomMissile ("ExplosionSmoke", 1, 0, random (0, 360), 2, random (0, 160))
+		Stop
+	}
+}

@@ -1,0 +1,317 @@
+// Water --------------------------------------------------------------------
+
+Actor BlueLiquidParticle
+{
+	Height 2
+	Radius 2
+	Mass 0
+	+Missile
+	+NoBlockMap
+	-NoGravity
+	+DontSplash
+	+FORCEXYBILLBOARD
+	+THRUACTORS
+	+CLIENTSIDEONLY
+	+NOTELEPORT
+	-DOOMBOUNCE
+	BounceFactor 0.1
+	Gravity 0.5
+	RenderStyle Add
+	Scale 1.0
+	Alpha 0.6
+	Speed 2
+	Translation "145:159=201:208", "177:191=201:208"
+	States
+	{
+		Spawn:
+		MSBL ABCDEFG 2
+		MSBL H 100
+		Stop
+		Death:
+		TNT1 A 0
+		TNT1 A 0 A_SetScale(1.9, 1.9)
+		BSPL ABCDEFGH 2
+		Stop
+	}
+}
+
+ACTOR HEWaterSplashBase
+{
+	RenderStyle Add
+	Alpha 0.9
+	+NOBLOCKMAP
+	+NOCLIP
+	+NOGRAVITY
+	+DONTSPLASH
+	+DONTBLAST
+	+CLIENTSIDEONLY
+	states
+	{
+		Spawn:
+			TNT1 A 0
+			TNT1 A 0 A_Jump(255, "spawn1", "Spawn2", "Spawn3", "Spawn4")
+		Spawn1:
+			TNT1 A 0
+			TNT1 A 0 A_SetScale(0.7, 0.7)
+			SPHW ABCDEF 1 A_FadeOut(0.1)
+			Stop
+		Spawn2:
+			TNT1 A 0
+			TNT1 A 0 A_SetScale(0.8, 0.8)
+			SPHW ABCDEF 1 A_FadeOut(0.1)
+			Stop
+		Spawn3:
+			TNT1 A 0
+			TNT1 A 0 A_SetScale(-0.6, 0.6)
+			SPHW ABCDEF 1 A_FadeOut(0.1)
+			Stop
+		Spawn4:
+			TNT1 A 0
+			TNT1 A 0 A_SetScale(-0.7, 0.7)
+			SPHW ABCDEF 1 A_FadeOut(0.1)
+			Stop
+		Death:
+			TNT1 A 0
+			Stop
+	}
+}
+
+actor HEWaterSplashBaseSmall
+{
+	+DONTSPLASH
+	+NOGRAVITY
+	+THRUACTORS
+	+CLIENTSIDEONLY
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 AAAA 0 A_CustomMissile ("WaterParticle", 0, 0, random (0, 360), CMF_AIMDIRECTION | CMF_ABSOLUTEPITCH | CMF_ABSOLUTEANGLE , random (60, 90))
+		TNT1 A 10
+		TNT1 A 0 A_NoBlocking
+		Stop
+	}
+}
+
+ACTOR HEWaterSplash
+{
+	Radius 2
+	Height 4
+	+NOBLOCKMAP
+	+MISSILE
+	+DROPOFF
+	+NOTELEPORT
+	-NOGRAVITY
+	+CANNOTPUSH
+	+DONTSPLASH
+	+DONTBLAST
+	Gravity 0.25
+	Alpha 0.5
+	Scale 1.0
+	Decal WaterSplash
+	Translation "145:159=201:208", "177:191=201:208"
+	States
+	{
+		Spawn:
+			WSPH ABCDDDDDDDD 4
+			Stop
+		Death:
+			TNT1 A 0 A_SetScale(0.6)
+			BSPL ABCDEFGH 1
+			Stop
+	}
+}
+
+Actor WaterParticle
+{
+  Radius 2
+  Height 2
+  +Missile  -NoGravity  +FORCEXYBILLBOARD
+  +THRUACTORS  +CLIENTSIDEONLY
+  +NOTELEPORT  +DontSplash
+  decal watersplash
+  BounceFactor 0.1
+  Gravity 0.5
+  RenderStyle Add
+  Scale 1.6
+  Alpha 0.5
+	Translation "145:159=201:208", "177:191=201:208"
+  Speed 3
+  States
+  {
+  Spawn:
+    WSPH ABCDDDDDDDD 4
+    Stop
+ Death:
+	 TNT1 A 0
+	 TNT1 A 0 A_SetScale(0.6, 0.6)
+	 BSPL ABCDEFGH 1
+	 Stop
+
+  }
+}
+
+// Sludge --------------------------------------------------------------------
+
+Actor SlimeSplashWaves
+{
+	+CLIENTSIDEONLY
+	+THRUACTORS
+	+DONTSPLASH
+	Mass 0
+	States
+	{
+		Spawn:
+		TNT1 A 0
+		TNT1 A 0 ACS_NamedExecuteAlways("BDCheckWaterRipples", 0, 0, 0, 0)
+		TNT1 A 3
+		TNT1 A 0 A_JumpIfInventory("Clip2", 1, "Vanish")
+		SLDG DE 4 A_SetScale(1.8, 1.8)
+		SLDG FHI 4
+		TNT1 A 1 A_SetScale(2.2, 1.4)
+		SLDG DEFHI 6
+		TNT1 A 1 A_SetScale(2.8, 0.8)
+		SLDG DEFHI 8
+		Stop
+
+		Vanish:
+			TNT1 A 0
+			Stop
+	}
+}
+
+Actor GreenLiquidParticle : BlueLiquidParticle
+{
+	Translation "145:159=225:240", "177:191=225:240"
+}
+
+ACTOR HESludgeSplash
+{
+	RenderStyle Add
+	Alpha 0.9
+	+NOBLOCKMAP
+	+NOCLIP
+	+NOGRAVITY
+	+DONTSPLASH
+	+DONTBLAST
+	+CLIENTSIDEONLY
+	states
+	{
+		Spawn:
+			TNT1 A 0
+			TNT1 A 0 A_Jump(255, "spawn1", "Spawn2", "Spawn3", "Spawn4")
+		Spawn1:
+			TNT1 A 0
+			TNT1 A 0 A_SetScale(0.7, 0.7)
+			SPHB ABCDEF 1 A_FadeOut(0.1)
+			Stop
+		Spawn2:
+			TNT1 A 0
+			TNT1 A 0 A_SetScale(0.8, 0.8)
+			SPHB ABCDEF 1 A_FadeOut(0.1)
+			Stop
+		Spawn3:
+			TNT1 A 0
+			TNT1 A 0 A_SetScale(-0.6, 0.6)
+			SPHB ABCDEF 1 A_FadeOut(0.1)
+			Stop
+		Spawn4:
+			TNT1 A 0
+			TNT1 A 0 A_SetScale(-0.7, 0.7)
+			SPHB ABCDEF 1 A_FadeOut(0.1)
+			Stop
+		Death:
+			TNT1 A 0
+			Stop
+	}
+}
+
+actor HESludgeSplashSmall
+{
+	+DONTSPLASH
+	+NOGRAVITY
+	+THRUACTORS
+	+CLIENTSIDEONLY
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 AAAA 0 A_CustomMissile ("SlimeParticle", 0, 0, random (0, 360), CMF_AIMDIRECTION | CMF_ABSOLUTEPITCH | CMF_ABSOLUTEANGLE , random (60, 90))
+		TNT1 A 10
+		TNT1 A 0 A_NoBlocking
+		Stop
+	}
+}
+
+ACTOR HESludgeChunk
+{
+	Radius 2
+	Height 4
+	+NOBLOCKMAP
+	+MISSILE
+	+DROPOFF
+	+NOTELEPORT
+	-NOGRAVITY
+	+CANNOTPUSH
+	+DONTSPLASH
+	+DONTBLAST
+	Gravity 0.125
+	Alpha 0.5
+	Scale 1.0
+	Translation "145:159=225:240", "177:191=225:240"
+	States
+	{
+		Spawn:
+			WSPH ABCDDDDDDDD 4
+			Stop
+		Death:
+			TNT1 A 0 A_SetScale(0.6)
+			BSPL ABCDEFGH 1
+			Stop
+	}
+}
+
+Actor SlimeParticle : WaterParticle
+{
+	Translation "145:159=225:240", "177:191=225:240"
+}
+
+// Lava --------------------------------------------------------------------
+
+ACTOR HELavaSplash
+{
+	+NOBLOCKMAP
+	+NOCLIP
+	+NOGRAVITY
+	+DONTSPLASH
+	+DONTBLAST
+	Scale 0.33
+	RenderStyle Add
+	Alpha 0.75
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 AAAA 1 A_CustomMissile ("HEExplosionParticle", 0, 0, random (0, 360), CMF_AIMDIRECTION | CMF_ABSOLUTEPITCH | CMF_ABSOLUTEANGLE , random (60, 90))
+		INFE ABCDE 1 BRIGHT
+		INFE FGHIJKLMNOPQRST 1 BRIGHT
+		Stop
+	}
+}
+
+ACTOR HELavaSmoke
+{
+	+NOBLOCKMAP
+	+NOCLIP
+	+NOGRAVITY
+	+DONTSPLASH
+	RenderStyle Translucent
+	Alpha 0.5
+	Scale 0.33
+	States
+	{
+	Spawn:
+		SMK6 BCDEFGHIJKLM 2 A_FadeOut(0.08)
+		Stop
+	}
+}

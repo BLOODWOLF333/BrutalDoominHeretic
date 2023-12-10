@@ -1,0 +1,94 @@
+ACTOR HEGoldWand : GoldWand Replaces GoldWand
+{
+	+BLOODSPLATTER
+	Weapon.SelectionOrder 2000
+	Weapon.AmmoGive 25
+	Weapon.AmmoUse 1
+	Weapon.AmmoType "HEGoldWandAmmo"
+	Weapon.SisterWeapon "HEGoldWandPowered"
+	Weapon.YAdjust 5
+	Obituary "$OB_MPGOLDWAND"
+	DropItem "HEGoldWand"
+	VisibleToPlayerClass Corvus
+	Inventory.ForbiddenTo BDoomer, ArcadeDoomer, TacticalDoomer, Purist
+	States
+	{
+	Ready:
+		GWND A 1 A_WeaponReady
+		Loop
+	Deselect:
+		GWND A 1 A_Lower
+		Loop
+	Select:
+		GWND A 1 A_Raise
+		Loop
+	Fire:
+		GWND B 2 BRIGHT
+		GWND B 0 A_PlaySound("weapons/wandhit", CHAN_WEAPON)
+		GWND C 4 BRIGHT A_FireBullets(3.0, 0.0, 1, 10, "HEGoldWandPuff",FBF_NORANDOM | FBF_USEAMMO)
+		GWND D 2 BRIGHT
+		GWND D 0 A_ReFire
+		Goto Ready
+	}
+}
+
+ACTOR HEGoldWandPowered : HEGoldWand Replaces GoldWandPowered
+{
+	+WEAPON.POWERED_UP
+	Weapon.AmmoGive 0
+	Weapon.SisterWeapon "HEGoldWand"
+	Obituary "$OB_MPPGOLDWAND"
+	DropItem "HEGoldWand"
+	States
+	{
+	Fire:
+		GWND B 3 BRIGHT
+	Hold:
+		GWND B 0 A_PlaySound("dsparil/attack", CHAN_WEAPON)
+		GWND C 4 BRIGHT A_RailAttack((random(10,10)), 0, 1, "none", "none", RGF_SILENT | RGF_NOPIERCING | RGF_FULLBRIGHT | RGF_CENTERZ, 22.5, "HEGoldWandPuff", 0.0, 0.0, 1024, 1, 8.0, 0, "HEGoldWandTrail")
+		GWND C 0 A_TakeInventory("GoldWandAmmo",1)
+		GWND D 0 A_Refire
+		GWND D 3 BRIGHT
+		Goto Ready
+	}
+}
+
+ACTOR HEGoldWandPuff: GoldWandPuff1 Replaces GoldWandPuff1
+{
+	+NOBLOCKMAP
+	+NOGRAVITY
+	+ALWAYSPUFF
+	+BLOODLESSIMPACT
+	RenderStyle Add
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItemEx("GoldParticleSpawner")
+		PUF2 ABCDE 3 BRIGHT
+		Stop
+	}
+}
+
+ACTOR HEGoldWandTrail
+{
+	+FORCEXYBILLBOARD
+	+CLIENTSIDEONLY
+	+NOBLOCKMAP
+	+NOGRAVITY
+	+SHADOW
+	+NOTELEPORT
+	+CANNOTPUSH
+	+NODAMAGETHRUST
+	+DONTSPLASH
+	renderstyle ADD
+	alpha 0.75
+	scale 0.03
+	states
+	{
+	Spawn:
+		LEYS A 0
+		LEYS A 1 BRIGHT
+		Stop
+	}
+}

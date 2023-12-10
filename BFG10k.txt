@@ -1,0 +1,303 @@
+Actor BFG10k : BrutalWeapon
+{
+	Radius 20
+	Height 20
+	Weapon.AmmoUse 10
+	Weapon.AmmoGive 0
+	Weapon.AmmoType "AmmoCell"
+	Weapon.Kickback 100
+	Weapon.SelectionOrder 2900
+	Inventory.Pickupmessage "$GOTBFG10K"
+	Inventory.PickupSound "BFGREADY"
+	Obituary "%o was blasted by %k's BFG10K"
+	Decal BFGLightning
+	+WEAPON.BFG
+	+WEAPON.NOAUTOAIM
+	+WEAPON.NOAUTOFIRE
+	+WEAPON.EXPLOSIVE
+	YScale 0.7
+	XScale 0.9
+	DropItem "BFG10KSpawner"
+  States
+  {
+	Spawn:
+		BFG2 A -1
+		Stop
+
+	Ready:
+	Ready3:
+	SteadY:
+		BG2G A 0
+		BG2G A 0 A_PlaySound ("10KIDLE", 1)
+		BG2G A 3 BRIGHT A_WeaponReady
+		BG2G A 0 A_JumpIfInventory("FiredPrimary",1,"Fire")
+		BG2G A 0 A_JumpIfInventory("Kicking",1,"DoKick")
+		BG2G A 0 A_JumpIfInventory("Taunting",1,"Taunt")
+		BG2G A 0 A_JumpIfInventory("Salute1", 1, "Salute")
+		BG2G A 0 A_JumpIfInventory("Salute2", 1, "Salute")
+		BG2G A 0 A_JumpIfInventory("TossGrenade",1,"TossGrenade")
+
+		BG2G B 3 BRIGHT A_WeaponReady
+		BG2G A 0 A_JumpIfInventory("FiredPrimary",1,"Fire")
+		BG2G A 0 A_JumpIfInventory("Kicking",1,"DoKick")
+		BG2G A 0 A_JumpIfInventory("Taunting",1,"Taunt")
+		BG2G A 0 A_JumpIfInventory("Salute1", 1, "Salute")
+		BG2G A 0 A_JumpIfInventory("Salute2", 1, "Salute")
+		BG2G A 0 A_JumpIfInventory("TossGrenade",1,"TossGrenade")
+
+		BG2G C 3 BRIGHT A_WeaponReady
+		BG2G A 0 A_JumpIfInventory("FiredPrimary",1,"Fire")
+		BG2G A 0 A_JumpIfInventory("Kicking",1,"DoKick")
+		BG2G A 0 A_JumpIfInventory("Taunting",1,"Taunt")
+		BG2G A 0 A_JumpIfInventory("Salute1", 1, "Salute")
+		BG2G A 0 A_JumpIfInventory("Salute2", 1, "Salute")
+		BG2G A 0 A_JumpIfInventory("TossGrenade",1,"TossGrenade")
+
+		BG2G D 3 BRIGHT A_WeaponReady
+		BG2G A 0 A_JumpIfInventory("FiredPrimary",1,"Fire")
+		BG2G A 0 A_JumpIfInventory("Kicking",1,"DoKick")
+		BG2G A 0 A_JumpIfInventory("Taunting",1,"Taunt")
+		BG2G A 0 A_JumpIfInventory("Salute1", 1, "Salute")
+		BG2G A 0 A_JumpIfInventory("Salute2", 1, "Salute")
+		BG2G A 0 A_JumpIfInventory("TossGrenade",1,"TossGrenade")
+		BG2G A 0 A_JumpIfInventory("IsRunning",1,"CheckSprint")
+		Loop
+
+	Deselect:
+		BG2G A 0 A_TakeInventory("TossGrenade", 1)
+		TNT1 A 0 A_TakeInventory("Unloading", 1)
+		TNT1 A 0 A_TakeInventory("Reloading", 1)
+		TNT1 A 0 A_TakeInventory("StartDualWield",1)
+		TNT1 AAAAAAAAAAAA 0 A_Lower
+		BG2G EEEE 1 BRIGHT A_Lower
+		Loop
+
+  Select:
+	BG2G A 0 A_Giveinventory("GoSpecial",1)
+	TNT1 A 0 A_TakeInventory("FistsSelected", 1)
+	TNT1 A 0 A_TakeInventory("ShotgunSelected", 1)
+	TNT1 A 0 A_TakeInventory("MinigunSelected", 1)
+	TNT1 A 0 A_TakeInventory("SSGSelected", 1)
+	TNT1 A 0 A_TakeInventory("RocketLauncherSelected", 1)
+	TNT1 A 0 A_TakeInventory("GrenadeLauncherSelected", 1)
+	TNT1 A 0 A_TakeInventory("PlasmaGunSelected", 1)
+	TNT1 A 0 A_TakeInventory("RailGunSelected", 1)
+	TNT1 A 0 A_TakeInventory("RevenantLauncherSelected", 1)
+	TNT1 A 0 A_TakeInventory("SubMachineGunSelected", 1)
+	TNT1 A 0 A_GiveInventory("BFG10KSelected", 1)
+	TNT1 A 0 A_TakeInventory("BFGSelected", 1)
+	TNT1 A 0 A_TakeInventory("FlameCannonSelected", 1)
+	TNT1 A 0 A_TakeInventory("SawSelected", 1)
+	BG2G A 0 A_Takeinventory("HasBarrel",1)
+	BG2G A 0 A_GunFlash
+    BG2G EEEE 1 BRIGHT A_Raise
+	BG2G A 0 A_PlaySound("BFGREADY", 3)
+	TNT1 AAAAAAAAAAAA 0 A_Raise
+    Goto Ready
+
+  Fire:
+	BG2G A 0 A_JumpIfInventory("AmmoCell",10,1)
+	Goto Ready
+    BG2G E 20 BRIGHT A_PlaySound("10KSTART", 4)
+    BG2G FGHIJ 2 BRIGHT
+    Goto Hold
+
+  Hold:
+	BG2G A 0 A_JumpIfInventory("AmmoCell",10,1)
+	Goto Ready
+    BG2G K 1 BRIGHT A_FireCustomMissile("GreenFlareSpawn", 0, 0, 0, 0)
+	BG2G A 0 A_PlaySound("10KFIRE", 1)
+	TNT1 A 0 A_FireCustomMissile("Alerter",0,0)
+    BG2G L 1 BRIGHT A_FireCustomMissile("BFG10K_Ball",frandom(-1.2,1.2),1,0,0,0,frandom(-1.4,1.4))
+	TNT1 A 0 A_Recoil(4)
+	TNT1 A 0 A_ZoomFactor(0.97)
+    BG2G M 1 BRIGHT A_FireCustomMissile("GreenFlareSpawn", 0, 0, 0, 0)
+	TNT1 A 0 A_ZoomFactor(1.0)
+	RIFG A 0 A_JumpIfInventory("IsNOTTacticalClass", 1, 2)//tactical mode has muzzle climb
+	RIFG A 0 A_SetPitch(pitch-6.0)
+	RIFG A 0 A_SetPitch(pitch-6.0)
+	BG2G FGHIJ 1 BRIGHT A_SetPitch(pitch+1.2)
+    BG2G N 0 A_ReFire
+    BG2G O 30 A_PlaySound("10KSTOP", 4)
+    Goto Ready
+
+ CheckSprint:
+		BG2G A 0 A_PlaySound ("10KIDLE", 1)
+		BG2G ABCD 3 BRIGHT A_WeaponReady(WRF_NOFIRE)
+		BG2G A 0 A_JumpIfInventory("IsStandingStill", 1, "Ready3")
+		BG2G A 0 A_JumpIfInventory("IsTacticalClass", 1, "StartSprint")
+		Goto Ready3
+
+	StartSprint:
+		BG2G A 1 BRIGHT A_WeaponReady(WRF_NOFIRE)
+		TNT1 A 0 A_JumpIfInventory("PowerStrength", 1, 2)
+		BG2G A 0 A_JumpIfInventory("UsedStamina", 90, "StopSprintTired")
+
+	Sprinting:
+		BG2G A 0 A_PlaySound ("10KIDLE", 1)
+		BG2G A 0 A_JumpIfInventory("IsStandingStill", 1, "Ready3")
+		TNT1 A 0 A_JumpIfInventory("PowerStrength", 1, 2)
+		BG2G A 0 A_JumpIfInventory("UsedStamina", 100, "StopSprintTired")
+		PLAY A 0 ACS_NamedExecuteAlways("BDSprint", 0, 0, 0, 0)//Makes player faster.
+		BG2G A 1 offset(-9,32) A_SetPitch(pitch -0.5)//offset(-/+ left/right, (32)+/- down/up)
+		BG2G A 1 offset(-6,34) A_SetPitch(pitch -0.5)
+		TNT1 A 0 A_GiveInventory("UsedStamina", 2)
+		BG2G A 1 offset(-3,36) A_SetPitch(pitch -0.5)
+		BG2G B 1 offset(0,38) A_SetPitch(pitch -0.5)
+		TNT1 A 0 A_GiveInventory("UsedStamina", 2)
+		BG2G B 1 offset(3,36) A_SetPitch(pitch -0.5)
+		BG2G B 1 offset(6,34) A_SetPitch(pitch -0.5)
+		TNT1 A 0 A_GiveInventory("UsedStamina", 2)
+		TNT1 A 0 A_WeaponReady(WRF_NOBOB)
+		BG2G A 0 A_JumpIfInventory("Kicking",1,"DoKick")
+        BG2G A 0 A_JumpIfInventory("Taunting",1,"Taunt")
+		BG2G C 1 offset(9,32) A_SetPitch(pitch +0.5)
+		BG2G C 1 offset(6,34) A_SetPitch(pitch +0.5)
+		TNT1 A 0 A_GiveInventory("UsedStamina", 2)
+		BG2G C 1 offset(3,36) A_SetPitch(pitch +0.5)
+		BG2G D 1 offset(0,38) A_SetPitch(pitch +0.5)
+		TNT1 A 0 A_GiveInventory("UsedStamina", 2)
+		BG2G D 1 offset(-3,36) A_SetPitch(pitch +0.5)
+		BG2G D 1 offset(-6,34) A_SetPitch(pitch +0.5)
+		TNT1 A 0 A_GiveInventory("UsedStamina", 2)
+		TNT1 A 0 A_WeaponReady(WRF_NOBOB)
+		BG2G A 0 A_JumpIfInventory("IsRunning", 1, "Sprinting")
+		Goto StopSprint
+
+	StopSprintTired:
+		BG2G A 0
+		PLAY A 0 ACS_NamedExecuteAlways("BDTacticalSpeed", 0, 0, 0, 0)//Makes player slower.
+		BG2G A 0 A_PlaySound("Tired", 2)
+		BG2G A 0 A_PlaySound ("10KIDLE", 1)
+		BG2G A 4 BRIGHT A_WeaponReady
+		BG2G A 0 A_TakeInventory("UsedStamina", 1)
+		BG2G B 4 BRIGHT A_WeaponReady
+		BG2G A 0 A_TakeInventory("UsedStamina", 1)
+		BG2G C 4 BRIGHT A_WeaponReady
+		BG2G A 0 A_PlaySound ("10KIDLE", 1)
+		BG2G A 0 A_TakeInventory("UsedStamina", 1)
+		BG2G D 4 BRIGHT A_WeaponReady
+		BG2G A 0 A_TakeInventory("UsedStamina", 1)
+		BG2G A 4 BRIGHT A_WeaponReady
+		BG2G A 0 A_TakeInventory("UsedStamina", 1)
+		BG2G B 4 BRIGHT A_WeaponReady
+		BG2G A 0 A_PlaySound ("10KIDLE", 1)
+		BG2G A 0 A_TakeInventory("UsedStamina", 1)
+		Goto Ready
+
+	StopSprint:
+		BG2G A 1 BRIGHT
+		TNT1 A 0 A_JumpIfInventory("PowerStrength", 1, 2)
+		BG2G A 0 A_JumpIfInventory("UsedStamina", 90, "StopSprintTired")
+		PLAY A 0 ACS_NamedExecuteAlways("BDTacticalSpeed", 0, 0, 0, 0)//Makes player slower.
+		Goto Ready
+  }
+}
+
+ACTOR BFG10K_Ball: FastProjectile
+{
+	Speed 200
+	Damage (random(400, 400))
+    DamageType Desintegrate
+	Decal "SmallerScorch"
+	Projectile
+	+RANDOMIZE
+	+THRUSPECIES
+	+FORCEXYBILLBOARD
+	renderstyle ADD
+	Alpha 0.75
+	Scale 0.5
+	DeathSound "weapons/plasmax"
+    SeeSound "None"
+	Obituary "$OB_MPPLASMARIFLE"
+	Species "Marines"
+	States
+	{
+
+	Spawn:
+        BFS1 AB 1 BRIGHT A_CustomMissile ("BFGDeathParticleFast", 0, 0, random (0, 360), 2, random (0, 360))
+		Loop
+
+	Death:
+		BFE1 A 0 Bright
+		BFE1 A 3 Bright A_Explode(350,175,0)
+		TNT1 A 0 A_CustomMissile("ExplosionSplashSpawner")
+		BFGN A 0 A_SpawnItemEx ("UnderwaterExplosion",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
+		TNT1 A 0 A_SpawnItemEx ("DetectFloorCraterNoFire",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
+		BFGN A 0 A_SpawnItemEx ("DetectCeilCrater",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
+		BG2G A 0 Radius_Quake(2, 35, 0, 5, 0)
+		BG2G A 0 Bright A_SpawnItem("GreenShockWave",0,0,0)
+		EXPL AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile ("BFGDeathParticleSuperFast", 0, 0, random (0, 360), 2, random (0, 360))
+		EXPL AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile ("BFGDeathParticleFast", 0, 0, random (0, 360), 2, random (0, 360))
+		EXPL AAAA 0 A_CustomMissile ("BFGBIGFOG", 0, 0, random (0, 360), 2, random (0, 360))
+		TNT1 AAAAAAA 0 A_CustomMissile ("GreenExplosionFire", 2, 0, random (0, 360), 2, random (0, 360))
+		EXPL AA 0 A_CustomMissile ("BigNeoSmoke", 0, 0, random (0, 360), 2, random (0, 360))
+		BFE1 BCDEF 2 Bright
+		BG2G A 0 A_PlaySound("FAREXPL")
+		TNT1 AAAA 2 A_CustomMissile ("BigNeoSmoke", 2, 0, random (0, 360), 2, random (0, 360))
+		Stop
+	}
+}
+
+ACTOR MarineBFG10K_Ball : BFG10K_Ball
+{
+	DamageType "Friendbullet"
+	States
+	{
+
+	Spawn:
+        BFS1 AB 1 BRIGHT A_CustomMissile ("BFGDeathParticleFast", 0, 0, random (0, 360), 2, random (0, 360))
+		Loop
+
+	Death:
+		BFE1 A 0 Bright
+		BFE1 A 3 Bright A_Explode(350,175,0)
+		TNT1 A 0 A_CustomMissile("ExplosionSplashSpawner")
+		BFGN A 0 A_SpawnItemEx ("UnderwaterExplosion",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
+		TNT1 A 0 A_SpawnItemEx ("DetectFloorCraterNoFire",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
+		BFGN A 0 A_SpawnItemEx ("DetectCeilCrater",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
+		BG2G A 0 Radius_Quake(2, 35, 0, 5, 0)
+		BG2G A 0 Bright A_SpawnItem("GreenShockWave",0,0,0)
+		EXPL AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile ("BFGDeathParticleSuperFast", 0, 0, random (0, 360), 2, random (0, 360))
+		EXPL AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile ("BFGDeathParticleFast", 0, 0, random (0, 360), 2, random (0, 360))
+		EXPL AAAA 0 A_CustomMissile ("BFGBIGFOG", 0, 0, random (0, 360), 2, random (0, 360))
+		TNT1 AAAAAAA 0 A_CustomMissile ("GreenExplosionFire", 2, 0, random (0, 360), 2, random (0, 360))
+		EXPL AA 0 A_CustomMissile ("BigNeoSmoke", 0, 0, random (0, 360), 2, random (0, 360))
+		BFE1 BCDEF 2 Bright
+		BG2G A 0 A_PlaySound("FAREXPL")
+		TNT1 AAAA 2 A_CustomMissile ("BigNeoSmoke", 2, 0, random (0, 360), 2, random (0, 360))
+		Stop
+	}
+}
+
+ACTOR GreenExplosionFire
+{
+	Game Doom
+	Radius 1
+	Height 1
+	Speed 3
+    +NOBLOCKMAP
+    +NOTELEPORT
+    +DONTSPLASH
+	+MISSILE
+	+FORCEXYBILLBOARD
+    +CLIENTSIDEONLY
+    +NOINTERACTION
+	+NOCLIP
+	RenderStyle Add
+    Scale 2.0
+	Alpha 1
+	Gravity 0
+	States
+	{
+    Spawn:
+        TNT1 A 1
+        EXPG ABCDEFG 3 BRIGHT
+        Stop
+	}
+}
+
+ACTOR GreenExplosionFireSmall: GreenExplosionFire
+{
+    Scale 0.6
+}

@@ -1,0 +1,103 @@
+ACTOR HEGauntlets : Gauntlets
+{
+	+BLOODSPLATTER
+	Weapon.SelectionOrder 2300
+	+WEAPON.WIMPY_WEAPON
+	+WEAPON.MELEEWEAPON
+	Weapon.Kickback 0
+	Weapon.YAdjust 15
+	Weapon.UpSound "weapons/gauntletsactivate"
+	Weapon.SisterWeapon "HEGauntletsPowered"
+	Inventory.PickupMessage "$TXT_WPNGAUNTLETS"
+	Tag "$TAG_GAUNTLETS"
+	Obituary "$OB_MPGAUNTLETS"
+	//DropItem "Gauntlets"
+	VisibleToPlayerClass Corvus
+	Inventory.ForbiddenTo BDoomer, ArcadeDoomer, TacticalDoomer, Purist
+	States
+	{
+	Spawn:
+		WGNT A -1
+		Stop
+	Ready:
+		GAUN A 1 A_WeaponReady
+		Loop
+	Deselect:
+		GAUN A 1 A_Lower
+		Loop
+	Select:
+		GAUN A 1 A_Raise
+		Loop
+	Fire:
+		GAUN B 4 A_PlayWeaponSound("weapons/gauntletsuse")
+		GAUN C 4
+	Hold:
+		GAUN DEF 4 BRIGHT A_GauntletAttack(0)
+		GAUN C 4 A_ReFire
+		GAUN B 4 A_Light0
+		Goto Ready
+	}
+}
+
+ACTOR HEGauntletsPowered : HEGauntlets Replaces GauntletsPowered
+{
+	+POWERED_UP
+	Obituary "$OB_MPPGAUNTLETS"
+	Weapon.SisterWeapon "HEGauntlets"
+	States
+	{
+	Ready:
+		GAUN GHI 4 A_WeaponReady
+		Loop
+	Deselect:
+		GAUN G 1 A_Lower
+		Loop
+	Select:
+		GAUN G 1 A_Raise
+		Loop
+	Fire:
+		GAUN J 4 A_PlayWeaponSound("weapons/gauntletsuse")
+		GAUN K 4
+	Hold:
+		GAUN LMN 4 BRIGHT A_GauntletAttack(1)
+		GAUN K 4 A_ReFire
+		GAUN J 4 A_Light0
+		Goto Ready
+	}
+}
+
+// Gauntlet puff 1 ----------------------------------------------------------
+
+ACTOR HEGauntletPuff1 Replaces GauntletPuff1
+{
+	+NOBLOCKMAP
+	+NOGRAVITY
+	+PUFFONACTORS
+	RenderStyle Add
+	Alpha 0.5
+	VSpeed 0.8
+	Scale 0.03
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItemEx("GreenParticleSpawner")
+		SPKG AAAA 4 BRIGHT
+		Stop
+	}
+}
+
+// Gauntlet puff 2 ---------------------------------------------------------
+
+ACTOR HEGauntletPuff2 : HEGauntletPuff1 Replaces GauntletPuff2
+{
+	Scale 0.03
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItemEx("RedParticleSpawner")
+		SPKR AAAA 4 BRIGHT
+		Stop
+	}
+}

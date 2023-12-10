@@ -1,0 +1,1255 @@
+ACTOR BasicAmmoPickup : Ammo
+{
+	scale 1.0
+	radius 20
+	height 16
+	+FORCEXYBILLBOARD
+	+MOVEWITHSECTOR
+	-COUNTITEM
+	-INVENTORY.ALWAYSPICKUP
+	Inventory.Amount 0
+	Inventory.MaxAmount 99999
+	+Quiet
+}
+
+// Backpack ---------------------------------------------------------------
+
+ACTOR AmmoSupply : BackpackItem Replaces Backpack
+{
+	Inventory.PickupMessage "$GOTBACKPACK"
+	Inventory.PickupSound "BACKPACK"
+	VisibleToPlayerClass BDoomer, ArcadeDoomer, TacticalDoomer, Purist
+	Inventory.ForbiddenTo Corvus
+	+INVENTORY.NOSCREENFLASH
+	-INVENTORY.ALWAYSPICKUP
+	States
+	{
+	Spawn:
+		BPAK A -1
+		Stop
+	}
+}
+
+ACTOR HEBagOfHolding : BackpackItem
+{
+	Inventory.PickupMessage "$TXT_ITEMBAGOFHOLDING"
+	Inventory.PickupSound "misc/i_pkup"
+	VisibleToPlayerClass Corvus
+	Inventory.ForbiddenTo BDoomer, ArcadeDoomer, TacticalDoomer, Purist
+	+COUNTITEM
+	+FLOATBOB
+	+NOGRAVITY
+	States
+	{
+	Spawn:
+		BAGH A -1
+		Stop
+	}
+}
+
+Actor BagOfHoldingReplacer : BasicAmmoPickup Replaces BagOfHolding
+{
+    States
+    {
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItemEx("AmmoSupply",0,0,0,0,0,0,0,0,0)
+		TNT1 A 0 A_SpawnItemEx("HEBagOfHolding",0,0,0,0,0,0,0,0,0)
+		TNT1 A 1
+		TNT1 A -1
+		Stop
+    }
+}
+
+// Slot 2 ----------------------------------------------------------------------
+
+ACTOR Clip1 : Ammo
+{
+	Inventory.Amount 15
+	Inventory.MaxAmount 200
+	Ammo.BackpackAmount 15
+	Ammo.BackpackMaxAmount 400
+	Inventory.Icon "CLIPC0"
+	Inventory.PickupMessage "Picked up a Pistol Magazine."
+	Inventory.PickupSound "CLIPICK"
+	VisibleToPlayerClass BDoomer, ArcadeDoomer, TacticalDoomer
+	Inventory.ForbiddenTo Purist, Corvus
+	+INVENTORY.NOSCREENFLASH
+	Scale 0.9
+	States
+	{
+	Spawn:
+		CLIP C -1
+		Stop
+	}
+}
+
+ACTOR HEGoldWandAmmo : Ammo
+{
+	Inventory.PickupMessage "$TXT_AMMOGOLDWAND1"
+	Inventory.PickupSound "misc/i_pkup"
+	VisibleToPlayerClass Corvus
+	Inventory.ForbiddenTo BDoomer, ArcadeDoomer, TacticalDoomer, Purist
+	Inventory.Amount 10
+	Inventory.MaxAmount 200
+	Ammo.BackpackAmount 10
+	Ammo.BackpackMaxAmount 400
+	Inventory.Icon "INAMGLD"
+	States
+	{
+	Spawn:
+		AMG1 A -1
+		Stop
+	}
+}
+
+Actor Clip1Drop : BasicAmmoPickup //AmmoDropper
+{
+    States
+    {
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItemEx("Clip1",0,0,0,0,0,0,0,0,0)
+		TNT1 A 0 A_SpawnItemEx("ClipPurist",0,0,0,0,0,0,0,0,0)
+		TNT1 A 0 A_SpawnItemEx("HEGoldWandAmmo",0,0,0,0,0,0,0,0,0)
+		TNT1 A 1
+		TNT1 A -1
+		Stop
+    }
+}
+
+Actor GoldWandAmmoReplacer : BasicAmmoPickup Replaces GoldWandAmmo
+{
+    States
+    {
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItemEx("Clip1",0,0,0,0,0,0,0,0,0)
+		TNT1 A 0 A_SpawnItemEx("ClipPurist",0,0,0,0,0,0,0,0,0)
+		TNT1 A 0 A_SpawnItemEx("HEGoldWandAmmo",0,0,0,0,0,0,0,0,0)
+		TNT1 A 1
+		TNT1 A -1
+		Stop
+    }
+}
+
+ACTOR PistolAmmoBox: Clip1
+{
+	Scale 0.9
+	Inventory.PickupMessage "Picked up a box of pistol ammunition!"
+	Inventory.PickupSound "CBOXPICK"
+	Inventory.Amount 50
+	States
+	{
+	Spawn:
+		4M0K A -1
+		Stop
+	}
+}
+
+ACTOR HEGoldWandHefty : HEGoldWandAmmo
+{
+	Inventory.PickupMessage "$TXT_AMMOGOLDWAND2"
+	Inventory.PickupSound "misc/i_pkup"
+	Inventory.Amount 50
+	States
+	{
+	Spawn:
+		AMG2 ABC 4
+		Loop
+	}
+}
+
+Actor GoldWandHeftyReplacer : BasicAmmoPickup Replaces GoldWandHefty
+{
+    States
+    {
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItemEx("PistolAmmoBox",0,0,0,0,0,0,0,0,0)
+		TNT1 A 0 A_SpawnItemEx("ClipBoxPurist",0,0,0,0,0,0,0,0,0)
+		TNT1 A 0 A_SpawnItemEx("HEGoldWandHefty",0,0,0,0,0,0,0,0,0)
+		TNT1 A 1
+		TNT1 A -1
+		Stop
+    }
+}
+
+// Slot 3 ----------------------------------------------------------------------
+
+ACTOR AmmoShell : Ammo
+{
+	Inventory.PickupMessage "$GOTSHELLS"
+	Inventory.Pickupsound "SHELPK1"
+	VisibleToPlayerClass BDoomer, ArcadeDoomer, TacticalDoomer
+	Inventory.ForbiddenTo Purist, Corvus
+	Inventory.Amount 4
+	Inventory.MaxAmount 50
+	Ammo.BackpackAmount 4
+	Ammo.BackpackMaxAmount 100
+	Inventory.Icon "SHELA0"
+	+INVENTORY.NOSCREENFLASH
+	Scale 0.9
+	States
+	{
+	Spawn:
+		SHEL A -1
+		Stop
+	}
+}
+
+ACTOR ShellPurist : Ammo
+{
+	Inventory.PickupMessage "$GOTSHELLS"
+	Inventory.Pickupsound "SHELPK1"
+	VisibleToPlayerClass Purist
+	Inventory.ForbiddenTo BDoomer, ArcadeDoomer, TacticalDoomer, Corvus
+	Inventory.Amount 4
+	Inventory.MaxAmount 50
+	Ammo.BackpackAmount 4
+	Ammo.BackpackMaxAmount 100
+	Inventory.Icon "SHELA0"
+	+INVENTORY.NOSCREENFLASH
+	Scale 0.9
+	States
+	{
+	Spawn:
+		SHEL A -1
+		Stop
+	}
+}
+
+ACTOR AmmoSlug : Ammo
+{
+	Game Doom
+	Inventory.PickupMessage "$GOTSLUGS"
+	Inventory.Pickupsound "SHELPK1"
+	VisibleToPlayerClass BDoomer, ArcadeDoomer, TacticalDoomer
+	Inventory.ForbiddenTo Purist, Corvus
+	Inventory.Amount 4
+	Inventory.MaxAmount 50
+	Ammo.BackpackAmount 4
+	Ammo.BackpackMaxAmount 100
+	Inventory.Icon "SHELB0"
+	+INVENTORY.NOSCREENFLASH
+	Scale 0.9
+	States
+	{
+	Spawn:
+		SHEL B -1
+		Stop
+	}
+}
+
+ACTOR AmmoMagnum : Ammo
+{
+	Game Doom
+	Inventory.PickupMessage "Picked up some magnum rounds."
+	Inventory.PickupSound "CBOXPICK"
+	VisibleToPlayerClass BDoomer, ArcadeDoomer, TacticalDoomer
+	Inventory.ForbiddenTo Purist, Corvus
+	Inventory.Amount 6
+	Inventory.MaxAmount 30
+	Ammo.BackpackAmount 6
+	Ammo.BackpackMaxAmount 60
+	Inventory.Icon "MAGAA0"
+	+INVENTORY.NOSCREENFLASH
+	Scale 0.6
+	States
+	{
+	Spawn:
+		MAGA A -1
+		Stop
+	}
+}
+
+ACTOR HECrossbowAmmo : Ammo
+{
+	Inventory.PickupMessage "$TXT_AMMOCROSSBOW1"
+	Inventory.PickupSound "misc/i_pkup"
+	VisibleToPlayerClass Corvus
+	Inventory.ForbiddenTo BDoomer, ArcadeDoomer, TacticalDoomer, Purist
+	Inventory.Amount 5
+	Inventory.MaxAmount 50
+	Ammo.BackpackAmount 5
+	Ammo.BackpackMaxAmount 100
+	Inventory.Icon "INAMBOW"
+	States
+	{
+	Spawn:
+		AMC1 A -1
+		Stop
+	}
+}
+
+ACTOR ShellSpawner: BasicAmmoPickup
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		MARN A 0 ACS_NamedExecuteAlways("BDDisableNewGuns", 0, 0, 0, 0)//Check if advanced decorations are disabled.
+		TNT1 A 2
+		TNT1 A 0 A_Jump(4, "Spawn3") // Magnum Ammo
+		TNT1 A 0 A_Jump(32, "Spawn2") // Slug Ammo
+		TNT1 A 2
+
+	Vanilla:
+	Spawn1:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItemEx ("AmmoShell",0,0,0,0,0,0,0,0,0)
+		TNT1 A 1
+		TNT1 A -1
+		Stop
+
+	Spawn2:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItemEx ("AmmoSlug",0,0,0,0,0,0,0,0,0)
+		TNT1 A 1
+		TNT1 A -1
+		Stop
+
+	Spawn3:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItemEx ("AmmoMagnum",0,0,0,0,0,0,0,0,0)
+		TNT1 A 1
+		TNT1 A -1
+		Stop
+	}
+}
+
+Actor CrossbowAmmoReplacer : BasicAmmoPickup Replaces CrossbowAmmo
+{
+    States
+    {
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItemEx("ShellSpawner",0,0,0,0,0,0,0,0,0)
+		TNT1 A 0 A_SpawnItemEx("ShellPurist",0,0,0,0,0,0,0,0,0)
+		TNT1 A 0 A_SpawnItemEx("HECrossbowAmmo",0,0,0,0,0,0,0,0,0)
+		TNT1 A 1
+		TNT1 A -1
+		Stop
+    }
+}
+
+// Shell box ---------------------------------------------------------------
+
+ACTOR AmmoShellBox : AmmoShell
+{
+	Inventory.PickupMessage "$GOTSHELLBOX"
+	Inventory.Pickupsound "SHELPK2"
+	Inventory.Amount 20
+	+INVENTORY.NOSCREENFLASH
+	Scale 0.9
+	States
+	{
+	Spawn:
+		SBOX A -1
+		Stop
+	}
+}
+ACTOR ShellBoxPurist : ShellPurist
+{
+	Inventory.PickupMessage "$GOTSHELLBOX"
+	Inventory.Pickupsound "SHELPK2"
+	Inventory.Amount 20
+	+INVENTORY.NOSCREENFLASH
+	Scale 0.9
+	States
+	{
+	Spawn:
+		SBOX A -1
+		Stop
+	}
+}
+
+ACTOR AmmoSlugBox : AmmoSlug
+{
+	Inventory.PickupMessage "$GOTSLUGBOX"
+	Inventory.Pickupsound "SHELPK2"
+	Inventory.Amount 20
+	+INVENTORY.NOSCREENFLASH
+	Scale 0.9
+	States
+	{
+	Spawn:
+		SLSU A -1
+		Stop
+	}
+}
+
+ACTOR AmmoMagnumBox : AmmoMagnum
+{
+	Inventory.PickupMessage "Picked up a box of magnum rounds."
+	Inventory.Pickupsound "CBOXPICK"
+	Inventory.Amount 20
+	+INVENTORY.NOSCREENFLASH
+	Scale 0.9
+	States
+	{
+	Spawn:
+		MBOX A -1
+		Stop
+	}
+}
+
+ACTOR HECrossbowHefty : HECrossbowAmmo
+{
+	Inventory.PickupMessage "$TXT_AMMOCROSSBOW2"
+	Inventory.PickupSound "misc/i_pkup"
+	Inventory.Amount 20
+	States
+	{
+	Spawn:
+		AMC2 ABC 5
+		Loop
+	}
+}
+
+ACTOR ShellBoxSpawner: BasicAmmoPickup
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		MARN A 0 ACS_NamedExecuteAlways("BDDisableNewGuns", 0, 0, 0, 0)//Check if advanced decorations are disabled.
+		TNT1 A 2
+		TNT1 A 0 A_Jump(4, "Spawn3") // Magnum Ammo Box
+		TNT1 A 0 A_Jump(32, "Spawn2") // Slug Ammo Box
+		TNT1 A 2
+
+	Vanilla:
+	Spawn1:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItemEx ("AmmoShellBox",0,0,0,0,0,0,0,0,0)
+		TNT1 A 1
+		TNT1 A -1
+		Stop
+
+	Spawn2:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItemEx ("AmmoSlugBox",0,0,0,0,0,0,0,0,0)
+		TNT1 A 1
+		TNT1 A -1
+		Stop
+
+	Spawn3:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItemEx ("AmmoMagnumBox",0,0,0,0,0,0,0,0,0)
+		TNT1 A 1
+		TNT1 A -1
+		Stop
+	}
+}
+
+ACTOR CrossbowHeftyReplacer : BasicAmmoPickup Replaces CrossbowHefty
+{
+	States
+    {
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItemEx("ShellBoxSpawner",0,0,0,0,0,0,0,0,0)
+		TNT1 A 0 A_SpawnItemEx("ShellBoxPurist",0,0,0,0,0,0,0,0,0)
+		TNT1 A 0 A_SpawnItemEx("HECrossbowHefty",0,0,0,0,0,0,0,0,0)
+		TNT1 A 1
+		TNT1 A -1
+		Stop
+    }
+}
+
+// Slot 4 ----------------------------------------------------------------------
+
+ACTOR Clip2 : Ammo
+{
+	Inventory.PickupMessage "Picked up a Rifle Magazine."
+	Inventory.PickupSound "CLIPICK2"
+	VisibleToPlayerClass BDoomer, ArcadeDoomer, TacticalDoomer
+	Inventory.ForbiddenTo Purist, Corvus
+	Inventory.Amount 30
+	Inventory.MaxAmount 300
+	Ammo.BackpackAmount 30
+	Ammo.BackpackMaxAmount 600
+	Inventory.Icon "CLIPA0"
+	+INVENTORY.NOSCREENFLASH
+	Scale 0.9
+	States
+	{
+	Spawn:
+		CLIP A -1
+		Stop
+	}
+}
+
+ACTOR ClipPurist : Ammo
+{
+	Inventory.PickupMessage "$GOTCLIP"
+	Inventory.PickupSound "CLIPICK2"
+	VisibleToPlayerClass Purist
+	Inventory.ForbiddenTo BDoomer, ArcadeDoomer, TacticalDoomer, Corvus
+	Inventory.Amount 10
+	Inventory.MaxAmount 200
+	Ammo.BackpackAmount 10
+	Ammo.BackpackMaxAmount 400
+	Inventory.Icon "CLIPA0"
+	+INVENTORY.NOSCREENFLASH
+	Scale 0.9
+	States
+	{
+	Spawn:
+		CLIP A -1
+		Stop
+	}
+}
+
+ACTOR Mauser9mm : Ammo
+{
+	Inventory.PickupMessage "Picked up a Mauser 9mm Magazine for the MP40."
+	Inventory.PickupSound "CLIPICK"
+	VisibleToPlayerClass BDoomer, ArcadeDoomer, TacticalDoomer, Purist
+	Inventory.ForbiddenTo Corvus
+	+INVENTORY.NOSCREENFLASH
+	Inventory.Amount 32
+	Inventory.MaxAmount 200
+	Ammo.BackpackAmount 32
+	Ammo.BackpackMaxAmount 400
+	Inventory.Icon "CLIPB0"
+	Scale 0.6
+	States
+	{
+	Spawn:
+		CLIP B -1
+		Stop
+	}
+}
+
+ACTOR HEBlasterAmmo : Ammo
+{
+	Inventory.PickupMessage "$TXT_AMMOBLASTER1"
+	Inventory.PickupSound "misc/i_pkup"
+	VisibleToPlayerClass Corvus
+	Inventory.ForbiddenTo BDoomer, ArcadeDoomer, TacticalDoomer, Purist
+	Inventory.Amount 10
+	Inventory.MaxAmount 200
+	Ammo.BackpackAmount 10
+	Ammo.BackpackMaxAmount 400
+	Inventory.Icon "INAMBST"
+	Scale 0.5
+	States
+	{
+	Spawn:
+		AMB1 ABC 4 BRIGHT
+		Loop
+	}
+}
+
+Actor ClipSpawner : BasicAmmoPickup
+{
+    States
+    {
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItemEx("Clip2",0,0,0,0,0,0,0,0,0)
+		TNT1 A 0 A_SpawnItemEx("ClipPurist",0,0,0,0,0,0,0,0,0)
+		TNT1 A 1
+		TNT1 A -1
+		Stop
+    }
+}
+
+Actor ClipReplacer : BasicAmmoPickup
+{
+    States
+    {
+	Spawn:
+		TNT1 A 0
+		MARN A 0 ACS_NamedExecuteAlways("BDDisableNewGuns", 0, 0, 0, 0)//Check if advanced decorations are disabled.
+		TNT1 A 2
+		TNT1 A 0 A_Jump(4, "Spawn2") // Mauser 9mm
+
+	Vanilla:
+	Spawn1:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItemEx ("ClipSpawner",0,0,0,0,0,0,0,0,0)
+		TNT1 A 1
+		TNT1 A -1
+		Stop
+
+	Spawn2:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItemEx ("Mauser9mm",0,0,0,0,0,0,0,0,0)
+		TNT1 A 1
+		TNT1 A -1
+		Stop
+    }
+}
+
+Actor BlasterAmmoReplacer : BasicAmmoPickup Replaces BlasterAmmo
+{
+    States
+    {
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItemEx("ClipReplacer",0,0,0,0,0,0,0,0,0)
+		TNT1 A 0 A_SpawnItemEx("HEBlasterAmmo",0,0,0,0,0,0,0,0,0)
+		TNT1 A 1
+		TNT1 A -1
+		Stop
+    }
+}
+
+ACTOR ClipBox2 : Clip2
+{
+	Inventory.PickupMessage "Picked up a box of rifle ammunition."
+	Inventory.PickupSound "CBOXPICK"
+	Inventory.Amount 50
+	Scale 0.9
+	States
+	{
+	Spawn:
+		AMMO A -1
+		Stop
+	}
+}
+
+ACTOR ClipBoxPurist : ClipPurist
+{
+	Inventory.PickupMessage "$GOTCLIPBOX"
+	Inventory.PickupSound "CBOXPICK"
+	Inventory.Amount 50
+	Scale 0.9
+	States
+	{
+	Spawn:
+		AMMO A -1
+		Stop
+	}
+}
+
+ACTOR BuzzSawAmmo : Ammo
+{
+	Inventory.PickupMessage "Picked up a belt of MG42 ammo."
+	Inventory.PickupSound "CBOXPICK"
+	VisibleToPlayerClass BDoomer, ArcadeDoomer, TacticalDoomer, Purist
+	Inventory.ForbiddenTo Corvus
+	+INVENTORY.NOSCREENFLASH
+	Inventory.Amount 50
+	Inventory.MaxAmount 300
+	Ammo.BackpackAmount 50
+	Ammo.BackpackMaxAmount 600
+	Inventory.Icon "HBUSE0"
+	Scale 0.6
+	States
+	{
+	Spawn:
+		HBUS E -1
+		Stop
+	}
+}
+
+ACTOR HEBlasterHefty : HEBlasterAmmo
+{
+	Inventory.PickupMessage "$TXT_AMMOBLASTER2"
+	Inventory.Amount 25
+	Scale 1.0
+	States
+	{
+	Spawn:
+		AMB2 ABC 4 BRIGHT
+		Loop
+	}
+}
+
+Actor ClipBoxSpawner : BasicAmmoPickup
+{
+    States
+    {
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItemEx("ClipBox2",0,0,0,0,0,0,0,0,0)
+		TNT1 A 0 A_SpawnItemEx("ClipBoxPurist",0,0,0,0,0,0,0,0,0)
+		TNT1 A 1
+		TNT1 A -1
+		Stop
+    }
+}
+
+Actor ClipBoxReplacer : BasicAmmoPickup
+{
+    States
+    {
+	Spawn:
+		TNT1 A 0
+		MARN A 0 ACS_NamedExecuteAlways("BDDisableNewGuns", 0, 0, 0, 0)//Check if advanced decorations are disabled.
+		TNT1 A 2
+		TNT1 A 0 A_Jump(4, "Spawn2") // Buzzsaw ammo
+		TNT1 A 2
+
+	Vanilla:
+	Spawn1:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItemEx ("ClipBoxSpawner",0,0,0,0,0,0,0,0,0)
+		TNT1 A 1
+		TNT1 A -1
+		Stop
+
+	Spawn2:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItemEx ("BuzzSawAmmo",0,0,0,0,0,0,0,0,0)
+		TNT1 A 1
+		TNT1 A -1
+		Stop
+    }
+}
+
+Actor BlasterHeftyReplacer : BasicAmmoPickup Replaces BlasterHefty
+{
+    States
+    {
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItemEx("ClipBoxReplacer",0,0,0,0,0,0,0,0,0)
+		TNT1 A 0 A_SpawnItemEx("HEBlasterHefty",0,0,0,0,0,0,0,0,0)
+		TNT1 A 1
+		TNT1 A -1
+		Stop
+    }
+}
+
+// Slot 5 ----------------------------------------------------------------------
+
+ACTOR AmmoRocket : Ammo
+{
+	Inventory.PickupMessage "$GOTROCKET"
+	Inventory.Pickupsound "RCKCLIP"
+	VisibleToPlayerClass BDoomer, ArcadeDoomer, TacticalDoomer, Purist
+	Inventory.ForbiddenTo Corvus
+	Inventory.Amount 1
+	Inventory.MaxAmount 50
+	Ammo.BackpackAmount 1
+	Ammo.BackpackMaxAmount 100
+	Inventory.Icon "ROCKA0"
+	+INVENTORY.NOSCREENFLASH
+	Scale 0.9
+	+NOTAUTOAIMED
+	+SHOOTABLE
+	+NOBLOOD
+	+NORADIUSDMG
+	+FORCERADIUSDMG
+
+	damagefactor "Shrapnel", 0.0  damagefactor "Trample", 0.0
+	damagefactor "Head", 0.0	damagefactor "FriendBullet", 0.0    damagefactor "Taunt", 0.0    damagefactor "KillMe", 0.0
+	damagefactor "CancelTeleportFog", 0.0	damagefactor "BHFTOnBarrel", 0.0	damagefactor "GibRemoving", 0.0
+	damagefactor "SpawnMarine", 0.0	damagefactor "TeleportRemover", 0.0	damagefactor "MinorHead", 0.0
+	damagefactor "Decaptate", 0.0	damagefactor "MonsterKnocked", 0.0
+	DamageFactor "CauseSplash", 0.0 DamageFactor "CauseObjectsToSplashSlime", 0.0 DamageFactor "CauseObjectsToSplashNukage", 0.0
+	DamageFactor "CauseObjectsToSplashBlood", 0.0 DamageFactor "CauseObjectsToSplashLava", 0.0
+	damagefactor "HelperMarineFatallity", 0.0	damagefactor "Leg", 0.0
+	DamageFactor "KillMeBot", 0.0
+	Health 20
+	States
+	{
+	Spawn:
+		ROCK A 1
+		TNT1 A 0 ACS_NamedExecuteAlways("BDShootableAmmo")//Checks if shootable ammo is enabled
+		ROCK A 4
+		TNT1 A 0 A_JumpIfInventory("Clip1", 1, "NoShootable")
+		ROCK A -1
+		Stop
+
+	NoShootable:
+		ROCK A 1
+		TNT1 A 0 A_ChangeFlag("SHOOTABLE", 0)
+		ROCK A -1
+		Stop
+	Death:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItemEx ("ExplosionSplashSpawner", 0, 0, -20)
+        TNT1 A 0 A_SpawnItemEx ("DetectFloorCrater",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
+	    TNT1 A 0 A_SpawnItemEx ("DetectCeilCrater",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
+	    TNT1 A 0 A_SpawnItemEx ("UnderwaterExplosion",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
+        TNT1 A 0 A_SpawnItemEx ("ExplosionFlareSpawner",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
+        TNT1 AAAAAAAAA 0 A_CustomMissile ("ExplosionParticleHeavy", 0, 0, random (0, 360), 2, random (0, 180))
+        TNT1 AAAAAAAAAAAAAAAAAA 0 A_CustomMissile ("ExplosionParticleHeavy", 0, 0, random (0, 360), 2, random (0, 360))
+		TNT1 AAAAAAAAA 0 A_CustomMissile ("ExplosionParticleVeryFast", 0, 0, random (0, 360), 2, random (0, 360))
+        TNT1 AAAA 0 A_CustomMissile ("MediumExplosionFlames", 0, 0, random (0, 360), 2, random (0, 360))
+        EXPL AAAA 0 A_CustomMissile ("ExplosionSmokeFast22", 0, 0, random (0, 360), 2, random (0, 360))
+		EXPL A 0 A_CustomMissile ("BigNeoSmoke", 0, 0, random (0, 360), 2, random (0, 360))
+		TNT1 A 0 A_SpawnItemEx ("RocketExplosion",0,0,13,0,0,0,0,SXF_NOCHECKPOSITION,0)
+		//TNT1 A 0 A_SpawnItemEx ("RocketPenetrator",cos(-pitch)*42,0,0+(sin(pitch)*42),cos(-pitch)*40,0,sin(pitch)*40,0,SXF_TRANSFERPITCH)
+		//TNT1 AA 0 A_SpawnItem("SuperExpensiveParticleSpawner")
+
+		TNT1 A 2
+		TNT1 A 0 A_SpawnItemEx ("LiquidExplosionEffectSpawner",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
+		TNT1 A 0 A_PlaySound("FAREXPL", 3)
+		TNT1 A 4
+		TNT1 A 0 A_Explode(100, 100)
+		TNT1 A 10
+		TNT1 A 0 A_PlaySound("distantexp", 5)
+		TNT1 AAAAA 4 A_CustomMissile ("HeavyExplosionSmoke", 2, 0, random (0, 360), 2, random (0, 360))
+		Stop
+	}
+}
+
+ACTOR HEPhoenixRodAmmo : Ammo
+{
+	Inventory.PickupMessage "$TXT_AMMOPHOENIXROD1"
+	Inventory.PickupSound "misc/i_pkup"
+	VisibleToPlayerClass Corvus
+	Inventory.ForbiddenTo BDoomer, ArcadeDoomer, TacticalDoomer, Purist
+	Inventory.Amount 1
+	Inventory.MaxAmount 20
+	Ammo.BackpackAmount 1
+	Ammo.BackpackMaxAmount 40
+	Inventory.Icon "INAMPNX"
+	States
+	{
+	Spawn:
+		AMP1 ABC 4
+		Loop
+	}
+}
+
+ACTOR AmmoRocketReplacer : BasicAmmoPickup
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		MARN A 0 ACS_NamedExecuteAlways("BDDisableNewGuns", 0, 0, 0, 0)//Check if advanced decorations are disabled.
+		TNT1 A 2
+		TNT1 A 0 A_Jump(4, "Spawn2") // Grenade Ammo
+		TNT1 A 2
+
+	Vanilla:
+	Spawn1:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItemEx ("AmmoRocket",0,0,0,0,0,0,0,0,0)
+		TNT1 A 1
+		TNT1 A -1
+		Stop
+
+	Spawn2:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItemEx ("GrenadeAmmo",0,0,0,0,0,0,0,0,0)
+		TNT1 A 1
+		TNT1 A -1
+		Stop
+	}
+}
+
+ACTOR PhoenixRodAmmoReplacer : BasicAmmoPickup Replaces PhoenixRodAmmo
+{
+	States
+    {
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItemEx("AmmoRocketReplacer",0,0,0,0,0,0,0,0,0)
+		TNT1 A 0 A_SpawnItemEx("HEPhoenixRodAmmo",0,0,0,0,0,0,0,0,0)
+		TNT1 A 1
+		TNT1 A -1
+		Stop
+    }
+}
+
+// Rocket box --------------------------------------------------------------
+
+ACTOR AmmoRocketBox : AmmoRocket
+{
+	Inventory.PickupMessage "$GOTROCKBOX"
+	Inventory.Pickupsound "RCKCLIP2"
+	Inventory.Amount 3
+	Scale 0.9
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 ACS_NamedExecuteAlways("BDShootableAmmo")//Checks if shootable ammo is enabled
+		BROK A 4
+		TNT1 A 0 A_JumpIfInventory("Clip1", 1, "NoShootable")
+		BROK A -1
+		Stop
+
+	NoShootable:
+		BROK A 1
+		TNT1 A 0 A_ChangeFlag("SHOOTABLE", 0)
+		BROK A -1
+		Stop
+
+	Death:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItemEx ("ExplosionSplashSpawner", 0, 0, -20)
+        TNT1 A 0 A_SpawnItemEx ("DetectFloorCrater",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
+	    TNT1 A 0 A_SpawnItemEx ("DetectCeilCrater",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
+	    TNT1 A 0 A_SpawnItemEx ("UnderwaterExplosion",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
+        TNT1 A 0 A_SpawnItemEx ("ExplosionFlareSpawner",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
+        TNT1 AAAAAAAAA 0 A_CustomMissile ("ExplosionParticleHeavy", 0, 0, random (0, 360), 2, random (0, 180))
+        TNT1 AAAAAAAAAAAAAAAAAA 0 A_CustomMissile ("ExplosionParticleHeavy", 0, 0, random (0, 360), 2, random (0, 360))
+		TNT1 AAAAAAAAA 0 A_CustomMissile ("ExplosionParticleVeryFast", 0, 0, random (0, 360), 2, random (0, 360))
+        TNT1 AAAA 0 A_CustomMissile ("MediumExplosionFlames", 0, 0, random (0, 360), 2, random (0, 360))
+        EXPL AAAA 0 A_CustomMissile ("ExplosionSmokeFast22", 0, 0, random (0, 360), 2, random (0, 360))
+		EXPL A 0 A_CustomMissile ("BigNeoSmoke", 0, 0, random (0, 360), 2, random (0, 360))
+		TNT1 A 0 A_SpawnItemEx ("RocketExplosion",0,0,13,0,0,0,0,SXF_NOCHECKPOSITION,0)
+		//TNT1 A 0 A_SpawnItemEx ("RocketPenetrator",cos(-pitch)*42,0,0+(sin(pitch)*42),cos(-pitch)*40,0,sin(pitch)*40,0,SXF_TRANSFERPITCH)
+		//TNT1 AA 0 A_SpawnItem("SuperExpensiveParticleSpawner")
+		EXPL AAA 0 A_CustomMissile ("BarrelKaboom", 0, 0, random (0, 360), 2, random (0, 360))
+		TNT1 A 0 A_Explode(150, 300)
+		TNT1 A 2
+		TNT1 A 0 A_SpawnItemEx ("LiquidExplosionEffectSpawner",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
+		TNT1 A 0 A_PlaySound("FAREXPL", 3)
+		TNT1 A 15
+		TNT1 A 0 A_PlaySound("distantexp", 5)
+		TNT1 AAAAA 4 A_CustomMissile ("HeavyExplosionSmoke", 2, 0, random (0, 360), 2, random (0, 360))
+		Stop
+	}
+}
+
+ACTOR HEPhoenixRodHefty : HEPhoenixRodAmmo
+{
+	Inventory.PickupMessage "$TXT_AMMOPHOENIXROD2"
+	Inventory.Amount 10
+	States
+	{
+	Spawn:
+		AMP2 ABC 4
+		Loop
+	}
+}
+
+ACTOR PhoenixRodHeftyReplacer: BasicAmmoPickup Replaces PhoenixRodHefty
+{
+	States
+    {
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItemEx("AmmoRocketBox",0,0,0,0,0,0,0,0,0)
+		TNT1 A 0 A_SpawnItemEx("HEPhoenixRodHefty",0,0,0,0,0,0,0,0,0)
+		TNT1 A 1
+		TNT1 A -1
+		Stop
+    }
+}
+
+// Slot 6 ----------------------------------------------------------------------
+
+ACTOR AmmoCell : Ammo
+{
+	Inventory.PickupMessage "$GOTCELL"
+	VisibleToPlayerClass BDoomer, ArcadeDoomer, TacticalDoomer
+	Inventory.ForbiddenTo Purist, Corvus
+	+INVENTORY.NOSCREENFLASH
+	Inventory.Amount 20
+	Inventory.MaxAmount 300
+	Ammo.BackpackAmount 20
+	Ammo.BackpackMaxAmount 600
+	Inventory.Icon "CELLA0"
+	Scale 0.9
+	States
+	{
+	Spawn:
+		CELL A -1
+		Stop
+	}
+}
+
+ACTOR CellPurist : Ammo
+{
+	Inventory.PickupMessage "$GOTCELL"
+	VisibleToPlayerClass Purist
+	Inventory.ForbiddenTo BDoomer, ArcadeDoomer, TacticalDoomer, Corvus
+	+INVENTORY.NOSCREENFLASH
+	Inventory.Amount 20
+	Inventory.MaxAmount 300
+	Ammo.BackpackAmount 20
+	Ammo.BackpackMaxAmount 600
+	Inventory.Icon "CELLA0"
+	States
+	{
+	Spawn:
+		CELL A -1
+		Stop
+	}
+}
+
+ACTOR HESkullRodAmmo : Ammo
+{
+	Inventory.PickupMessage "$TXT_AMMOSKULLROD1"
+	Inventory.PickupSound "misc/i_pkup"
+	VisibleToPlayerClass Corvus
+	Inventory.ForbiddenTo BDoomer, ArcadeDoomer, TacticalDoomer, Purist
+	Inventory.Amount 20
+	Inventory.MaxAmount 200
+	Ammo.BackpackAmount 20
+	Ammo.BackpackMaxAmount 400
+	Inventory.Icon "INAMRAM"
+	Scale 0.5
+	States
+	{
+	Spawn:
+		AMS2 AB 5
+		Loop
+	}
+}
+
+ACTOR SkullRodAmmoReplacer: BasicAmmoPickup Replaces SkullRodAmmo
+{
+	States
+    {
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItemEx("AmmoCell",0,0,0,0,0,0,0,0,0)
+		TNT1 A 0 A_SpawnItemEx("CellPurist",0,0,0,0,0,0,0,0,0)
+		TNT1 A 0 A_SpawnItemEx("HESkullRodAmmo",0,0,0,0,0,0,0,0,0)
+		TNT1 A 1
+		TNT1 A -1
+		Stop
+	}
+}
+
+ACTOR AmmoCellPack : AmmoCell
+{
+	Inventory.PickupMessage "$GOTCELLBOX"
+	Inventory.Amount 100
+	Scale 0.9
+	States
+	{
+	Spawn:
+		CELP A -1
+		Stop
+	}
+}
+
+ACTOR CellPackPurist : CellPurist
+{
+	Inventory.PickupMessage "$GOTCELLBOX"
+	Inventory.Amount 100
+	States
+	{
+	Spawn:
+		CELP A -1
+		Stop
+	}
+}
+
+ACTOR Gas : Ammo
+{
+	Inventory.Amount 50
+	Inventory.MaxAmount 300
+	Ammo.BackpackAmount 50
+	Ammo.BackpackMaxAmount 600
+	Inventory.Icon "GSLNA0"
+	Inventory.PickupMessage "Picked up a jug of Gasoline."
+	Inventory.PickupSound "BFGREADY"
+	+INVENTORY.NOSCREENFLASH
+	Scale 0.9
+	States
+	{
+	Spawn:
+		GSLN A -1
+		Stop
+	}
+}
+
+ACTOR HESkullRodHefty : HESkullRodAmmo
+{
+	Inventory.PickupMessage "$TXT_AMMOSKULLROD2"
+	Inventory.Amount 100
+	Scale 1.0
+	States
+	{
+	Spawn:
+		AMS2 AB 5
+		Loop
+	}
+}
+
+ACTOR AmmoCellPackReplacer : BasicAmmoPickup
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		MARN A 0 ACS_NamedExecuteAlways("BDDisableNewGuns", 0, 0, 0, 0)//Check if advanced decorations are disabled.
+		TNT1 A 2
+		TNT1 A 0 A_Jump(4, "Spawn2") // Gas
+		TNT1 A 2
+
+	Vanilla:
+	Spawn1:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItemEx ("AmmoCellPack",0,0,0,0,0,0,0,0,0)
+		TNT1 A 1
+		TNT1 A -1
+		Stop
+
+	Spawn2:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItemEx ("Gas",0,0,0,0,0,0,0,0,0)
+		TNT1 A 1
+		TNT1 A -1
+		Stop
+	}
+}
+
+ACTOR SkullRodHeftyReplacer : BasicAmmoPickup Replaces SkullRodHefty
+{
+	States
+    {
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItemEx("AmmoCellPackReplacer",0,0,0,0,0,0,0,0,0)
+		TNT1 A 0 A_SpawnItemEx("CellPackPurist",0,0,0,0,0,0,0,0,0)
+		TNT1 A 0 A_SpawnItemEx("HESkullRodHefty",0,0,0,0,0,0,0,0,0)
+		TNT1 A 1
+		TNT1 A -1
+		Stop
+	}
+}
+
+// Slot 7 ----------------------------------------------------------------------
+
+ACTOR RavenAmmo : Ammo
+{
+	Scale 0.5
+	Inventory.PickupMessage "Lesser Raven Rune"
+	Inventory.PickupSound "misc/i_pkup"
+	VisibleToPlayerClass Corvus
+	Inventory.ForbiddenTo BDoomer, ArcadeDoomer, TacticalDoomer, Purist
+	Inventory.Amount 20
+	Inventory.MaxAmount 150
+	Ammo.BackpackAmount 20
+	Ammo.BackpackMaxAmount 300
+	Inventory.Icon "INAMRAV"
+	States
+	{
+	Spawn:
+		AMR1 A -1
+		Stop
+	}
+}
+
+ACTOR MaceAmmoReplacer : BasicAmmoPickup Replaces MaceAmmo
+{
+	States
+    {
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItemEx("AmmoCell",0,0,0,0,0,0,0,0,0)
+		TNT1 A 0 A_SpawnItemEx("CellPurist",0,0,0,0,0,0,0,0,0)
+		TNT1 A 0 A_SpawnItemEx("RavenAmmo",0,0,0,0,0,0,0,0,0)
+		TNT1 A 1
+		TNT1 A -1
+		Stop
+	}
+}
+
+ACTOR Nuke : Ammo
+{
+	Inventory.PickupMessage "Picked up a nuclear missile."
+	Inventory.PickupSound "BFGREADY"
+	VisibleToPlayerClass BDoomer, ArcadeDoomer, TacticalDoomer
+	Inventory.ForbiddenTo Corvus, Purist
+	Inventory.Amount 1
+	Inventory.MaxAmount 1
+	Ammo.BackpackAmount 0
+	Ammo.BackpackMaxAmount 2
+	Inventory.Icon "NKLAA0"
+	+INVENTORY.NOSCREENFLASH
+	Scale 0.6
+	States
+	{
+	Spawn:
+		BNUK A -1
+		Stop
+	}
+}
+
+ACTOR RavenHefty : RavenAmmo
+{
+	Scale 0.75
+	Inventory.PickupMessage "Greater Raven Rune"
+	Inventory.Amount 100
+	States
+	{
+	Spawn:
+		AMR1 A -1
+		Stop
+	}
+}
+
+ACTOR AmmoCellPackReplacer2 : BasicAmmoPickup
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		MARN A 0 ACS_NamedExecuteAlways("BDDisableNewGuns", 0, 0, 0, 0)//Check if advanced decorations are disabled.
+		TNT1 A 2
+		TNT1 A 0 A_Jump(2, "Spawn2") // Nuclear Missile
+		TNT1 A 2
+
+	Vanilla:
+	Spawn1:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItemEx ("AmmoCellPack",0,0,0,0,0,0,0,0,0)
+		TNT1 A 1
+		TNT1 A -1
+		Stop
+
+	Spawn2:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItemEx ("Nuke",0,0,0,0,0,0,0,0,0)
+		TNT1 A 1
+		TNT1 A -1
+		Stop
+	}
+}
+
+ACTOR MaceHeftyReplacer : BasicAmmoPickup Replaces MaceHefty
+{
+	States
+    {
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItemEx("AmmoCellPackReplacer2",0,0,0,0,0,0,0,0,0)
+		TNT1 A 0 A_SpawnItemEx("CellPackPurist",0,0,0,0,0,0,0,0,0)
+		TNT1 A 0 A_SpawnItemEx("RavenHefty",0,0,0,0,0,0,0,0,0)
+		TNT1 A 1
+		TNT1 A -1
+		Stop
+	}
+}
+
+// Slot 9 ----------------------------------------------------------------------
+
+ACTOR GrenadeAmmo : Ammo
+{
+	Inventory.PickupMessage "Picked up a Grenade."
+	VisibleToPlayerClass BDoomer, ArcadeDoomer, TacticalDoomer, Purist
+	Inventory.ForbiddenTo Corvus
+	Inventory.Amount 1
+	Inventory.MaxAmount 3
+	Ammo.BackpackAmount 1
+	Ammo.BackpackMaxAmount 6
+	Inventory.Icon "GRNDA"
+	+INVENTORY.NOSCREENFLASH
+	Scale 0.3
+	States
+	{
+	Spawn:
+		GRND H -1
+		Stop
+	}
+}
+
+ACTOR GrenadeBox : GrenadeAmmo
+{
+	Inventory.PickupMessage "Picked up a box of grenades."
+	Inventory.Amount 3
+	States
+	{
+	Spawn:
+		GRND H -1
+		Stop
+	}
+}

@@ -1,0 +1,140 @@
+#library "ssplash"
+#include "zcommon.acs"
+
+script "BDCheckFloorType" (void) //Ricochets
+{
+	if (CheckActorFloorTexture(0, "BDFWATER"))  GiveInventory("IsOverWater", 1);
+	if (CheckActorFloorTexture(0, "FLTFLWW1"))	GiveInventory("IsOverWater", 1);
+	if (CheckActorFloorTexture(0, "FLTFLWW2"))	GiveInventory("IsOverWater", 1);
+	if (CheckActorFloorTexture(0, "FLTFLWW3"))	GiveInventory("IsOverWater", 1);
+	if (CheckActorFloorTexture(0, "FLTWAWA1"))	GiveInventory("IsOverWater", 1);
+	if (CheckActorFloorTexture(0, "FLTWAWA2"))	GiveInventory("IsOverWater", 1);
+	if (CheckActorFloorTexture(0, "FLTWAWA3"))	GiveInventory("IsOverWater", 1);
+
+	if (CheckActorFloorTexture(0, "GRWAT_01"))  GiveInventory("IsOverSludge", 1);
+	if (CheckActorFloorTexture(0, "FLTSLUD1"))	GiveInventory("IsOverSludge", 1);
+	if (CheckActorFloorTexture(0, "FLTSLUD2"))	GiveInventory("IsOverSludge", 1);
+	if (CheckActorFloorTexture(0, "FLTSLUD3"))	GiveInventory("IsOverSludge", 1);
+
+	if (CheckActorFloorTexture(0, "LAVAFL"))    GiveInventory("IsOverLava", 1);
+	if (CheckActorFloorTexture(0, "FLATHUH1"))	GiveInventory("IsOverLava", 1);
+	if (CheckActorFloorTexture(0, "FLATHUH2"))	GiveInventory("IsOverLava", 1);
+	if (CheckActorFloorTexture(0, "FLATHUH3"))	GiveInventory("IsOverLava", 1);
+	if (CheckActorFloorTexture(0, "FLATHUH4"))	GiveInventory("IsOverLava", 1);
+	if (CheckActorFloorTexture(0, "FLTLAVA1"))	GiveInventory("IsOverLava", 1);
+	if (CheckActorFloorTexture(0, "FLTLAVA2"))	GiveInventory("IsOverLava", 1);
+	if (CheckActorFloorTexture(0, "FLTLAVA3"))	GiveInventory("IsOverLava", 1);
+	if (CheckActorFloorTexture(0, "FLTLAVA4"))	GiveInventory("IsOverLava", 1);
+
+	if (CheckActorFloorTexture(0, "FLOOR27"))    GiveInventory("IsOverSand", 1);
+}
+
+script "BDCheckFloorType2" (void) // Footstep Sounds
+{
+	if (CheckActorFloorTexture(0, "BDFWATER"))    GiveInventory("IsOverWater", 1);
+	if (CheckActorFloorTexture(0, "FLTFLWW1"))	GiveInventory("IsOverWater", 1);
+	if (CheckActorFloorTexture(0, "FLTFLWW2"))	GiveInventory("IsOverWater", 1);
+	if (CheckActorFloorTexture(0, "FLTFLWW3"))	GiveInventory("IsOverWater", 1);
+	if (CheckActorFloorTexture(0, "FLTWAWA1"))	GiveInventory("IsOverWater", 1);
+	if (CheckActorFloorTexture(0, "FLTWAWA2"))	GiveInventory("IsOverWater", 1);
+	if (CheckActorFloorTexture(0, "FLTWAWA3"))	GiveInventory("IsOverWater", 1);
+
+	if (CheckActorFloorTexture(0, "GRWAT_01"))    GiveInventory("IsOverSludge", 1);
+	if (CheckActorFloorTexture(0, "FLTSLUD1"))	GiveInventory("IsOverSludge", 1);
+	if (CheckActorFloorTexture(0, "FLTSLUD2"))	GiveInventory("IsOverSludge", 1);
+	if (CheckActorFloorTexture(0, "FLTSLUD3"))	GiveInventory("IsOverSludge", 1);
+
+	if (CheckActorFloorTexture(0, "LAVAFL"))    GiveInventory("IsOverLava", 1);
+	if (CheckActorFloorTexture(0, "FLATHUH1"))	GiveInventory("IsOverLava", 1);
+	if (CheckActorFloorTexture(0, "FLATHUH2"))	GiveInventory("IsOverLava", 1);
+	if (CheckActorFloorTexture(0, "FLATHUH3"))	GiveInventory("IsOverLava", 1);
+	if (CheckActorFloorTexture(0, "FLATHUH4"))	GiveInventory("IsOverLava", 1);
+	if (CheckActorFloorTexture(0, "FLTLAVA1"))	GiveInventory("IsOverLava", 1);
+	if (CheckActorFloorTexture(0, "FLTLAVA2"))	GiveInventory("IsOverLava", 1);
+	if (CheckActorFloorTexture(0, "FLTLAVA3"))	GiveInventory("IsOverLava", 1);
+	if (CheckActorFloorTexture(0, "FLTLAVA4"))	GiveInventory("IsOverLava", 1);
+
+	if (CheckActorFloorTexture(0, "FLOOR17"))    GiveInventory("IsOverDirt", 1);
+
+	if (CheckActorFloorTexture(0, "FLAT507"))    GiveInventory("IsOverMetal", 1);
+
+	if (CheckActorFloorTexture(0, "FLOOR08"))    GiveInventory("IsOverMetal2", 1);
+
+	if (CheckActorFloorTexture(0, "FLOOR00"))    GiveInventory("IsOverRock", 1);
+	if (CheckActorFloorTexture(0, "FLOOR01"))    GiveInventory("IsOverRock", 1);
+	if (CheckActorFloorTexture(0, "FLOOR02"))    GiveInventory("IsOverRock", 1);
+	if (CheckActorFloorTexture(0, "FLOOR03"))    GiveInventory("IsOverRock", 1);
+	if (CheckActorFloorTexture(0, "FLOOR04"))    GiveInventory("IsOverRock", 1);
+	if (CheckActorFloorTexture(0, "FLOOR05"))    GiveInventory("IsOverRock", 1);
+	if (CheckActorFloorTexture(0, "FLOOR16"))    GiveInventory("IsOverRock", 1);
+	if (CheckActorFloorTexture(0, "FLOOR18"))    GiveInventory("IsOverRock", 1);
+	if (CheckActorFloorTexture(0, "FLOOR25"))    GiveInventory("IsOverRock", 1);
+	if (CheckActorFloorTexture(0, "FLAT503"))    GiveInventory("IsOverRock", 1);
+	if (CheckActorFloorTexture(0, "FLAT506"))    GiveInventory("IsOverRock", 1);
+	if (CheckActorFloorTexture(0, "FLAT509"))    GiveInventory("IsOverRock", 1);
+	if (CheckActorFloorTexture(0, "FLAT510"))    GiveInventory("IsOverRock", 1);
+	if (CheckActorFloorTexture(0, "FLAT513"))    GiveInventory("IsOverRock", 1);
+	if (CheckActorFloorTexture(0, "FLOOR07"))    GiveInventory("IsOverRock", 1);
+	if (CheckActorFloorTexture(0, "FLAT516"))    GiveInventory("IsOverRock", 1);
+	if (CheckActorFloorTexture(0, "FLAT520"))    GiveInventory("IsOverRock", 1);
+	if (CheckActorFloorTexture(0, "FLAT521"))    GiveInventory("IsOverRock", 1);
+	if (CheckActorFloorTexture(0, "FLAT522"))    GiveInventory("IsOverRock", 1);
+	if (CheckActorFloorTexture(0, "FLAT523"))    GiveInventory("IsOverRock", 1);
+
+	if (CheckActorFloorTexture(0, "FLOOR27"))    GiveInventory("IsOverSand", 1);
+
+	if (CheckActorFloorTexture(0, "FLOOR06"))    GiveInventory("IsOverTile", 1);
+	if (CheckActorFloorTexture(0, "FLOOR09"))    GiveInventory("IsOverTile", 1);
+	if (CheckActorFloorTexture(0, "FLOOR21"))    GiveInventory("IsOverTile", 1);
+	if (CheckActorFloorTexture(0, "FLOOR22"))    GiveInventory("IsOverTile", 1);
+	if (CheckActorFloorTexture(0, "FLOOR23"))    GiveInventory("IsOverTile", 1);
+	if (CheckActorFloorTexture(0, "FLOOR24"))    GiveInventory("IsOverTile", 1);
+	if (CheckActorFloorTexture(0, "FLOOR26"))    GiveInventory("IsOverTile", 1);
+	if (CheckActorFloorTexture(0, "FLOOR28"))    GiveInventory("IsOverTile", 1);
+	if (CheckActorFloorTexture(0, "FLOOR29"))    GiveInventory("IsOverTile", 1);
+	if (CheckActorFloorTexture(0, "FLOOR30"))    GiveInventory("IsOverTile", 1);
+	if (CheckActorFloorTexture(0, "FLAT502"))    GiveInventory("IsOverTile", 1);
+	if (CheckActorFloorTexture(0, "FLAT504"))    GiveInventory("IsOverTile", 1);
+	if (CheckActorFloorTexture(0, "FLOOR20"))    GiveInventory("IsOverTile", 1);
+
+	if (CheckActorFloorTexture(0, "FLOOR19"))    GiveInventory("IsOverTile2", 1);
+	if (CheckActorFloorTexture(0, "FLTTELE1"))    GiveInventory("IsOverTile2", 1);
+	if (CheckActorFloorTexture(0, "FLTTELE2"))    GiveInventory("IsOverTile2", 1);
+	if (CheckActorFloorTexture(0, "FLTTELE3"))    GiveInventory("IsOverTile2", 1);
+	if (CheckActorFloorTexture(0, "FLTTELE4"))    GiveInventory("IsOverTile2", 1);
+	if (CheckActorFloorTexture(0, "FLAT500"))    GiveInventory("IsOverTile2", 1);
+	if (CheckActorFloorTexture(0, "FLAT517"))    GiveInventory("IsOverTile2", 1);
+
+	if (CheckActorFloorTexture(0, "FLOOR10"))    GiveInventory("IsOverWood", 1);
+	if (CheckActorFloorTexture(0, "FLAT508"))    GiveInventory("IsOverWood", 1);
+}
+
+script "BDCheckFloorType3" (void) ///Check if Over Dirt or Grass for explosions
+{
+	if (CheckActorFloorTexture(0, "BDFWATER"))    GiveInventory("IsOverWater", 1);
+	if (CheckActorFloorTexture(0, "FLTFLWW1"))	GiveInventory("IsOverWater", 1);
+	if (CheckActorFloorTexture(0, "FLTFLWW2"))	GiveInventory("IsOverWater", 1);
+	if (CheckActorFloorTexture(0, "FLTFLWW3"))	GiveInventory("IsOverWater", 1);
+	if (CheckActorFloorTexture(0, "FLTWAWA1"))	GiveInventory("IsOverWater", 1);
+	if (CheckActorFloorTexture(0, "FLTWAWA2"))	GiveInventory("IsOverWater", 1);
+	if (CheckActorFloorTexture(0, "FLTWAWA3"))	GiveInventory("IsOverWater", 1);
+
+	if (CheckActorFloorTexture(0, "GRWAT_01"))    GiveInventory("IsOverSludge", 1);
+	if (CheckActorFloorTexture(0, "FLTSLUD1"))	GiveInventory("IsOverSludge", 1);
+	if (CheckActorFloorTexture(0, "FLTSLUD2"))	GiveInventory("IsOverSludge", 1);
+	if (CheckActorFloorTexture(0, "FLTSLUD3"))	GiveInventory("IsOverSludge", 1);
+
+	if (CheckActorFloorTexture(0, "LAVAFL"))    GiveInventory("IsOverLava", 1);
+	if (CheckActorFloorTexture(0, "FLATHUH1"))	GiveInventory("IsOverLava", 1);
+	if (CheckActorFloorTexture(0, "FLATHUH2"))	GiveInventory("IsOverLava", 1);
+	if (CheckActorFloorTexture(0, "FLATHUH3"))	GiveInventory("IsOverLava", 1);
+	if (CheckActorFloorTexture(0, "FLATHUH4"))	GiveInventory("IsOverLava", 1);
+	if (CheckActorFloorTexture(0, "FLTLAVA1"))	GiveInventory("IsOverLava", 1);
+	if (CheckActorFloorTexture(0, "FLTLAVA2"))	GiveInventory("IsOverLava", 1);
+	if (CheckActorFloorTexture(0, "FLTLAVA3"))	GiveInventory("IsOverLava", 1);
+	if (CheckActorFloorTexture(0, "FLTLAVA4"))	GiveInventory("IsOverLava", 1);
+
+	if (CheckActorFloorTexture(0, "FLOOR17"))    GiveInventory("IsOverDirt", 1);
+
+	if (CheckActorFloorTexture(0, "FLOOR27"))    GiveInventory("IsOverSand", 1);
+}
